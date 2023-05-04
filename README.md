@@ -1,2 +1,2 @@
 # MANA
-MANA: MoA identification Assisted by modelling and Network Analysis
+MANA: mMoA identification Assisted by modelling and Network Analysis
