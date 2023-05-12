@@ -242,7 +242,7 @@ def map_single_column(data,hgnc_data,col_to_add):
 		data.insert(2,col_to_add,mapped_ids)
 	return data
 
-def find_high_low_exprs(uarray_data,threshold_dw_perc,threshold_up_perc):
+def find_high_low_exprs(uarray_data,threshold_dw_perc=25,threshold_up_perc=75):
 	"""find_high_low_exprs.
 
 	Parameters
@@ -262,9 +262,6 @@ def find_high_low_exprs(uarray_data,threshold_dw_perc,threshold_up_perc):
 	"""
 	# threshold_dw_perc : Low expression percentile
 	# threshold_up_perc : High expression percentile
-	#Define the threshold according to the dataset
-	#NB : Maybe defining a threshold per molecule(maybe on control data)
-	# is a better idea ?
 	if pd.DataFrame(uarray_data).shape[1] > 1:
 		raise ValueError("More than one column provided, check duplicates")
 	if (0 <= threshold_up_perc <= 100) & (0 <= threshold_dw_perc <= 100) & \

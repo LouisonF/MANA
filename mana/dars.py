@@ -7,22 +7,74 @@ import scipy.cluster.hierarchy as hc
 from scipy.spatial import distance_matrix
 
 def calculate_frequencies(data, name):
+	"""calculate_frequencies.
+
+	Parameters
+	----------
+	data : pandas dataframe
+		a dataframe containing the partial enumeration results
+	name : str
+		the name of the pandas Series
+
+	Returns
+	-------
+		a pandas series with the sum of partial enumeration results for each reaction.
+
+	"""
 	prob_vec = [sum(data.iloc[:, col])/data.shape[0] for col in range(data.shape[1])]
 	return pd.Series(prob_vec, name=name)
+
 def calculate_frequencies_for_dir(full_enum_path,rList,output_file= ""):
+	"""calculate_frequencies_for_dir.
+
+	Parameters
+	----------
+	full_enum_path : str
+		the path to the full_enum directory
+	rList : list
+		the list of reactions in the model
+	output_file : str
+		if not empty, the frequencies table is written in csv to the path provided in this param
+
+	Returns
+	-------
+		a pandas dataframe containing the frequencies table, of each csv file found in the full enum path.
+
+	"""
 	csv_files = os.listdir(full_enum_path)
-	prob_table = pd.DataFrame()
-	prob_table = pd.concat([calculate_frequencies(pd.read_csv(full_enum_path+"/"+csv_file,index_col=0), csv_file.split('_')[0])
+	freq_table = pd.DataFrame()
+	freq_table = pd.concat([calculate_frequencies(pd.read_csv(full_enum_path+"/"+csv_file,index_col=0), csv_file.split('_')[0])
 							for csv_file in csv_files], axis=1).transpose()
-	prob_table.insert(0,"Barcode",prob_table.index)
+	freq_table.insert(0,"Barcode",freq_table.index)
 	if "Barcode" not in rList:
 		rList.insert(0,"Barcode")
-	prob_table.columns = rList
+	freq_table.columns = rList
 	if len(output_file) > 0:
-		prob_table.to_csv(output_file)
-	return prob_table
+		freq_table.to_csv(output_file)
+	return freq_table
 
 def calculate_freq_ctrls(rListFile, all_cpds, time, pheno, working_path):
+	"""calculate_freq_ctrls.
+
+	Parameters
+	----------
+	rListFile : str
+		the path to the model's reactions list file
+	all_cpds : str
+		the list of compounds to process, from the props.properties file
+	time : str 
+		the exposure time to consider
+	pheno : pandas dataframe
+		the pandas data frame containing Open TG-Gates metadata.
+	working_path : str
+		the root path of your working directory.
+
+	Returns
+	-------
+		return a pandas dataframe with the calculated frequencies 
+		for all controls partial enumeration results corresponding to input parameters
+
+	"""
 	freq_ctrls = pd.DataFrame()
 	rList = list(pd.read_csv(rListFile).iloc[:,0])
 	cond_list = []
@@ -46,17 +98,23 @@ def calculate_freq_ctrls(rListFile, all_cpds, time, pheno, working_path):
 	return freq_ctrls
 
 def rotate(vector, theta, rotation_around=None):
-	"""
+	"""rotate.
+
 	reference: https://en.wikipedia.org/wiki/Rotation_matrix#In_two_dimensions
-	:param vector: list of length 2 OR
-				   list of list where inner list has size 2 OR
-				   1D numpy array of length 2 OR
-				   2D numpy array of size (number of points, 2)
-	:param theta: rotation angle in radians (+ve value of anti-clockwise rotation)
-	:param rotation_around: "vector" will be rotated around this point, 
-					otherwise [0, 0] will be considered as rotation axis
-	:return: rotated "vector" about "theta" degree around rotation
-			 axis "rotation_around" numpy array
+
+	Parameters
+	----------
+	vector : pandas dataframe
+		the activation frequencies dataframe to rotate
+	theta : float
+		rotation angle in radians
+	rotation_around : np.array
+		A point around which vector will be rotated around. Can be None
+
+	Returns
+	-------
+		The rotated dataframe
+
 	"""
 	vector = np.array(vector)
 
@@ -67,8 +125,6 @@ def rotate(vector, theta, rotation_around=None):
 		vector = vector - rotation_around
 
 	vector = vector.T
-
-#     theta = np.radians(theta)
 
 	rotation_matrix = np.array([
 		[np.cos(theta), -np.sin(theta)],
@@ -83,6 +139,18 @@ def rotate(vector, theta, rotation_around=None):
 	return output.squeeze()
 
 def rescale_and_rotate(comp_freq):
+	"""rescale_and_rotate.
+
+	Parameters
+	----------
+	comp_freq : pandas dataframe
+		a pandas dataframe containing several metrics computed from activation frequencies
+
+	Returns
+	-------
+		a pandas dataframe with f_ctrl and f_trt  that have been rescaled, rescaled and rotated
+
+	"""
 	rids = list(comp_freq.index)
 	#rescale f_ctrl and f_treatment
 	comp_freq = comp_freq.assign(
@@ -100,6 +168,22 @@ def rescale_and_rotate(comp_freq):
 	return comp_freq
 
 def findCircleCenter(A,B,C):
+	"""findCircleCenter.
+
+	Parameters
+	----------
+	A : list
+		a list containing x and y coordinates of point A, a point of the circle O
+	B : list
+		a list containing x and y coordinates of point B, a point of the circle O
+	C : list
+		a list containing x and y coordinates of point C, a point of the circle O
+
+	Returns
+	-------
+		a pandas dataframe containing :calculated properties of the circle O
+
+	"""
 	Ax = A[0] #x1
 	Ay = A[1] #y1
 	Bx = B[0] #x2
@@ -142,7 +226,27 @@ def findCircleCenter(A,B,C):
 	dist_to_OO = distance_matrix(df.values,df.values).max()
 	return pd.DataFrame([[-g,-f,r*2, dist_to_OO]], columns = ['x','y','d','dist_to_OO'])
 
-def extract_reactions_from_clusters(matrix,title,write_files=False,file_name='cluster',header=True):
+def extract_reactions_from_clusters(matrix,title,write_files=False,file_prefix='cluster',header=True):
+	"""extract_reactions_from_clusters.
+
+	Parameters
+	----------
+	matrix : pandas dataframe
+		a distance matrix
+	title : str
+		the title of dendrograms plots
+	write_files : boolean
+		if true, write cluster's reaction files
+	file_prefix : str
+		prefix to add when saving cluster's reaction file
+	header : boolean
+		if true, add a header to the cluster's reaction file
+
+	Returns
+	-------
+		Write a csv or a pickle with for categorized reactions activity
+
+	"""
 	#Show dendro
 	plt.figure(figsize=(20, 7))
 	plt.title(title)
@@ -171,7 +275,7 @@ def extract_reactions_from_clusters(matrix,title,write_files=False,file_name='cl
 	if write_files:
 		j=1
 		for key in clusters_dict.keys():
-			with open(file_name+str(j)+".tab",'w') as w_hdler:
+			with open(file_prefix+str(j)+".tab",'w') as w_hdler:
 				if header:
 					w_hdler.write("Reaction ID \n")
 				for elem in clusters_dict[key]:
@@ -180,6 +284,23 @@ def extract_reactions_from_clusters(matrix,title,write_files=False,file_name='cl
 	return cutree
 
 def compute_scores(comp_freq,crossing_point=1,crossing_point_1_2=1.2,b=1):
+	"""compute_scores.
+
+	Parameters
+	----------
+	comp_freq : pandas dataframe
+		a pandas dataframe containing several metrics computed from activation frequencies
+	crossing_point : int
+		a crossing point factor for the circle center calculation
+	crossing_point_1_2 : float
+		another crossing point factor the circle center calculation
+	b : int
+		a parameter for the calculation of ellipses 
+	Returns
+	-------
+		a pandas dataframe with several metrics computed: R2, center of circle, dist_to_OO, center of circle 1.2
+
+	"""
 	#instantiate theta
 	theta = math.pi/4
 	#create the data_id col with Reactions ids

@@ -9,11 +9,39 @@ from pyvis import network as net
 from .modelling import fullname_equation
 
 def get_node_list(gml_file):
+	"""get_node_list.
+
+	Parameters
+	----------
+	gml_file : str
+		the path to the gml file
+
+	Returns
+	-------
+		a list containing nodes ids from the gml file
+
+	"""
 	with open(gml_file,'r') as gml_handler:
 		parsed_gml = nx.parse_gml(gml_handler)
 	return(list(parsed_gml.nodes))
 
 def visualize_gml(gml_file,window_size=['1000px','1000px'],notebook=True):
+	"""visualize_gml.
+
+	Parameters
+	----------
+	gml_file : str
+		the path to the gml file
+	window_size : list
+		the list of x and y pixel sizes for the output window
+	notebook : boolean
+		if true enable the pyvis optimized visualisation for notebooks
+
+	Returns
+	-------
+		an interactive visualisation window of the graph
+
+	"""
 	g = net.Network(window_size[0],window_size[1],notebook=notebook)
 	nxg = nx.readwrite.gml.read_gml(gml_file)
 	g.from_nx(nxg)
@@ -21,6 +49,20 @@ def visualize_gml(gml_file,window_size=['1000px','1000px'],notebook=True):
 
 
 def dendro_reactions(matrix,title = "No title set"):
+	"""dendro_reactions.
+
+	Parameters
+	----------
+	matrix : pandas dataframe
+		a distance matrix
+	title : str
+		the title of the dendrogram
+
+	Returns
+	-------
+		a scipy linkage object and show plot the dendrogram
+
+	"""
 	plt.figure(figsize=(20, 7))
 	plt.title(title)
 	# Create dendrogram
@@ -32,13 +74,30 @@ def dendro_reactions(matrix,title = "No title set"):
 	plt.show()
 	return linkage
 
-def generate_annotation_table(reaction_file,recon_model,hgnc_data):
+def generate_annotation_table(reaction_file,model,hgnc_data,scores_file):
+	"""generate_annotation_table.
+
+	Parameters
+	----------
+	reaction_file : pandas dataframe
+		a dataframe containing the partial enumeration results
+	model : cobra model
+		A cobra object, loaded with the cobra library
+	hgnc_data : pandas dataframe
+		a hgnc database annotation dataframe
+	scores_file : str
+		the path to the computed scores file
+	Returns
+	-------
+		Write an excel file with one reaction per line and corresponding annotations in columns
+
+	"""
 	comp = {"c":"Cytoplasm","m":"Mitochondrion","x":"Peroxisome","l":"Lysosome","g":"Golgi appartus",\
 	 "e":"Extracellular space","r":"Endoplasic reticulum","n":"Nucleus","i":"Mitochondrial intermembrane space"}
-	r_direction_hdler = open("working_files/reaction_directions/"+reaction_file.replace('.tab','_direction.tab'), 'w')
-	computed_scores = pd.read_csv(glob.glob("working_files/computed_scores/"+str(reaction_file).split('_')[0]+'*_computed_scores.tsv')[0],sep='\t')
+	r_direction_hdler = open(reaction_file.replace('.tab','_direction.tab'), 'w')
+	computed_scores = pd.read_csv(scores_file,sep='\t')
 	computed_scores.index = computed_scores.data_id
-	annot_df = pd.read_csv("working_files/reaction_clusters/"+reaction_file,sep=',')
+	annot_df = pd.read_csv(reaction_file,sep=',')
 	#generate columns
 	annot_df["Reaction name"] = np.nan
 	annot_df["Direction"] = np.nan
@@ -51,7 +110,7 @@ def generate_annotation_table(reaction_file,recon_model,hgnc_data):
 	annot_df["Associated genes links"] = annot_df["Associated genes links"].astype(str)
 	for reaction in annot_df.iloc[:,0]:
 		rid = reaction.replace('R_','')
-		r = recon_model.reactions.get_by_id(reaction.replace('R_',''))
+		r = model.reactions.get_by_id(reaction.replace('R_',''))
 		annot_df.loc[annot_df.iloc[:,0] == reaction,"Reaction name"] = r.name
 		if ((computed_scores.loc[rid,'f_treatment']-computed_scores.loc[rid,'f_ctrl']) > 0):
 			annot_df.loc[annot_df.iloc[:,0] == reaction,"Direction"] = "UP"
@@ -84,13 +143,13 @@ def generate_annotation_table(reaction_file,recon_model,hgnc_data):
 					annot_df["Associated genes links"+str(i)] = ""
 					annot_df["Associated genes links"+str(i)] = annot_df["Associated genes links"+str(i)].astype(str)
 				if(i == 0):
-					annot_df.at[annot_df.loc[annot_df.iloc[:,0] == reaction,"Associated genes links"].index[0],"Associated genes links"] = annot_df.at[annot_df.loc[annot_df.iloc[:,0] == reaction,"Associated genes links"].index[0],"Associated genes links"] + \
+					annot_df.at[annot_df.loc[annot_df.iloc[:,0] == reaction,"Associated genes links"].index[0],"Associated genes links"] \
+						= annot_df.at[annot_df.loc[annot_df.iloc[:,0] == reaction,"Associated genes links"].index[0],"Associated genes links"] + \
 						list_urls[i]
 				else:
-					annot_df.at[annot_df.loc[annot_df.iloc[:,0] == reaction,"Associated genes links"+str(i)].index[0],"Associated genes links"+str(i)] = annot_df.at[annot_df.loc[annot_df.iloc[:,0] == reaction,"Associated genes links"+str(i)].index[0],"Associated genes links"+str(i)] + \
+					annot_df.at[annot_df.loc[annot_df.iloc[:,0] == reaction,"Associated genes links"+str(i)].index[0],"Associated genes links"+str(i)]\
+						  = annot_df.at[annot_df.loc[annot_df.iloc[:,0] == reaction,"Associated genes links"+str(i)].index[0],"Associated genes links"+str(i)] + \
 						list_urls[i]
-			#annot_df.at[annot_df.loc[annot_df.iloc[:,0] == reaction,"Associated genes links"].index[0],"Associated genes links"] = list_urls
-		#annot_df.at[annot_df.loc[annot_df.iloc[:,0] == reaction,"Associated genes links"].index[0],"Associated genes links"] = list_urls
 		if "array([]," in r.subsystem: #if no subsystem, leave cell empty
 			annot_df.loc[annot_df.iloc[:,0] == reaction,"Pathway in model"] = ""
 		else:
@@ -111,13 +170,17 @@ def generate_annotation_table(reaction_file,recon_model,hgnc_data):
 				if elem == '-->' or elem == '<--' or elem == '<=>':
 					if(len(compsR)>1 and len(compsP)>1):
 						#its a co-transport
-						annot_df.loc[annot_df.iloc[:,0] == reaction,"Localisation"] = "CoTransport"+'('+comp[list(compsR)[0]]+'/'+comp[list(compsR)[1]]+elem+comp[list(compsP)[0]]+'/'+comp[list(compsP)[1]]+')'
+						annot_df.loc[annot_df.iloc[:,0] == reaction,"Localisation"] = "CoTransport"+'('+comp[list(compsR)[0]]+\
+							'/'+comp[list(compsR)[1]]+elem+comp[list(compsP)[0]]+'/'+comp[list(compsP)[1]]+')'
 					elif(len(compsR)>1 and len(compsP)==1):
-						annot_df.loc[annot_df.iloc[:,0] == reaction,"Localisation"] = "CoTransport"+'('+comp[list(compsR)[0]]+'/'+comp[list(compsR)[1]]+elem+comp[compsP.pop()]+')'
+						annot_df.loc[annot_df.iloc[:,0] == reaction,"Localisation"] = "CoTransport"+'('+comp[list(compsR)[0]]+\
+							'/'+comp[list(compsR)[1]]+elem+comp[compsP.pop()]+')'
 					elif(len(compsR)==1 and len(compsP)>1):
-						annot_df.loc[annot_df.iloc[:,0] == reaction,"Localisation"] = "CoTransport"+'('+comp[compsR.pop()]+elem+comp[list(compsP)[0]]+'/'+comp[list(compsP)[1]]+')'
+						annot_df.loc[annot_df.iloc[:,0] == reaction,"Localisation"] = "CoTransport"+'('+comp[compsR.pop()]+\
+							elem+comp[list(compsP)[0]]+'/'+comp[list(compsP)[1]]+')'
 					else:
-						annot_df.loc[annot_df.iloc[:,0] == reaction,"Localisation"] = "Transport"+'('+comp[compsR.pop()]+elem+comp[compsP.pop()]+')'
+						annot_df.loc[annot_df.iloc[:,0] == reaction,"Localisation"] = "Transport"+'('+comp[compsR.pop()]+\
+							elem+comp[compsP.pop()]+')'
 					break
 		else:
 			annot_df.loc[annot_df.iloc[:,0] == reaction,"Localisation"] = comp[comps.pop()]
