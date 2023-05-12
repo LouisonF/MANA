@@ -1,4 +1,6 @@
 *.pyc
-*.csv
-*.tsv
+tests/control_24_hr/*/*.csv
+tests/high_24_hr/*/*.csv
+tests/DARS/*.tsv
 *.sh
+tests/input_data/anot_df_barcode_zscores.tsv
