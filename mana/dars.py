@@ -226,63 +226,6 @@ def findCircleCenter(A,B,C):
 	dist_to_OO = distance_matrix(df.values,df.values).max()
 	return pd.DataFrame([[-g,-f,r*2, dist_to_OO]], columns = ['x','y','d','dist_to_OO'])
 
-def extract_reactions_from_clusters(matrix,title,write_files=False,file_prefix='cluster',header=True):
-	"""extract_reactions_from_clusters.
-
-	Parameters
-	----------
-	matrix : pandas dataframe
-		a distance matrix
-	title : str
-		the title of dendrograms plots
-	write_files : boolean
-		if true, write cluster's reaction files
-	file_prefix : str
-		prefix to add when saving cluster's reaction file
-	header : boolean
-		if true, add a header to the cluster's reaction file
-
-	Returns
-	-------
-		Write a csv or a pickle with for categorized reactions activity
-
-	"""
-	#Show dendro
-	plt.figure(figsize=(20, 7))
-	plt.title(title)
-	colors = []
-	#populate the colors_vector with black hexa code
-	[colors.append("#000000") for x in range(0,matrix.shape[0]*matrix.shape[1])]
-	# Create dendrogram
-	linkage = hc.linkage(matrix, method='ward')
-	dendro = hc.dendrogram(linkage,labels=list(matrix.index),link_color_func=lambda k: colors[k])
-
-	plt.xlabel('Reaction ID')
-	plt.ylabel('Euclidean distance')
-	plt.show()
-	#ask user for the number of clusters:
-	nclusters = int(input("Enter the number of clusters to extract"))
-	cutree = hc.cut_tree(linkage,n_clusters=nclusters).T
-	labels = list(matrix.index)
-	print(cutree)
-	#for each cluster return reaction ids in a dict
-	#init dict
-	clusters_dict = {}
-	for i in range(0,nclusters):
-		#for each cluster, define
-		print([labels[x] for x in np.where(cutree == i)[1]])
-		clusters_dict["cluster"+str(i)] = [labels[x] for x in np.where(cutree == i)[1]]
-	if write_files:
-		j=1
-		for key in clusters_dict.keys():
-			with open(file_prefix+str(j)+".tab",'w') as w_hdler:
-				if header:
-					w_hdler.write("Reaction ID \n")
-				for elem in clusters_dict[key]:
-					w_hdler.write(elem.strip('\t')+'\n')
-			j=j+1
-	return cutree
-
 def compute_scores(comp_freq,crossing_point=1,crossing_point_1_2=1.2,b=1):
 	"""compute_scores.
 
