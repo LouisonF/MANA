@@ -74,19 +74,79 @@ def dendro_reactions(matrix,title = "No title set"):
 	plt.show()
 	return linkage
 
-def generate_annotation_table(reaction_file,model,hgnc_data,scores_file):
+def extract_reactions_from_clusters(matrix,title,write_files=False,file_prefix='cluster',header=True):
+	"""extract_reactions_from_clusters.
+
+	Parameters
+	----------
+	matrix : pandas dataframe
+		a distance matrix
+	title : str
+		the title of dendrograms plots
+	write_files : boolean
+		if true, write cluster's reaction files
+	file_prefix : str
+		prefix to add when saving cluster's reaction file
+	header : boolean
+		if true, add a header to the cluster's reaction file
+
+	Returns
+	-------
+		Write a csv or a pickle with for categorized reactions activity
+
+	"""
+	#Show dendro
+	plt.figure(figsize=(20, 7))
+	plt.title(title)
+	colors = []
+	#populate the colors_vector with black hexa code
+	[colors.append("#000000") for x in range(0,matrix.shape[0]*matrix.shape[1])]
+	# Create dendrogram
+	linkage = hc.linkage(matrix, method='ward')
+	dendro = hc.dendrogram(linkage,labels=list(matrix.index),link_color_func=lambda k: colors[k])
+
+	plt.xlabel('Reaction ID')
+	plt.ylabel('Euclidean distance')
+	plt.show()
+	#ask user for the number of clusters:
+	nclusters = int(input("Enter the number of clusters to extract"))
+	cutree = hc.cut_tree(linkage,n_clusters=nclusters).T
+	labels = list(matrix.index)
+	print(cutree)
+	#for each cluster return reaction ids in a dict
+	#init dict
+	clusters_dict = {}
+	for i in range(0,nclusters):
+		#for each cluster, define
+		print([labels[x] for x in np.where(cutree == i)[1]])
+		clusters_dict["cluster"+str(i)] = [labels[x] for x in np.where(cutree == i)[1]]
+	if write_files:
+		j=1
+		for key in clusters_dict.keys():
+			with open(file_prefix+str(j)+".tsv",'w') as w_hdler:
+				if header:
+					w_hdler.write("Reaction ID \n")
+				for elem in clusters_dict[key]:
+					w_hdler.write(elem.strip('\t')+'\n')
+			j=j+1
+	return cutree
+
+#TODO refactor this function
+def generate_annotation_table(cluster_file,model,hgnc_data,DARs_direction,outputFile):
 	"""generate_annotation_table.
 
 	Parameters
 	----------
-	reaction_file : pandas dataframe
-		a dataframe containing the partial enumeration results
+	cluster_file : str
+		path to the tsv file containg current cluster's DARs
 	model : cobra model
 		A cobra object, loaded with the cobra library
 	hgnc_data : pandas dataframe
 		a hgnc database annotation dataframe
-	scores_file : str
-		the path to the computed scores file
+	DARs_direction : str
+		the path to the tsv file for the molecule associated with current cluster to get DARs' direction
+	outputFile : str
+		path and name of the outputFile (xlsx file)
 	Returns
 	-------
 		Write an excel file with one reaction per line and corresponding annotations in columns
@@ -94,10 +154,8 @@ def generate_annotation_table(reaction_file,model,hgnc_data,scores_file):
 	"""
 	comp = {"c":"Cytoplasm","m":"Mitochondrion","x":"Peroxisome","l":"Lysosome","g":"Golgi appartus",\
 	 "e":"Extracellular space","r":"Endoplasic reticulum","n":"Nucleus","i":"Mitochondrial intermembrane space"}
-	r_direction_hdler = open(reaction_file.replace('.tab','_direction.tab'), 'w')
-	computed_scores = pd.read_csv(scores_file,sep='\t')
-	computed_scores.index = computed_scores.data_id
-	annot_df = pd.read_csv(reaction_file,sep=',')
+	dars_dir_test = pd.read_csv(DARs_direction,sep='\t',index_col=0,header=None)
+	annot_df = pd.read_csv(cluster_file,sep='\t')
 	#generate columns
 	annot_df["Reaction name"] = np.nan
 	annot_df["Direction"] = np.nan
@@ -112,15 +170,7 @@ def generate_annotation_table(reaction_file,model,hgnc_data,scores_file):
 		rid = reaction.replace('R_','')
 		r = model.reactions.get_by_id(reaction.replace('R_',''))
 		annot_df.loc[annot_df.iloc[:,0] == reaction,"Reaction name"] = r.name
-		if ((computed_scores.loc[rid,'f_treatment']-computed_scores.loc[rid,'f_ctrl']) > 0):
-			annot_df.loc[annot_df.iloc[:,0] == reaction,"Direction"] = "UP"
-			r_direction_hdler.write(reaction+'\t'+str(1)+"\n")
-		elif(computed_scores.loc[rid,'f_treatment']-computed_scores.loc[rid,'f_ctrl'] < 0):
-			annot_df.loc[annot_df.iloc[:,0] == reaction,"Direction"] = "DOWN"
-			r_direction_hdler.write(reaction+'\t'+str(-1)+"\n")
-		else:
-			annot_df.loc[annot_df.iloc[:,0] == reaction,"Direction"] = "UNDETERMINED"
-			r_direction_hdler.write(reaction+'\t'+str("")+"\n")
+		annot_df.loc[annot_df.iloc[:,0] == reaction,"Direction"] = dars_dir_test.loc[reaction,1]
 		annot_df.loc[annot_df.iloc[:,0] == reaction,"Equation"] = fullname_equation(r)
 		#convert HGNC IDs to Hugo symbols
 		list_genes = []
@@ -184,9 +234,8 @@ def generate_annotation_table(reaction_file,model,hgnc_data,scores_file):
 					break
 		else:
 			annot_df.loc[annot_df.iloc[:,0] == reaction,"Localisation"] = comp[comps.pop()]
-	r_direction_hdler.close()
 	#Excel writer (jmcnamara on stackoverflow)
-	writer = pd.ExcelWriter('working_files/clusters_tables/'+reaction_file.replace('.tab','')+'_table.xlsx', engine='xlsxwriter')
+	writer = pd.ExcelWriter(outputFile, engine='xlsxwriter')
 	# Convert the dataframe to an XlsxWriter Excel object.
 	annot_df.to_excel(writer, sheet_name="DAR_enriched_table", index=False)
 	# Get the xlsxwriter workbook and worksheet objects.
