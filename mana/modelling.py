@@ -1,12 +1,11 @@
 
-import progressbar
 import os
 import re
 import numpy as np
 import pandas as pd
-from cobra import core, io
-from collections import Counter
-from ast import And, BitAnd, BitOr, BoolOp, Expression, Name, NodeTransformer, Or
+from cobra import core
+from ast import And, BoolOp, Expression, Name, Or
+from tqdm.auto import tqdm
 from .utils import make_pickle, make_csvs
 
 def get_GPR_reactions(model):
@@ -24,12 +23,13 @@ def get_GPR_reactions(model):
 
 	"""
 	gpr = pd.DataFrame([], columns=['Reaction ID','Reaction Name','GPR'])
-	pbar = progressbar.ProgressBar()
-	for r in pbar(range(len(model.reactions))):
+	pbar = tqdm(total=len(model.reactions))
+	for r in range(len(model.reactions)):
 		reaction = model.reactions[r]
 		if reaction.gene_reaction_rule != '':
 			line = [reaction.id,reaction.name,reaction.gene_reaction_rule]
 			gpr.loc[len(gpr)] = line
+		pbar.update(1)
 	return gpr
 
 def eval_gpr_activity(expr, gh, gl):
@@ -130,8 +130,8 @@ def get_reactions_ids(model):
 
 	"""
 	all_reactions_ids = pd.DataFrame([],columns=['Reaction ID','Reaction Name','GPR'])
-	pbar = progressbar.ProgressBar()
-	for r in pbar(range(len(model.reactions))):
+	pbar = tqdm(total=len(model.reactions))
+	for r in range(len(model.reactions)):
 		reaction = model.reactions[r]
 		if reaction.gene_reaction_rule == '':
 			line = [reaction.id,reaction.name,'No GPR']
@@ -139,6 +139,7 @@ def get_reactions_ids(model):
 		else:
 			line = [reaction.id,reaction.name,reaction.gene_reaction_rule]
 			all_reactions_ids.loc[len(all_reactions_ids)] = line
+		pbar.update(1)
 	return all_reactions_ids
 
 def get_gene_list(model):
@@ -230,14 +231,15 @@ def map_single_column(data,hgnc_data,col_to_add):
 		the gene expressed dataframe with the mapped identifier added
 	"""
 	mapped_ids = []
-	pbar = progressbar.ProgressBar()
 	genes = data['ENTREZID']
-	for i in pbar(range(len(genes))):
+	pbar = tqdm(total=len(genes))
+	for i in range(len(genes)):
 		id = hgnc_data.loc[hgnc_data['NCBI Gene ID'] == str(genes[i])][col_to_add]
 		if len(id) == 0:
 			mapped_ids.append('NA')
 		else:
 			mapped_ids.append(id.iloc[0])
+		pbar.update(1)
 	if len(mapped_ids) == len(data):
 		data.insert(2,col_to_add,mapped_ids)
 	return data
@@ -272,7 +274,7 @@ def find_high_low_exprs(uarray_data,threshold_dw_perc=25,threshold_up_perc=75):
 		high_exprs = uarray_data.loc[uarray_data.iloc[:,] >= threshold_up]
 	return [high_exprs,low_exprs]
 
-def preprocess_data(data,gene_id_col,model,pickle=True,csvs=True):
+def preprocess_data(data,gene_id_col,model,pickle_path="",csvs_path=""):
 	"""preprocess_data.
 
 	Parameters
@@ -283,37 +285,38 @@ def preprocess_data(data,gene_id_col,model,pickle=True,csvs=True):
 		the name of the gene identifier column
 	model : cobra model
 		A cobra object, loaded with the cobra library
-	pickle : boolean
-		if true, write pkl files containing categorized reactions activity
-	csvs : boolean
-		if true, write csv files containing categorized reactions activity 
+	pickle : str
+		if not empty, write pkl files containing categorized reactions activity at given location
+	csvs : str
+		if not empty, write csv files containing categorized reactions activity at given location
 
 	Returns
 	-------
 		Write a csv or a pickle with for categorized reactions activity
 
 	"""
-	pbar = progressbar.ProgressBar()
+	pbar = tqdm(total=len(data.filter(like=".CEL",axis=1).columns))
 	suffix = '_rh_rl_zscores_75_25'
 	gprs = get_GPR_reactions(model)
-	for i in pbar(range(len(data.columns))):
+	for i in range(len(data.columns)):
 		uarray = data.columns[i]
 		if ('.CEL' in uarray):
 			uarray_data = data[uarray]
 			uarray_data.index = data[gene_id_col]
 			gh,gl = find_high_low_exprs(uarray_data,25,75)
 			rh,rl,rn = find_reactions_expression_levels(gprs,gh,gl)
-			if pickle:
+			if pickle_path != "":
 				picklef = uarray+suffix
-				if os.path.exists('pickles_reactions/'+model.id):
-					make_pickle([rh,rl,rn],'pickles_reactions/'+model.id+'/'+picklef+'.pkl')
+				if os.path.exists(pickle_path):
+					make_pickle([rh,rl,rn],pickle_path+'/'+picklef+'.pkl')
 				else:
-					os.mkdir('pickles_reactions/'+model.id)
-					make_pickle([rh,rl,rn],'pickles_reactions/'+model.id+'/'+picklef+'.pkl')
-			if csvs:
+					os.mkdir(pickle_path)
+					make_pickle([rh,rl,rn],pickle_path+'/'+picklef+'.pkl')
+			if csvs_path != "":
 				csvsf = uarray+suffix
-				if os.path.exists('csvs/'):
-					make_csvs([rh,rl,rn],'csvs/',csvsf)
+				if os.path.exists(csvs_path):
+					make_csvs([rh,rl,rn],csvs_path+"/",csvsf)
 				else:
-					os.mkdir('csvs/')
-					make_csvs([rh,rl,rn],'csvs/',csvsf)
+					os.mkdir(csvs_path)
+					make_csvs([rh,rl,rn],csvs_path+"/",csvsf)
+			pbar.update(1)
