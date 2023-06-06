@@ -131,7 +131,6 @@ def extract_reactions_from_clusters(matrix,title,write_files=False,file_prefix='
 			j=j+1
 	return cutree
 
-#TODO refactor this function
 def generate_annotation_table(cluster_file,model,hgnc_data,DARs_direction,outputFile):
 	"""generate_annotation_table.
 
