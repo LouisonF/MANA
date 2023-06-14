@@ -23,13 +23,11 @@ def get_GPR_reactions(model):
 
 	"""
 	gpr = pd.DataFrame([], columns=['Reaction ID','Reaction Name','GPR'])
-	pbar = tqdm(total=len(model.reactions))
 	for r in range(len(model.reactions)):
 		reaction = model.reactions[r]
 		if reaction.gene_reaction_rule != '':
 			line = [reaction.id,reaction.name,reaction.gene_reaction_rule]
 			gpr.loc[len(gpr)] = line
-		pbar.update(1)
 	return gpr
 
 def eval_gpr_activity(expr, gh, gl):
@@ -130,7 +128,6 @@ def get_reactions_ids(model):
 
 	"""
 	all_reactions_ids = pd.DataFrame([],columns=['Reaction ID','Reaction Name','GPR'])
-	pbar = tqdm(total=len(model.reactions))
 	for r in range(len(model.reactions)):
 		reaction = model.reactions[r]
 		if reaction.gene_reaction_rule == '':
@@ -139,7 +136,6 @@ def get_reactions_ids(model):
 		else:
 			line = [reaction.id,reaction.name,reaction.gene_reaction_rule]
 			all_reactions_ids.loc[len(all_reactions_ids)] = line
-		pbar.update(1)
 	return all_reactions_ids
 
 def get_gene_list(model):
@@ -232,14 +228,12 @@ def map_single_column(data,hgnc_data,col_to_add):
 	"""
 	mapped_ids = []
 	genes = data['ENTREZID']
-	pbar = tqdm(total=len(genes))
 	for i in range(len(genes)):
 		id = hgnc_data.loc[hgnc_data['NCBI Gene ID'] == str(genes[i])][col_to_add]
 		if len(id) == 0:
 			mapped_ids.append('NA')
 		else:
 			mapped_ids.append(id.iloc[0])
-		pbar.update(1)
 	if len(mapped_ids) == len(data):
 		data.insert(2,col_to_add,mapped_ids)
 	return data
