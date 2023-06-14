@@ -186,6 +186,7 @@ def remove_done_batchs(batch_dir,result_dir,launch_undone = True,relax_param = F
 		cleanfile = os.path.basename(file)
 		item = str(cleanfile.split('_')[0])+'_'+str(cleanfile.split('_')[3])+'_.*_enum.sh'
 		#look if item match with a batch file,(meaning that the batch is done)
+		batchs = os.listdir(batch_dir)
 		for batch in batchs:
 			if re.search(item,batch):
 				os.remove(batch_dir+'/'+batch)
