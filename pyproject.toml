@@ -16,6 +16,7 @@ progressbar = "^2.5"
 networkx = ">=2.8.4"
 pyvis = ">=0.3.2"
 xlsxwriter = ">=3.1.0"
+jproperties = ">=2.1.1"
 
 
 [build-system]
