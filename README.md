@@ -18,18 +18,39 @@ Properties and parameters for the workflow are stored in a unique file to update
 * **props.properties**
 
 The package source code is contained in the mana folder and can be installed as a python module with the following command (require pip) launched from the git repository:
-
-<code>pip install .</code>
-## Requirements:
+## Installation:
+### Requirements:
 
 * Python3.9X
 * Java 11
 * Met4j 1.2.2 jar (stored in this repository)
 * CPLEX 12.10 or newer (not required for the test case)
 
-## Launching the test case:
+### Installing the package
 
-As a test case, we compared Primary Human Hepatocytes (PHH) exposed to Amiodarone during 24 hours to its controls.
-Launching **master_notebook.ipnyb** will perform the complete workflow on this test case. The notebook will pause near the end of the workflow waiting for you to provide the desired number of clusters at the hierarchical clustering step.
+From the root directory of the MANA repository,enter the following command:
 
+<code>pip install .</code>
 
+### Launching the main jupyter notebook (test case)
+
+From the root directory of the MANA repository,enter the following command:
+
+<code>python3 -m jupyterlab master_notebook.ipynb</code>
+
+Once JupyterLab opened in your navigator, you can click on "Run", then click on "Run All Cells" as illustrated below.
+
+![Alt text](jupyterlab_interface_example.png)
+
+It will perform the complete workflow on the test case (PHH exposed to amiodarone during 24h and associated controls).
+The notebook will pause near the end of the workflow waiting for you to provide the desired number of clusters during the hierarchical clustering stpe.
+
+## Localisation of the main results files:
+
+[Annotated cluster 1](tests/analysis/clusters_annotation_tables/amiodarone_24_hr_extracellexclude_cluster1_table.xlsx)
+
+[Annotated cluster 2](tests/analysis/clusters_annotation_tables/amiodarone_24_hr_extracellexclude_cluster2_table.xlsx)
+
+[Subnetwork 1 reactions list](tests/analysis/subnetwork_reactions/amiodarone_24_hr_extracellexclude_cluster1_undirected_r2_noisecond_extracell.txt)
+
+[Subnetwork 2 reactions list](tests/analysis/subnetwork_reactions/amiodarone_24_hr_extracellexclude_cluster2_undirected_r2_noisecond_extracell.txt)
