@@ -17,7 +17,7 @@ Each step of the workflow is performed by a jupyter notebook:
 Properties and parameters for the workflow are stored in a unique file to update in order to change parameters such as compound, dose, time, etc:
 * **props.properties**
 
-The package source code is contained in the mana folder and can be installed as a python module with the following command (require pip) launched from the git repository:
+The package source code is contained in the mana folder and can be installed as a python module.
 ## Installation:
 ### Requirements:
 
@@ -28,13 +28,13 @@ The package source code is contained in the mana folder and can be installed as 
 
 ### Installing the package
 
-From the root directory of the MANA repository,enter the following command:
+From the root directory of the MANA repository, enter the following command:
 
 <code>pip install .</code>
 
 ### Launching the main jupyter notebook (test case)
 
-From the root directory of the MANA repository,enter the following command:
+From the root directory of the MANA repository, enter the following command:
 
 <code>python3 -m jupyterlab master_notebook.ipynb</code>
 
@@ -43,7 +43,7 @@ Once JupyterLab opened in your navigator, you can click on "Run", then click on 
 ![Alt text](jupyterlab_interface_example.png)
 
 It will perform the complete workflow on the test case (PHH exposed to amiodarone during 24h and associated controls).
-The notebook will pause near the end of the workflow waiting for you to provide the desired number of clusters during the hierarchical clustering stpe.
+The notebook will pause near the end of the workflow waiting for you to provide the desired number of clusters during the hierarchical clustering step.
 
 ## Localisation of the main results files:
 
