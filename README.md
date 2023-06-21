@@ -67,8 +67,12 @@ To visualise cluster's subnetworks in MetExploreViz, follow these steps:
 * Filter reactions to keep only mapped reactions:
     ![Alt text](readme_figures/filter_reactions.png)
 * Right click and left click on "Copy all to cart"
-* Finally, create the network from the cart as shown below:
+* Create the network from the cart as shown below:
     ![Alt text](readme_figures/graph_from_cart.png)
 
-Next you will be able to remove side compounds, move nodes and map new information on the visualisation.
+Next, you will be able to remove side compounds, move nodes and map new information on the visualisation.
 More information available in MetExplore documentation (https://metexplore.toulouse.inrae.fr/metexplore-doc/index.php) and MetExploreViz documentation (https://metexplore.toulouse.inrae.fr/metexploreViz/doc/index.php)
+
+## Contact:
+Louison Fresnais: fresnaislouison@gmail.com
+MetExplore/MetExploreViz team: contact-metexplore@inra.fr
