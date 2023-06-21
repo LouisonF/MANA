@@ -75,4 +75,5 @@ More information available in MetExplore documentation (https://metexplore.toulo
 
 ## Contact:
 Louison Fresnais: fresnaislouison@gmail.com
+
 MetExplore/MetExploreViz team: contact-metexplore@inra.fr
