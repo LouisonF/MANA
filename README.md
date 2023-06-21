@@ -1,5 +1,6 @@
 # MANA
-MANA: mMoA identification Assisted by modelling and Network Analysis
+MANA: mMoA identification Assisted by modelling and Network Analysis.
+
 This repository contains code and a test case associated with the article named : 
 
     New genome scale network modelling and mining workflow to detect metabolic modulations induced by the exposure to xenobiotics
@@ -40,7 +41,7 @@ From the root directory of the MANA repository, enter the following command:
 
 Once JupyterLab opened in your navigator, you can click on "Run", then click on "Run All Cells" as illustrated below.
 
-![Alt text](jupyterlab_interface_example.png)
+![Alt text](readme_figures/jupyterlab_interface_example.png)
 
 It will perform the complete workflow on the test case (PHH exposed to amiodarone during 24h and associated controls).
 The notebook will pause near the end of the workflow waiting for you to provide the desired number of clusters during the hierarchical clustering step.
@@ -54,3 +55,20 @@ The notebook will pause near the end of the workflow waiting for you to provide 
 [Subnetwork 1 reactions list](tests/analysis/subnetwork_reactions/amiodarone_24_hr_extracellexclude_cluster1_undirected_r2_noisecond_extracell.txt)
 
 [Subnetwork 2 reactions list](tests/analysis/subnetwork_reactions/amiodarone_24_hr_extracellexclude_cluster2_undirected_r2_noisecond_extracell.txt)
+
+## Visualisation with MetExploreViz:
+
+To visualise cluster's subnetworks in MetExploreViz, follow these steps:
+* go to https://metexplore.toulouse.inrae.fr/metexplore2/, then click on "Start MetExplore"
+* In the BioSources tab, find and left click on "Homo Sapiens", then double click on "Swainston2016 - Reconstruction of human metabolic network (Recon 2.2)"
+* Once loading is finished, left click on "OMICS", then on "Mapping -> From omics", load the desired subnetwork reactions .txt file
+* Change Object from "Metabolites" to "Reaction" and left click on "Map"
+* Once the mapping is finished, click on the "Network Data" tab then on the "Reactions" tab.
+* Filter reactions to keep only mapped reactions:
+    ![Alt text](readme_figures/filter_reactions.png)
+* Right click and left click on "Copy all to cart"
+* Finally, create the network from the cart as shown below:
+    ![Alt text](readme_figures/graph_from_cart.png)
+
+Next you will be able to remove side compounds, move nodes and map new information on the visualisation.
+More information available in MetExplore documentation (https://metexplore.toulouse.inrae.fr/metexplore-doc/index.php) and MetExploreViz documentation (https://metexplore.toulouse.inrae.fr/metexploreViz/doc/index.php)
