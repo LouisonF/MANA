@@ -73,7 +73,11 @@ To visualise cluster's subnetworks in MetExploreViz, follow these steps:
 Next, you will be able to remove side compounds, move nodes and map new information on the visualisation.
 More information available in MetExplore documentation (https://metexplore.toulouse.inrae.fr/metexplore-doc/index.php) and MetExploreViz documentation (https://metexplore.toulouse.inrae.fr/metexploreViz/doc/index.php)
 
+
 ## Contact:
 Louison Fresnais: fresnaislouison@gmail.com
 
 MetExplore/MetExploreViz team: contact-metexplore@inra.fr
+
+<a href="https://www.flaticon.com/free-icons/elixir" title="elixir icons">Repository icon created by redempticon</a>
+
