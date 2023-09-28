@@ -3,7 +3,7 @@ MANA: mMoA identification Assisted by modelling and Network Analysis.
 
 This repository contains code and a test case associated with the article named : 
 
-    New genome scale network modeling and mining workflow for detecting metabolic changes induced by exposure to chemicals
+    A strategy to detect metabolic changes induced by exposure to chemicals from large sets of condition-specific metabolic models computed with enumeration techniques
 
 The workflow presented in this article aims at improving our understanding of the metabolic Mechanism of Action and can be divided in three steps:
 1. Condition-specific metabolic network modelling with partial enumeration from gene expression data
