@@ -29,7 +29,11 @@ The package source code is contained in the mana folder and can be installed as 
 
 ### Installing the package
 
-From the root directory of the MANA repository, enter the following command:
+If needed, install poetry (package and dependances management):
+
+<code>pip install poetry</code>
+
+Then, from the root directory of the MANA repository, enter the following command:
 
 <code>pip install .</code>
 
