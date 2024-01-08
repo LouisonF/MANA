@@ -142,11 +142,13 @@ def concatenate_csv(filenames,out_dir,col_index,single_csv,index_suffix=""):
 	combined_csv = pd.concat(list_csvs,ignore_index=False)
 	if nrenum > 0:
 		#Modify index after reaction_enum solutions
-		index_list = list(os.path.basename(filenames[0]).split('_')[0]+'_' + combined_csv.index.astype(str) + str(index_suffix))
+		line_count = pd.RangeIndex(0,combined_csv.shape[0],1)
+		index_list = list(os.path.basename(filenames[0]).split('_')[0]+'_' + line_count.astype(str) + str(index_suffix))
 		index_list[0:nrenum] = list(combined_csv[0:nrenum]['Solutions_IDS'])
 		combined_csv.index = index_list
 	else:
-		combined_csv.index = os.path.basename(filenames[0]).split('_')[0]+'_' + combined_csv.index.astype(str) + str(index_suffix)
+		line_count = pd.RangeIndex(0,combined_csv.shape[0],1)
+		combined_csv.index = os.path.basename(filenames[0]).split('_')[0]+'_' + line_count.astype(str) + str(index_suffix)
 	combined_csv.drop(combined_csv.columns[0],axis=1,inplace=True)
 	combined_csv.drop_duplicates(inplace=True) #remove identical solutions
 	if single_csv:
