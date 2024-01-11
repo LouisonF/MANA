@@ -158,7 +158,7 @@ def concatenate_csv(filenames,out_dir,col_index,single_csv,index_suffix=""):
 	return
 
 
-def remove_done_batchs(batch_dir,result_dir,launch_undone = True,relax_param = False,enum_type="reaction_enum", para_batch=False):
+def remove_done_batchs(batch_dir,result_dir,launch_undone = True,relax_param = False,enum_type="reaction_enum", para_batch=False, env="MANA"):
 	"""remove_done_batchs.
 
 	Parameters
@@ -175,6 +175,8 @@ def remove_done_batchs(batch_dir,result_dir,launch_undone = True,relax_param = F
 		string indicating which type of enumeration is being processed (optional)
 	para_batch : boolean
 		if True, launch each batch file independantly (instead of parallel on conditions, parallel on batch)
+	env : str
+	name of the anaconda environment to be activated
 
 	Returns
 	-------
@@ -212,12 +214,12 @@ def remove_done_batchs(batch_dir,result_dir,launch_undone = True,relax_param = F
 			if '#!/bin/bash' in content:
 				continue
 			with open(batch_dir+batch,'w') as f:
-				f.write('#!/bin/bash\n#SBATCH -p workq\n#SBATCH --mem=12G\n#SBATCH --cpus-per-task=12\n#SBATCH -t 48:00:00\n#SBATCH -J '+enum_type+'\n#SBATCH -o log_dir/runout_relaunch.out\n#SBATCH '
-				'-e log_dir/runerr_relaunch.out\nsource activate cobrapy\n'+content)
+				f.write('#!/bin/bash\n#SBATCH -p workq\n#SBATCH --mem=12G\n#SBATCH --cpus-per-task=4\n#SBATCH -t 48:00:00\n#SBATCH -J '+enum_type+'\n#SBATCH -o log_dir/runout_relaunch.out\n#SBATCH '
+				'-e log_dir/runerr_relaunch.out\nsource activate '+env+'\n'+content)
 		if launch_undone == True:
 			with open(batch_dir.split('/')[0]+"/launch_failed_batch_"+enum_type+".sh", "w+") as f:
 				f.write('#!/bin/bash\n#SBATCH -p workq\n#SBATCH --mem=12G\n#SBATCH --cpus-per-task=12\n#SBATCH -t 48:00:00\n#SBATCH -J '+enum_type+'\n#SBATCH -o log_dir/runout_relaunch.out\n#SBATCH '
-				'-e log_dir/runerr_relaunch.out\nsource activate cobrapy\n ls '+batch_dir+'*enum.sh|xargs -n 1 -P 1 bash')
+				'-e log_dir/runerr_relaunch.out\nsource activate '+env+'\n ls '+batch_dir+'*enum.sh|xargs -n 1 -P 1 bash')
 	return removed_batchs
 
 def remove_zerobiomass_solutions(enum_dir,reaction_list,separator=','):

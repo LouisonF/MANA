@@ -70,7 +70,7 @@ def write_div_enum_script(script_path,batch_directory, rxn_enum_set_dir,output_d
 					f.write('#!/bin/bash\n#SBATCH -p workq\n#SBATCH --mem=12G\n#SBATCH --cpus-per-task=12\n#SBATCH -t 72:00:00\n#SBATCH -J div_enum\n#SBATCH -o %s/runout%s_div.out\n#SBATCH '
 						'-e %s/runerr%s_div.out\nsource activate %s \n'
 						% (str(log_dir),str(barcode),str(log_dir),str(barcode), str(env)))
-				with open(batch_directory+'/batch/'+barcode+ '_' + str(i) + "_diversity_enum.sh", "dist_anneal") as f:
+				with open(batch_directory+'/batch/'+barcode+ '_' + str(i) + "_diversity_enum.sh", "a") as f:
 					f.write('python %s -o %s/%s_div_enum_%i -m %s -r %s -p %s -a %.5f -i %i --obj_tol %.4f'
 						% (script_path,output_directory, barcode, i, modelfile, weightfile, prevsol_file, dist_anneal, iters, obj_tol))
 			else:
