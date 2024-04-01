@@ -3,7 +3,7 @@ MANA: mMoA identification Assisted by modelling and Network Analysis.
 
 This repository contains code and a test case associated with the article named : 
 
-    New genome scale network modeling and mining workflow for detecting metabolic changes induced by exposure to chemicals
+    A strategy to detect metabolic changes induced by exposure to chemicals from large sets of condition-specific metabolic models computed with enumeration techniques
 
 The workflow presented in this article aims at improving our understanding of the metabolic Mechanism of Action and can be divided in three steps:
 1. Condition-specific metabolic network modelling with partial enumeration from gene expression data
@@ -29,7 +29,11 @@ The package source code is contained in the mana folder and can be installed as 
 
 ### Installing the package
 
-From the root directory of the MANA repository, enter the following command:
+If needed, install poetry (package and dependances management):
+
+<code>pip install poetry</code>
+
+Then, from the root directory of the MANA repository, enter the following command:
 
 <code>pip install .</code>
 
@@ -73,7 +77,11 @@ To visualise cluster's subnetworks in MetExploreViz, follow these steps:
 Next, you will be able to remove side compounds, move nodes and map new information on the visualisation.
 More information available in MetExplore documentation (https://metexplore.toulouse.inrae.fr/metexplore-doc/index.php) and MetExploreViz documentation (https://metexplore.toulouse.inrae.fr/metexploreViz/doc/index.php)
 
+
 ## Contact:
 Louison Fresnais: fresnaislouison@gmail.com
 
 MetExplore/MetExploreViz team: contact-metexplore@inra.fr
+
+<a href="https://www.flaticon.com/free-icons/elixir" title="elixir icons">Repository icon created by redempticon</a>
+

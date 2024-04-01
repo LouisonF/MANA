@@ -4,7 +4,7 @@ import os
 import pandas as pd
 
 def write_div_enum_script(script_path,batch_directory, rxn_enum_set_dir,output_directory, modelfile, weightfile,\
-						   reactionFile, prev_sol_dir ='prev_sol_dir/', log_dir='log_dir',dist_anneal=0.9, obj_tol=0.01,\
+						   reactionFile, prev_sol_dir ='prev_sol_dir/', log_dir='log_dir',env="MANA",dist_anneal=0.9, obj_tol=0.01,\
 							  iters=100,para_batchs=False):
 	"""write_div_enum_script.
 
@@ -29,6 +29,8 @@ def write_div_enum_script(script_path,batch_directory, rxn_enum_set_dir,output_d
 		process should be saved
 	log_dir : str
 		path to the directory were log files should be stored
+	env : str
+		name of the anaconda environment to be activated
 	dist_anneal : float
 		dexom-python parameter, 0<=a<=1 controls the distance between each successive solution
 	obj_tol : float
@@ -66,9 +68,9 @@ def write_div_enum_script(script_path,batch_directory, rxn_enum_set_dir,output_d
 			if para_batchs:
 				with open(batch_directory+'/batch/'+barcode+ '_' + str(i) + "_diversity_enum.sh", "w+") as f:
 					f.write('#!/bin/bash\n#SBATCH -p workq\n#SBATCH --mem=12G\n#SBATCH --cpus-per-task=12\n#SBATCH -t 72:00:00\n#SBATCH -J div_enum\n#SBATCH -o %s/runout%s_div.out\n#SBATCH '
-						'-e %s/runerr%s_div.out\nsource activate cobrapy \n'
-						% (str(log_dir),str(barcode),str(log_dir),str(barcode)))
-				with open(batch_directory+'/batch/'+barcode+ '_' + str(i) + "_diversity_enum.sh", "dist_anneal") as f:
+						'-e %s/runerr%s_div.out\nsource activate %s \n'
+						% (str(log_dir),str(barcode),str(log_dir),str(barcode), str(env)))
+				with open(batch_directory+'/batch/'+barcode+ '_' + str(i) + "_diversity_enum.sh", "a") as f:
 					f.write('python %s -o %s/%s_div_enum_%i -m %s -r %s -p %s -a %.5f -i %i --obj_tol %.4f'
 						% (script_path,output_directory, barcode, i, modelfile, weightfile, prevsol_file, dist_anneal, iters, obj_tol))
 			else:
@@ -79,11 +81,11 @@ def write_div_enum_script(script_path,batch_directory, rxn_enum_set_dir,output_d
 	if para_batchs == False:
 		with open(batch_directory+"/runfiles_"+barcode+"_diversity_enum.sh", "w+") as f:
 			f.write('#!/bin/bash\n#SBATCH -p workq\n#SBATCH --mem=12G\n#SBATCH --cpus-per-task=12\n#SBATCH -t 72:00:00\n#SBATCH -J div_enum\n#SBATCH -o %s/runout%s_div.out\n#SBATCH '
-					'-e %s/runerr%s_div.out\nsource activate cobrapy\nls %s/batch/%s_*_diversity_enum.sh|xargs -n 1 -P 1 bash'
-					% (str(log_dir),str(barcode),str(log_dir),str(barcode),str(batch_directory),str(barcode)))
+					'-e %s/runerr%s_div.out\nsource activate %s\nls %s/batch/%s_*_diversity_enum.sh|xargs -n 1 -P 1 bash'
+					% (str(log_dir),str(barcode),str(log_dir),str(barcode),str(env),str(batch_directory),str(barcode)))
 
 def write_rxn_enum_script(script_path,batch_directory,output_directory, modelfile, weightfile,\
-						   reactionFile="", log_dir='log_dir',obj_tol=0.001, iters=100,para_batchs=False):
+						   reactionFile="", log_dir='log_dir',env="MANA",obj_tol=0.001, iters=100,para_batchs=False):
 	"""write_rxn_enum_script.
 
 	Parameters
@@ -102,6 +104,8 @@ def write_rxn_enum_script(script_path,batch_directory,output_directory, modelfil
 		path to the file that contains the list of reactions in the model
 	log_dir : str
 		path to the directory were log files should be stored
+	env : str
+		name of the anaconda environment to be activated
 	obj_tol : float
 		dexom-python parameter, objective value tolerance, as a fraction of the original value
 	iters : int
@@ -121,8 +125,8 @@ def write_rxn_enum_script(script_path,batch_directory,output_directory, modelfil
 		for i in range(rxn_num):
 			with open(batch_directory+'/batch/'+barcode+ '_' + str(i) + "_reaction_enum.sh", "w+") as f:
 				f.write('#!/bin/bash\n#SBATCH -p workq\n#SBATCH --mem=12G\n#SBATCH --cpus-per-task=12\n#SBATCH -t 24:00:00\n#SBATCH -J rxn_enum\n#SBATCH -o %s/runout%s_div.out\n#SBATCH '
-						'-e %s/runerr%s_div.out\nsource activate cobrapy \n'
-						% (str(log_dir),str(barcode),str(log_dir),str(barcode)))
+						'-e %s/runerr%s_div.out\nsource activate %s \n'
+						% (str(log_dir),str(barcode),str(log_dir),str(barcode),str(env)))
 			with open(batch_directory+'/batch/'+barcode+ '_' + str(i) + "_reaction_enum.sh", "a") as f:
 				f.write('python %s -o %s/%s_rxn_enum_%i --range %i_%i -m %s -r %s -l %s '
 						'-t 600 --mipgap %f \n' % (script_path,output_directory,barcode, i, i*iters, i*iters+iters, modelfile, weightfile, reactionFile, obj_tol))
@@ -133,5 +137,5 @@ def write_rxn_enum_script(script_path,batch_directory,output_directory, modelfil
 						'-t 600 --mipgap %f \n' % (script_path,output_directory,barcode, i, i*iters, i*iters+iters, modelfile, weightfile, reactionFile, obj_tol))
 			with open(batch_directory+"/runfiles_"+barcode+"_reaction_enum.sh", "w+") as f:
 				f.write('#!/bin/bash\n#SBATCH -p workq\n#SBATCH --mem=12G\n#SBATCH --cpus-per-task=12\n#SBATCH -t 24:00:00\n#SBATCH -J rxn_enum\n#SBATCH -o %s/runout%s_div.out\n#SBATCH '
-						'-e %s/runerr%s_div.out\nsource activate cobrapy\nls %s/batch/%s_{0..%i}_reaction_enum.sh|xargs -n 1 -P 1 bash'
-						 % (str(log_dir),str(barcode),str(log_dir),str(barcode),str(batch_directory),str(barcode), int(rxn_num-1)))
+						'-e %s/runerr%s_div.out\nsource activate %s\nls %s/batch/%s_{0..%i}_reaction_enum.sh|xargs -n 1 -P 1 bash'
+						 % (str(log_dir),str(barcode),str(log_dir),str(barcode),str(env),str(batch_directory),str(barcode), int(rxn_num-1)))
