@@ -82,6 +82,3 @@ More information available in MetExplore documentation (https://metexplore.toulo
 Louison Fresnais: fresnaislouison@gmail.com
 
 MetExplore/MetExploreViz team: contact-metexplore@inra.fr
-
-<a href="https://www.flaticon.com/free-icons/elixir" title="elixir icons">Repository icon created by redempticon</a>
-
