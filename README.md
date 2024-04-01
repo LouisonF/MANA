@@ -35,7 +35,7 @@ If needed, install poetry (package and dependances management):
 
 Then, from the root directory of the MANA repository, enter the following command:
 
-<code>pip install . -e</code>
+<code>pip install -e .</code>
 
 ### Launching the main jupyter notebook (test case)
 

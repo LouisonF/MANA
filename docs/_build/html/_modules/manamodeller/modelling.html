@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>manamodeller.modelling &mdash; manamodeller 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=2389946f"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            manamodeller
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../manamodeller.html">Mana Modeller modules</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">manamodeller</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">manamodeller.modelling</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for manamodeller.modelling</h1><div class="highlight"><pre>
+<span></span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">cobra</span> <span class="kn">import</span> <span class="n">core</span>
+<span class="kn">from</span> <span class="nn">ast</span> <span class="kn">import</span> <span class="n">And</span><span class="p">,</span> <span class="n">BoolOp</span><span class="p">,</span> <span class="n">Expression</span><span class="p">,</span> <span class="n">Name</span><span class="p">,</span> <span class="n">Or</span>
+<span class="kn">from</span> <span class="nn">tqdm.auto</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">from</span> <span class="nn">.utils</span> <span class="kn">import</span> <span class="n">make_pickle</span><span class="p">,</span> <span class="n">make_csvs</span>
+
+<div class="viewcode-block" id="get_GPR_reactions"><a class="viewcode-back" href="../../manamodeller.html#manamodeller.modelling.get_GPR_reactions">[docs]</a><span class="k">def</span> <span class="nf">get_GPR_reactions</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
+<span class="w">	</span><span class="sd">&quot;&quot;&quot;get_GPR_reactions.</span>
+
+<span class="sd">	Parameters</span>
+<span class="sd">	----------</span>
+<span class="sd">	model : cobra model</span>
+<span class="sd">		A cobra object, loaded with the cobra library</span>
+
+<span class="sd">	Returns</span>
+<span class="sd">	-------</span>
+<span class="sd">	pandas dataframe</span>
+<span class="sd">		a dataframe with all the reactions in the model having a GPR</span>
+
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">gpr</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Reaction ID&#39;</span><span class="p">,</span><span class="s1">&#39;Reaction Name&#39;</span><span class="p">,</span><span class="s1">&#39;GPR&#39;</span><span class="p">])</span>
+	<span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">reactions</span><span class="p">)):</span>
+		<span class="n">reaction</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">reactions</span><span class="p">[</span><span class="n">r</span><span class="p">]</span>
+		<span class="k">if</span> <span class="n">reaction</span><span class="o">.</span><span class="n">gene_reaction_rule</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+			<span class="n">line</span> <span class="o">=</span> <span class="p">[</span><span class="n">reaction</span><span class="o">.</span><span class="n">id</span><span class="p">,</span><span class="n">reaction</span><span class="o">.</span><span class="n">name</span><span class="p">,</span><span class="n">reaction</span><span class="o">.</span><span class="n">gene_reaction_rule</span><span class="p">]</span>
+			<span class="n">gpr</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">gpr</span><span class="p">)]</span> <span class="o">=</span> <span class="n">line</span>
+	<span class="k">return</span> <span class="n">gpr</span></div>
+
+<div class="viewcode-block" id="eval_gpr_activity"><a class="viewcode-back" href="../../manamodeller.html#manamodeller.modelling.eval_gpr_activity">[docs]</a><span class="k">def</span> <span class="nf">eval_gpr_activity</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">gh</span><span class="p">,</span> <span class="n">gl</span><span class="p">):</span>
+<span class="w">	</span><span class="sd">&quot;&quot;&quot;eval_gpr_activity.</span>
+
+<span class="sd">	This is an adaptation of the eval_gpr function available in cobrapy.</span>
+<span class="sd">	Instead of evaluating if a GPR is active according to a list of knockout</span>
+<span class="sd">	genes, it will evaluate if the GPR is regulated by a list of genes</span>
+
+<span class="sd">	Exemple of usage :</span>
+<span class="sd">	provide the list of Highly expressed genes and Lowly expressed genes</span>
+<span class="sd">	Return all expressions that are True, thus Highly expressed</span>
+
+<span class="sd">	evaluate compiled ast of gene_reaction_rule with list of active genes</span>
+
+<span class="sd">	Parameters</span>
+<span class="sd">	----------</span>
+<span class="sd">	expr : Expression</span>
+<span class="sd">		The ast of the gene reaction rule</span>
+<span class="sd">	gh : list</span>
+<span class="sd">		list of highly expressed genes</span>
+<span class="sd">	gl : list</span>
+<span class="sd">		list of lowly expressed genes</span>
+<span class="sd">	Returns</span>
+<span class="sd">	-------</span>
+<span class="sd">	bool</span>
+<span class="sd">		True if the reaction is active with the given gh and gl lists</span>
+<span class="sd">		otherwise false</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">Expression</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">eval_gpr_activity</span><span class="p">(</span><span class="n">expr</span><span class="o">.</span><span class="n">body</span><span class="p">,</span> <span class="n">gh</span><span class="p">,</span> <span class="n">gl</span><span class="p">)</span>
+	<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">Name</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">expr</span><span class="o">.</span><span class="n">id</span> <span class="ow">in</span> <span class="n">gh</span><span class="p">:</span>
+			<span class="k">return</span> <span class="mi">1</span>
+		<span class="k">elif</span> <span class="n">expr</span><span class="o">.</span><span class="n">id</span> <span class="ow">in</span> <span class="n">gl</span><span class="p">:</span>
+			<span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">return</span> <span class="mi">0</span>
+	<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">BoolOp</span><span class="p">):</span>
+		<span class="n">op</span> <span class="o">=</span> <span class="n">expr</span><span class="o">.</span><span class="n">op</span>
+		<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">Or</span><span class="p">):</span>
+			<span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">eval_gpr_activity</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">gh</span><span class="p">,</span> <span class="n">gl</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">expr</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+		<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">And</span><span class="p">):</span>
+			<span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">eval_gpr_activity</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">gh</span><span class="p">,</span> <span class="n">gl</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">expr</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;unsupported operation &quot;</span> <span class="o">+</span> <span class="n">op</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+	<span class="k">elif</span> <span class="n">expr</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+		<span class="k">return</span> <span class="kc">False</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;unsupported operation  &quot;</span> <span class="o">+</span> <span class="nb">repr</span><span class="p">(</span><span class="n">expr</span><span class="p">))</span></div>
+		
+<div class="viewcode-block" id="find_reactions_expression_levels"><a class="viewcode-back" href="../../manamodeller.html#manamodeller.modelling.find_reactions_expression_levels">[docs]</a><span class="k">def</span> <span class="nf">find_reactions_expression_levels</span><span class="p">(</span><span class="n">gprs</span><span class="p">,</span><span class="n">gh</span><span class="p">,</span><span class="n">gl</span><span class="p">):</span>
+<span class="w">	</span><span class="sd">&quot;&quot;&quot;find_reactions_expression_levels.</span>
+
+<span class="sd">	Parameters</span>
+<span class="sd">	----------</span>
+<span class="sd">	gprs : cobra gpr</span>
+<span class="sd">		A cobra gpr object, obtained from a cobra model</span>
+<span class="sd">	gh : list</span>
+<span class="sd">		list of highly expressed genes</span>
+<span class="sd">	gl : list</span>
+<span class="sd">		list of lowly expressed genes</span>
+
+<span class="sd">	Returns</span>
+<span class="sd">	-------</span>
+<span class="sd">	tuple</span>
+<span class="sd">		a tuple of three list.</span>
+<span class="sd">		rh, is the list of reactions identified as active according to gene expression data</span>
+<span class="sd">		rl, is the list of reactions identified as inactive according to gene expression data</span>
+<span class="sd">		rn, is the list of reactions not constrained by gene expression data</span>
+
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">rh</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="n">rl</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="n">rn</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">gprs</span><span class="p">)):</span>
+		<span class="n">res</span> <span class="o">=</span> <span class="n">eval_gpr_activity</span><span class="p">(</span><span class="n">core</span><span class="o">.</span><span class="n">gene</span><span class="o">.</span><span class="n">GPR</span><span class="p">()</span><span class="o">.</span><span class="n">from_string</span><span class="p">(</span><span class="n">gprs</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">GPR</span><span class="p">)</span><span class="o">.</span><span class="n">body</span><span class="p">,</span><span class="n">gh</span><span class="p">,</span><span class="n">gl</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">res</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+			<span class="n">rh</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">gprs</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+		<span class="k">elif</span> <span class="n">res</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+			<span class="n">rl</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">gprs</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">rn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">gprs</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+	<span class="k">return</span> <span class="n">rh</span><span class="p">,</span><span class="n">rl</span><span class="p">,</span><span class="n">rn</span></div>
+
+<div class="viewcode-block" id="get_reactions_ids"><a class="viewcode-back" href="../../manamodeller.html#manamodeller.modelling.get_reactions_ids">[docs]</a><span class="k">def</span> <span class="nf">get_reactions_ids</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
+<span class="w">	</span><span class="sd">&quot;&quot;&quot;get_reactions_ids.</span>
+
+<span class="sd">	Parameters</span>
+<span class="sd">	----------</span>
+<span class="sd">	model : cobra model</span>
+<span class="sd">		A cobra object, loaded with the cobra library</span>
+
+<span class="sd">	Returns</span>
+<span class="sd">	-------</span>
+<span class="sd">	pandas dataframe</span>
+<span class="sd">		a dataframe with all the reactions and eventually their GPR</span>
+
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">all_reactions_ids</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([],</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Reaction ID&#39;</span><span class="p">,</span><span class="s1">&#39;Reaction Name&#39;</span><span class="p">,</span><span class="s1">&#39;GPR&#39;</span><span class="p">])</span>
+	<span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">reactions</span><span class="p">)):</span>
+		<span class="n">reaction</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">reactions</span><span class="p">[</span><span class="n">r</span><span class="p">]</span>
+		<span class="k">if</span> <span class="n">reaction</span><span class="o">.</span><span class="n">gene_reaction_rule</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+			<span class="n">line</span> <span class="o">=</span> <span class="p">[</span><span class="n">reaction</span><span class="o">.</span><span class="n">id</span><span class="p">,</span><span class="n">reaction</span><span class="o">.</span><span class="n">name</span><span class="p">,</span><span class="s1">&#39;No GPR&#39;</span><span class="p">]</span>
+			<span class="n">all_reactions_ids</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">all_reactions_ids</span><span class="p">)]</span> <span class="o">=</span> <span class="n">line</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">line</span> <span class="o">=</span> <span class="p">[</span><span class="n">reaction</span><span class="o">.</span><span class="n">id</span><span class="p">,</span><span class="n">reaction</span><span class="o">.</span><span class="n">name</span><span class="p">,</span><span class="n">reaction</span><span class="o">.</span><span class="n">gene_reaction_rule</span><span class="p">]</span>
+			<span class="n">all_reactions_ids</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">all_reactions_ids</span><span class="p">)]</span> <span class="o">=</span> <span class="n">line</span>
+	<span class="k">return</span> <span class="n">all_reactions_ids</span></div>
+
+<div class="viewcode-block" id="get_gene_list"><a class="viewcode-back" href="../../manamodeller.html#manamodeller.modelling.get_gene_list">[docs]</a><span class="k">def</span> <span class="nf">get_gene_list</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
+<span class="w">	</span><span class="sd">&quot;&quot;&quot;get_gene_list.</span>
+
+<span class="sd">	Parameters</span>
+<span class="sd">	----------</span>
+<span class="sd">	model : cobra model</span>
+<span class="sd">		A cobra object, loaded with the cobra library</span>
+
+<span class="sd">	Returns</span>
+<span class="sd">	-------</span>
+<span class="sd">	list</span>
+<span class="sd">		a list containing all the genes in the model</span>
+
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">gene_list</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="k">for</span> <span class="n">gene</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">genes</span><span class="p">:</span>
+		<span class="n">gene_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">gene</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">gene_list</span></div>
+
+<div class="viewcode-block" id="identify_model_gene_ids"><a class="viewcode-back" href="../../manamodeller.html#manamodeller.modelling.identify_model_gene_ids">[docs]</a><span class="k">def</span> <span class="nf">identify_model_gene_ids</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
+<span class="w">	</span><span class="sd">&quot;&quot;&quot;identify_model_gene_ids.</span>
+
+<span class="sd">	Parameters</span>
+<span class="sd">	----------</span>
+<span class="sd">	model : cobra model</span>
+<span class="sd">		A cobra object, loaded with the cobra library</span>
+
+<span class="sd">	Returns</span>
+<span class="sd">	-------</span>
+<span class="sd">	str</span>
+<span class="sd">		The type of gene identifiers used in the model</span>
+
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">model_genes</span> <span class="o">=</span> <span class="n">get_gene_list</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+	<span class="k">if</span> <span class="s1">&#39;HGNC:&#39;</span> <span class="ow">in</span> <span class="n">model_genes</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+		<span class="k">return</span> <span class="s1">&#39;HGNC ID&#39;</span>
+	<span class="k">elif</span> <span class="s1">&#39;ENSG&#39;</span> <span class="ow">in</span> <span class="n">model_genes</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+		<span class="k">return</span> <span class="s1">&#39;Ensembl gene ID&#39;</span>
+	<span class="k">elif</span> <span class="s1">&#39;_AT&#39;</span> <span class="ow">in</span> <span class="n">model_genes</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+		<span class="k">return</span> <span class="s1">&#39;NCBI Gene ID&#39;</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="k">return</span> <span class="s1">&#39;model not implemented&#39;</span></div>
+	
+<div class="viewcode-block" id="fullname_equation"><a class="viewcode-back" href="../../manamodeller.html#manamodeller.modelling.fullname_equation">[docs]</a><span class="k">def</span> <span class="nf">fullname_equation</span><span class="p">(</span><span class="n">reaction</span><span class="p">):</span>
+<span class="w">	</span><span class="sd">&quot;&quot;&quot;fullname_equation.</span>
+
+<span class="sd">	Parameters</span>
+<span class="sd">	----------</span>
+<span class="sd">	reaction : cobra reaction</span>
+<span class="sd">		A cobra reaction object, obtained from a cobra model</span>
+
+<span class="sd">	Returns</span>
+<span class="sd">	-------</span>
+<span class="sd">	str</span>
+<span class="sd">		the reaction with complete metabolites names</span>
+
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">reaction_metabolites</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">reaction</span><span class="o">.</span><span class="n">metabolites</span><span class="p">)</span>
+	<span class="c1">#generate metabolites dict</span>
+	<span class="n">metabolites_dict</span> <span class="o">=</span> <span class="p">{}</span>
+	<span class="k">for</span> <span class="n">met</span> <span class="ow">in</span> <span class="n">reaction_metabolites</span><span class="p">:</span>
+		<span class="n">metabolites_dict</span><span class="p">[</span><span class="n">met</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">met</span><span class="o">.</span><span class="n">name</span> 
+	<span class="n">splitted_equation</span> <span class="o">=</span> <span class="n">reaction</span><span class="o">.</span><span class="n">reaction</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+	<span class="n">fullname_equation</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+	<span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">splitted_equation</span><span class="p">:</span>
+		<span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&quot;.*\[.\].*&quot;</span><span class="p">,</span><span class="n">elem</span><span class="p">):</span>
+			<span class="n">fullname_equation</span> <span class="o">=</span> <span class="n">fullname_equation</span><span class="o">+</span><span class="n">metabolites_dict</span><span class="p">[</span><span class="n">elem</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot; &quot;</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">fullname_equation</span> <span class="o">=</span> <span class="n">fullname_equation</span><span class="o">+</span><span class="n">elem</span><span class="o">+</span><span class="s2">&quot; &quot;</span>
+	<span class="k">return</span> <span class="n">fullname_equation</span></div>
+	
+<div class="viewcode-block" id="map_single_column"><a class="viewcode-back" href="../../manamodeller.html#manamodeller.modelling.map_single_column">[docs]</a><span class="k">def</span> <span class="nf">map_single_column</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">hgnc_data</span><span class="p">,</span><span class="n">col_to_add</span><span class="p">):</span>
+<span class="w">	</span><span class="sd">&quot;&quot;&quot;map_single_column.</span>
+
+<span class="sd">	Parameters</span>
+<span class="sd">	----------</span>
+<span class="sd">	data : pandas dataframe</span>
+<span class="sd">		a gene expression dataset</span>
+<span class="sd">	hgnc_data : pandas dataframe</span>
+<span class="sd">		a hgnc database annotation dataframe</span>
+<span class="sd">	col_to_add : str</span>
+<span class="sd">		the name of the identifier column to map</span>
+
+<span class="sd">	Returns</span>
+<span class="sd">	-------</span>
+<span class="sd">	pandas dataframe</span>
+<span class="sd">		the gene expressed dataframe with the mapped identifier added</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">mapped_ids</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="n">genes</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;ENTREZID&#39;</span><span class="p">]</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">genes</span><span class="p">)):</span>
+		<span class="nb">id</span> <span class="o">=</span> <span class="n">hgnc_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">hgnc_data</span><span class="p">[</span><span class="s1">&#39;NCBI Gene ID&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">genes</span><span class="p">[</span><span class="n">i</span><span class="p">])][</span><span class="n">col_to_add</span><span class="p">]</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+			<span class="n">mapped_ids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;NA&#39;</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">mapped_ids</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">id</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">mapped_ids</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+		<span class="n">data</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">col_to_add</span><span class="p">,</span><span class="n">mapped_ids</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">data</span></div>
+
+<div class="viewcode-block" id="find_high_low_exprs"><a class="viewcode-back" href="../../manamodeller.html#manamodeller.modelling.find_high_low_exprs">[docs]</a><span class="k">def</span> <span class="nf">find_high_low_exprs</span><span class="p">(</span><span class="n">uarray_data</span><span class="p">,</span><span class="n">threshold_dw_perc</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span><span class="n">threshold_up_perc</span><span class="o">=</span><span class="mi">75</span><span class="p">):</span>
+<span class="w">	</span><span class="sd">&quot;&quot;&quot;find_high_low_exprs.</span>
+
+<span class="sd">	Parameters</span>
+<span class="sd">	----------</span>
+<span class="sd">	uarray_data : pandas dataframe</span>
+<span class="sd">		Description of parameter `uarray_data`.</span>
+<span class="sd">	threshold_dw_perc : int</span>
+<span class="sd">		The percentile below which we consider that genes are not expresed.</span>
+<span class="sd">	threshold_up_perc : int</span>
+<span class="sd">		The percentile above which we consider that genes are highly expressed.</span>
+
+<span class="sd">	Returns</span>
+<span class="sd">	-------</span>
+<span class="sd">	list</span>
+<span class="sd">		Return list of highly/lowly expressed gene .</span>
+
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="c1"># threshold_dw_perc : Low expression percentile</span>
+	<span class="c1"># threshold_up_perc : High expression percentile</span>
+	<span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">uarray_data</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;More than one column provided, check duplicates&quot;</span><span class="p">)</span>
+	<span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">threshold_up_perc</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">threshold_dw_perc</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">)</span> <span class="o">&amp;</span> \
+	 <span class="p">(</span><span class="n">threshold_dw_perc</span> <span class="o">&lt;</span> <span class="n">threshold_up_perc</span><span class="p">):</span>
+		<span class="n">threshold_dw</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">uarray_data</span><span class="p">,</span><span class="n">threshold_dw_perc</span><span class="p">)</span>
+		<span class="n">threshold_up</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">uarray_data</span><span class="p">,</span><span class="n">threshold_up_perc</span><span class="p">)</span>
+		<span class="n">low_exprs</span> <span class="o">=</span> <span class="n">uarray_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">uarray_data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,]</span> <span class="o">&lt;=</span> <span class="n">threshold_dw</span><span class="p">]</span>
+		<span class="n">high_exprs</span> <span class="o">=</span> <span class="n">uarray_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">uarray_data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,]</span> <span class="o">&gt;=</span> <span class="n">threshold_up</span><span class="p">]</span>
+	<span class="k">return</span> <span class="p">[</span><span class="n">high_exprs</span><span class="p">,</span><span class="n">low_exprs</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="preprocess_data"><a class="viewcode-back" href="../../manamodeller.html#manamodeller.modelling.preprocess_data">[docs]</a><span class="k">def</span> <span class="nf">preprocess_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">gene_id_col</span><span class="p">,</span><span class="n">model</span><span class="p">,</span><span class="n">pickle_path</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="n">csvs_path</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">threshold_dw_perc</span> <span class="o">=</span> <span class="mi">25</span><span class="p">,</span> <span class="n">threshold_up_perc</span> <span class="o">=</span> <span class="mi">75</span><span class="p">):</span>
+<span class="w">	</span><span class="sd">&quot;&quot;&quot;preprocess_data.</span>
+
+<span class="sd">	Parameters</span>
+<span class="sd">	----------</span>
+<span class="sd">	data : pandas dataframe</span>
+<span class="sd">		a gene expression dataset</span>
+<span class="sd">	gene_id_col : str</span>
+<span class="sd">		the name of the gene identifier column</span>
+<span class="sd">	model : cobra model</span>
+<span class="sd">		A cobra object, loaded with the cobra library</span>
+<span class="sd">	pickle : str</span>
+<span class="sd">		if not empty, write pkl files containing categorized reactions activity at given location</span>
+<span class="sd">	csvs : str</span>
+<span class="sd">		if not empty, write csv files containing categorized reactions activity at given location</span>
+<span class="sd">	threshold_dw_perc : int</span>
+<span class="sd">		The percentile below which we consider that genes are not expresed.</span>
+<span class="sd">	threshold_up_perc : int</span>
+<span class="sd">		The percentile above which we consider that genes are highly expressed.</span>
+
+<span class="sd">	Returns</span>
+<span class="sd">	-------</span>
+<span class="sd">		Write a csv or a pickle with for categorized reactions activity</span>
+
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">pbar</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">total</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">like</span><span class="o">=</span><span class="s2">&quot;.CEL&quot;</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">columns</span><span class="p">))</span>
+	<span class="n">suffix</span> <span class="o">=</span> <span class="s1">&#39;_rh_rl_zscores_&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">threshold_dw_perc</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;_&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">threshold_up_perc</span><span class="p">)</span>
+	<span class="n">gprs</span> <span class="o">=</span> <span class="n">get_GPR_reactions</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">)):</span>
+		<span class="n">uarray</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+		<span class="k">if</span> <span class="p">(</span><span class="s1">&#39;.CEL&#39;</span> <span class="ow">in</span> <span class="n">uarray</span><span class="p">):</span>
+			<span class="n">uarray_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">uarray</span><span class="p">]</span>
+			<span class="n">uarray_data</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">gene_id_col</span><span class="p">]</span>
+			<span class="n">gh</span><span class="p">,</span><span class="n">gl</span> <span class="o">=</span> <span class="n">find_high_low_exprs</span><span class="p">(</span><span class="n">uarray_data</span><span class="p">,</span><span class="n">threshold_dw_perc</span><span class="p">,</span><span class="n">threshold_up_perc</span><span class="p">)</span>
+			<span class="n">rh</span><span class="p">,</span><span class="n">rl</span><span class="p">,</span><span class="n">rn</span> <span class="o">=</span> <span class="n">find_reactions_expression_levels</span><span class="p">(</span><span class="n">gprs</span><span class="p">,</span><span class="n">gh</span><span class="p">,</span><span class="n">gl</span><span class="p">)</span>
+			<span class="k">if</span> <span class="n">pickle_path</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+				<span class="n">picklef</span> <span class="o">=</span> <span class="n">uarray</span><span class="o">+</span><span class="n">suffix</span>
+				<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">pickle_path</span><span class="p">):</span>
+					<span class="n">make_pickle</span><span class="p">([</span><span class="n">rh</span><span class="p">,</span><span class="n">rl</span><span class="p">,</span><span class="n">rn</span><span class="p">],</span><span class="n">pickle_path</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="n">picklef</span><span class="o">+</span><span class="s1">&#39;.pkl&#39;</span><span class="p">)</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">pickle_path</span><span class="p">)</span>
+					<span class="n">make_pickle</span><span class="p">([</span><span class="n">rh</span><span class="p">,</span><span class="n">rl</span><span class="p">,</span><span class="n">rn</span><span class="p">],</span><span class="n">pickle_path</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="n">picklef</span><span class="o">+</span><span class="s1">&#39;.pkl&#39;</span><span class="p">)</span>
+			<span class="k">if</span> <span class="n">csvs_path</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+				<span class="n">csvsf</span> <span class="o">=</span> <span class="n">uarray</span><span class="o">+</span><span class="n">suffix</span>
+				<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">csvs_path</span><span class="p">):</span>
+					<span class="n">make_csvs</span><span class="p">([</span><span class="n">rh</span><span class="p">,</span><span class="n">rl</span><span class="p">,</span><span class="n">rn</span><span class="p">],</span><span class="n">csvs_path</span><span class="o">+</span><span class="s2">&quot;/&quot;</span><span class="p">,</span><span class="n">csvsf</span><span class="p">)</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">csvs_path</span><span class="p">)</span>
+					<span class="n">make_csvs</span><span class="p">([</span><span class="n">rh</span><span class="p">,</span><span class="n">rl</span><span class="p">,</span><span class="n">rn</span><span class="p">],</span><span class="n">csvs_path</span><span class="o">+</span><span class="s2">&quot;/&quot;</span><span class="p">,</span><span class="n">csvsf</span><span class="p">)</span>
+			<span class="n">pbar</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Louison Fresnais.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

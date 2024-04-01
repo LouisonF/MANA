@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>manamodeller.dars &mdash; manamodeller 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=2389946f"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            manamodeller
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../manamodeller.html">Mana Modeller modules</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">manamodeller</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">manamodeller.dars</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for manamodeller.dars</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy.cluster.hierarchy</span> <span class="k">as</span> <span class="nn">hc</span> 
+
+<span class="kn">from</span> <span class="nn">scipy.spatial</span> <span class="kn">import</span> <span class="n">distance_matrix</span>
+
+<div class="viewcode-block" id="calculate_frequencies"><a class="viewcode-back" href="../../manamodeller.html#manamodeller.dars.calculate_frequencies">[docs]</a><span class="k">def</span> <span class="nf">calculate_frequencies</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="w">	</span><span class="sd">&quot;&quot;&quot;calculate_frequencies.</span>
+
+<span class="sd">	Parameters</span>
+<span class="sd">	----------</span>
+<span class="sd">	data : pandas dataframe</span>
+<span class="sd">		a dataframe containing the partial enumeration results</span>
+<span class="sd">	name : str</span>
+<span class="sd">		the name of the pandas Series</span>
+
+<span class="sd">	Returns</span>
+<span class="sd">	-------</span>
+<span class="sd">		a pandas series with the sum of partial enumeration results for each reaction.</span>
+
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">prob_vec</span> <span class="o">=</span> <span class="p">[</span><span class="nb">sum</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">col</span><span class="p">])</span><span class="o">/</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+	<span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">prob_vec</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="calculate_frequencies_for_dir"><a class="viewcode-back" href="../../manamodeller.html#manamodeller.dars.calculate_frequencies_for_dir">[docs]</a><span class="k">def</span> <span class="nf">calculate_frequencies_for_dir</span><span class="p">(</span><span class="n">full_enum_path</span><span class="p">,</span><span class="n">rList</span><span class="p">,</span><span class="n">output_file</span><span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">):</span>
+<span class="w">	</span><span class="sd">&quot;&quot;&quot;calculate_frequencies_for_dir.</span>
+
+<span class="sd">	Parameters</span>
+<span class="sd">	----------</span>
+<span class="sd">	full_enum_path : str</span>
+<span class="sd">		the path to the full_enum directory</span>
+<span class="sd">	rList : list</span>
+<span class="sd">		the list of reactions in the model</span>
+<span class="sd">	output_file : str</span>
+<span class="sd">		if not empty, the frequencies table is written in csv to the path provided in this param</span>
+
+<span class="sd">	Returns</span>
+<span class="sd">	-------</span>
+<span class="sd">		a pandas dataframe containing the frequencies table, of each csv file found in the full enum path.</span>
+
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">csv_files</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">full_enum_path</span><span class="p">)</span>
+	<span class="n">freq_table</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+	<span class="n">freq_table</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">calculate_frequencies</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">full_enum_path</span><span class="o">+</span><span class="s2">&quot;/&quot;</span><span class="o">+</span><span class="n">csv_file</span><span class="p">,</span><span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">csv_file</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+							<span class="k">for</span> <span class="n">csv_file</span> <span class="ow">in</span> <span class="n">csv_files</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+	<span class="n">freq_table</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;Barcode&quot;</span><span class="p">,</span><span class="n">freq_table</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+	<span class="k">if</span> <span class="s2">&quot;Barcode&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">rList</span><span class="p">:</span>
+		<span class="n">rList</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;Barcode&quot;</span><span class="p">)</span>
+	<span class="n">freq_table</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">rList</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">output_file</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+		<span class="n">freq_table</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_file</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">freq_table</span></div>
+
+<div class="viewcode-block" id="calculate_freq_ctrls"><a class="viewcode-back" href="../../manamodeller.html#manamodeller.dars.calculate_freq_ctrls">[docs]</a><span class="k">def</span> <span class="nf">calculate_freq_ctrls</span><span class="p">(</span><span class="n">rListFile</span><span class="p">,</span> <span class="n">all_cpds</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">pheno</span><span class="p">,</span> <span class="n">working_path</span><span class="p">):</span>
+<span class="w">	</span><span class="sd">&quot;&quot;&quot;calculate_freq_ctrls.</span>
+
+<span class="sd">	Parameters</span>
+<span class="sd">	----------</span>
+<span class="sd">	rListFile : str</span>
+<span class="sd">		the path to the model&#39;s reactions list file</span>
+<span class="sd">	all_cpds : str</span>
+<span class="sd">		the list of compounds to process, from the props.properties file</span>
+<span class="sd">	time : str </span>
+<span class="sd">		the exposure time to consider</span>
+<span class="sd">	pheno : pandas dataframe</span>
+<span class="sd">		the pandas data frame containing Open TG-Gates metadata.</span>
+<span class="sd">	working_path : str</span>
+<span class="sd">		the root path of your working directory.</span>
+
+<span class="sd">	Returns</span>
+<span class="sd">	-------</span>
+<span class="sd">		return a pandas dataframe with the calculated frequencies </span>
+<span class="sd">		for all controls partial enumeration results corresponding to input parameters</span>
+
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">freq_ctrls</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+	<span class="n">rList</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">rListFile</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
+	<span class="n">cond_list</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="k">for</span> <span class="n">cpd</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">all_cpds</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">):</span>
+		<span class="c1"># pool enumerated solutions for each compound&#39;s control at specified time</span>
+		<span class="n">tmp_fullenum</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+		<span class="n">barcodes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">pheno</span><span class="p">[(</span><span class="n">pheno</span><span class="p">[</span><span class="s2">&quot;compound_name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">cpd</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">pheno</span><span class="p">[</span><span class="s2">&quot;sacri_period&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">time</span><span class="p">)</span> <span class="o">&amp;</span> \
+			<span class="p">(</span><span class="n">pheno</span><span class="p">[</span><span class="s2">&quot;dose_level&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Control&quot;</span><span class="p">)]</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+		<span class="k">for</span> <span class="n">barcode</span> <span class="ow">in</span> <span class="n">barcodes</span><span class="p">:</span>
+			<span class="k">try</span><span class="p">:</span>
+				<span class="n">tmp_fullenum</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">tmp_fullenum</span><span class="p">,</span> \
+					<span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">working_path</span><span class="o">+</span><span class="s2">&quot;/control_&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">time</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span><span class="s2">&quot;_&quot;</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;/full_enum/&quot;</span><span class="o">+</span><span class="n">barcode</span><span class="o">+</span>\
+						<span class="s2">&quot;_solutions.csv&quot;</span><span class="p">,</span><span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)])</span>
+			<span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+				<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;File not found for &quot;</span><span class="o">+</span><span class="n">barcode</span><span class="p">)</span>
+		<span class="n">freq_ctrls</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">freq_ctrls</span><span class="p">,</span> <span class="n">calculate_frequencies</span><span class="p">(</span><span class="n">tmp_fullenum</span><span class="p">,</span> <span class="n">cpd</span><span class="p">)],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+		<span class="n">cond_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cpd</span><span class="o">+</span><span class="s2">&quot;_control_&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">time</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span><span class="s2">&quot;_&quot;</span><span class="p">))</span>
+		<span class="n">freq_ctrls</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">cond_list</span>
+	<span class="n">freq_ctrls</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">rList</span>          
+	<span class="n">freq_ctrls</span> <span class="o">=</span> <span class="n">freq_ctrls</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+	<span class="k">return</span> <span class="n">freq_ctrls</span></div>
+
+<div class="viewcode-block" id="rotate"><a class="viewcode-back" href="../../manamodeller.html#manamodeller.dars.rotate">[docs]</a><span class="k">def</span> <span class="nf">rotate</span><span class="p">(</span><span class="n">vector</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">rotation_around</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">	</span><span class="sd">&quot;&quot;&quot;rotate.</span>
+
+<span class="sd">	reference: https://en.wikipedia.org/wiki/Rotation_matrix#In_two_dimensions</span>
+
+<span class="sd">	Parameters</span>
+<span class="sd">	----------</span>
+<span class="sd">	vector : pandas dataframe</span>
+<span class="sd">		the activation frequencies dataframe to rotate</span>
+<span class="sd">	theta : float</span>
+<span class="sd">		rotation angle in radians</span>
+<span class="sd">	rotation_around : np.array</span>
+<span class="sd">		A point around which vector will be rotated around. Can be None</span>
+
+<span class="sd">	Returns</span>
+<span class="sd">	-------</span>
+<span class="sd">		The rotated dataframe</span>
+
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">vector</span><span class="p">)</span>
+
+	<span class="k">if</span> <span class="n">vector</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+		<span class="n">vector</span> <span class="o">=</span> <span class="n">vector</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="p">:]</span>
+
+	<span class="k">if</span> <span class="n">rotation_around</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+		<span class="n">vector</span> <span class="o">=</span> <span class="n">vector</span> <span class="o">-</span> <span class="n">rotation_around</span>
+
+	<span class="n">vector</span> <span class="o">=</span> <span class="n">vector</span><span class="o">.</span><span class="n">T</span>
+
+	<span class="n">rotation_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+		<span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)],</span>
+		<span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)]</span>
+	<span class="p">])</span>
+
+	<span class="n">output</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="p">(</span><span class="n">rotation_matrix</span> <span class="o">@</span> <span class="n">vector</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+
+	<span class="k">if</span> <span class="n">rotation_around</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+		<span class="n">output</span> <span class="o">=</span> <span class="n">output</span> <span class="o">+</span> <span class="n">rotation_around</span>
+
+	<span class="k">return</span> <span class="n">output</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="rescale_and_rotate"><a class="viewcode-back" href="../../manamodeller.html#manamodeller.dars.rescale_and_rotate">[docs]</a><span class="k">def</span> <span class="nf">rescale_and_rotate</span><span class="p">(</span><span class="n">comp_freq</span><span class="p">):</span>
+<span class="w">	</span><span class="sd">&quot;&quot;&quot;rescale_and_rotate.</span>
+
+<span class="sd">	Parameters</span>
+<span class="sd">	----------</span>
+<span class="sd">	comp_freq : pandas dataframe</span>
+<span class="sd">		a pandas dataframe containing several metrics computed from activation frequencies</span>
+
+<span class="sd">	Returns</span>
+<span class="sd">	-------</span>
+<span class="sd">		a pandas dataframe with f_ctrl and f_trt  that have been rescaled, rescaled and rotated</span>
+
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">rids</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">comp_freq</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+	<span class="c1">#rescale f_ctrl and f_treatment</span>
+	<span class="n">comp_freq</span> <span class="o">=</span> <span class="n">comp_freq</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+		<span class="n">f_ctrl_rescale</span> <span class="o">=</span> <span class="p">(</span><span class="n">comp_freq</span><span class="p">[</span><span class="s1">&#39;f_ctrl&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span>
+		<span class="n">f_treatment_rescale</span> <span class="o">=</span> <span class="p">(</span><span class="n">comp_freq</span><span class="p">[</span><span class="s1">&#39;f_treatment&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span>
+	<span class="p">)</span>
+	<span class="c1">#Rotation of f_ctrl and f_treatment</span>
+	<span class="n">rotated_f</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">rotate</span><span class="p">(</span><span class="n">comp_freq</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">],</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;f_ctrl_r&#39;</span><span class="p">,</span><span class="s1">&#39;f_treatment_r&#39;</span><span class="p">],</span> <span class="n">index</span> <span class="o">=</span> <span class="n">comp_freq</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+	<span class="n">comp_freq</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">comp_freq</span><span class="p">,</span><span class="n">rotated_f</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+	<span class="c1">#Rotation of f_ctrl_rescale and f_treatment_rescale</span>
+	<span class="n">rotated_frescale</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">rotate</span><span class="p">(</span><span class="n">comp_freq</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">3</span><span class="p">:</span><span class="mi">5</span><span class="p">],</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;f_ctrl_rescale_r&#39;</span><span class="p">,</span><span class="s1">&#39;f_treatment_rescale_r&#39;</span><span class="p">],</span> <span class="n">index</span> <span class="o">=</span> <span class="n">comp_freq</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+	<span class="n">comp_freq</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">comp_freq</span><span class="p">,</span><span class="n">rotated_frescale</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+	<span class="k">return</span> <span class="n">comp_freq</span></div>
+
+<div class="viewcode-block" id="findCircleCenter"><a class="viewcode-back" href="../../manamodeller.html#manamodeller.dars.findCircleCenter">[docs]</a><span class="k">def</span> <span class="nf">findCircleCenter</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">C</span><span class="p">):</span>
+<span class="w">	</span><span class="sd">&quot;&quot;&quot;findCircleCenter.</span>
+
+<span class="sd">	Parameters</span>
+<span class="sd">	----------</span>
+<span class="sd">	A : list</span>
+<span class="sd">		a list containing x and y coordinates of point A, a point of the circle O</span>
+<span class="sd">	B : list</span>
+<span class="sd">		a list containing x and y coordinates of point B, a point of the circle O</span>
+<span class="sd">	C : list</span>
+<span class="sd">		a list containing x and y coordinates of point C, a point of the circle O</span>
+
+<span class="sd">	Returns</span>
+<span class="sd">	-------</span>
+<span class="sd">		a pandas dataframe containing :calculated properties of the circle O</span>
+
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">Ax</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#x1</span>
+	<span class="n">Ay</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1">#y1</span>
+	<span class="n">Bx</span> <span class="o">=</span> <span class="n">B</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#x2</span>
+	<span class="n">By</span> <span class="o">=</span> <span class="n">B</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1">#y2</span>
+	<span class="n">Cx</span> <span class="o">=</span> <span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#x3</span>
+	<span class="n">Cy</span> <span class="o">=</span> <span class="n">C</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1">#y3</span>
+	<span class="n">xAB</span> <span class="o">=</span> <span class="n">Ax</span> <span class="o">-</span> <span class="n">Bx</span> <span class="c1">#x12</span>
+	<span class="n">xAC</span> <span class="o">=</span> <span class="n">Ax</span> <span class="o">-</span> <span class="n">Cx</span> <span class="c1">#x13</span>
+	<span class="n">yAB</span> <span class="o">=</span> <span class="n">Ay</span> <span class="o">-</span> <span class="n">By</span> <span class="c1">#y12</span>
+	<span class="n">yAC</span> <span class="o">=</span> <span class="n">Ay</span> <span class="o">-</span> <span class="n">Cy</span> <span class="c1">#y13</span>
+	<span class="n">xCA</span> <span class="o">=</span> <span class="n">Cx</span> <span class="o">-</span> <span class="n">Ax</span> <span class="c1">#x31</span>
+	<span class="n">xBA</span> <span class="o">=</span> <span class="n">Bx</span> <span class="o">-</span> <span class="n">Ax</span> <span class="c1">#x21</span>
+	<span class="n">yCA</span> <span class="o">=</span> <span class="n">Cy</span> <span class="o">-</span> <span class="n">Ay</span> <span class="c1">#y31</span>
+	<span class="n">yBA</span> <span class="o">=</span> <span class="n">By</span> <span class="o">-</span> <span class="n">Ay</span> <span class="c1">#y21</span>
+
+	<span class="n">sxAC</span> <span class="o">=</span> <span class="p">(</span><span class="n">Ax</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">Cx</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">#sx13</span>
+	<span class="n">syAC</span> <span class="o">=</span> <span class="p">(</span><span class="n">Ay</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">Cy</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">#sy13</span>
+	<span class="n">sxBA</span> <span class="o">=</span> <span class="p">(</span><span class="n">Bx</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">Ax</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">#sx21</span>
+	<span class="n">syBA</span> <span class="o">=</span> <span class="p">(</span><span class="n">By</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">Ay</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">#sy21</span>
+	<span class="k">try</span><span class="p">:</span>
+		<span class="n">f</span> <span class="o">=</span> <span class="p">((</span><span class="n">sxAC</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">xAB</span><span class="p">)</span>
+		<span class="o">+</span> <span class="p">(</span><span class="n">syAC</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">xAB</span><span class="p">)</span>
+		<span class="o">+</span> <span class="p">(</span><span class="n">sxBA</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">xAC</span><span class="p">)</span>
+		<span class="o">+</span> <span class="p">(</span><span class="n">syBA</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">xAC</span><span class="p">))</span> <span class="o">/</span> \
+		<span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="p">((</span><span class="n">yCA</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">xAB</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">yBA</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">xAC</span><span class="p">)))</span>
+
+		<span class="n">g</span> <span class="o">=</span> <span class="p">((</span><span class="n">sxAC</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">yAB</span><span class="p">)</span>
+		<span class="o">+</span> <span class="p">(</span><span class="n">syAC</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">yAB</span><span class="p">)</span>
+		<span class="o">+</span> <span class="p">(</span><span class="n">sxBA</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">yAC</span><span class="p">)</span>
+		<span class="o">+</span> <span class="p">(</span><span class="n">syBA</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">yAC</span><span class="p">))</span> <span class="o">/</span> \
+		<span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="p">((</span><span class="n">xCA</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">yAB</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">xBA</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">yAC</span><span class="p">)))</span>  
+	<span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+		<span class="c1">#ZeroDivision Error raised, return nan values</span>
+		<span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">]],</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="s1">&#39;y&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="s1">&#39;dist_to_OO&#39;</span><span class="p">])</span>
+	<span class="n">c</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="p">(</span><span class="n">Ax</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">Ay</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">Ax</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">f</span> <span class="o">*</span><span class="n">Ay</span>
+	<span class="n">sqr_of_r</span> <span class="o">=</span> <span class="o">-</span><span class="n">g</span> <span class="o">*</span> <span class="p">(</span><span class="o">-</span><span class="n">g</span><span class="p">)</span> <span class="o">+</span> <span class="o">-</span><span class="n">f</span> <span class="o">*</span> <span class="p">(</span><span class="o">-</span><span class="n">f</span><span class="p">)</span> <span class="o">-</span><span class="n">c</span>
+	<span class="n">r</span>  <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sqr_of_r</span><span class="p">)</span>
+
+	<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="n">g</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="n">f</span><span class="p">])))</span>
+	<span class="n">dist_to_OO</span> <span class="o">=</span> <span class="n">distance_matrix</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="n">df</span><span class="o">.</span><span class="n">values</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+	<span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="o">-</span><span class="n">g</span><span class="p">,</span><span class="o">-</span><span class="n">f</span><span class="p">,</span><span class="n">r</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="n">dist_to_OO</span><span class="p">]],</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="s1">&#39;y&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="s1">&#39;dist_to_OO&#39;</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="compute_scores"><a class="viewcode-back" href="../../manamodeller.html#manamodeller.dars.compute_scores">[docs]</a><span class="k">def</span> <span class="nf">compute_scores</span><span class="p">(</span><span class="n">comp_freq</span><span class="p">,</span><span class="n">crossing_point</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">crossing_point_1_2</span><span class="o">=</span><span class="mf">1.2</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">	</span><span class="sd">&quot;&quot;&quot;compute_scores.</span>
+
+<span class="sd">	Parameters</span>
+<span class="sd">	----------</span>
+<span class="sd">	comp_freq : pandas dataframe</span>
+<span class="sd">		a pandas dataframe containing several metrics computed from activation frequencies</span>
+<span class="sd">	crossing_point : int</span>
+<span class="sd">		a crossing point factor for the circle center calculation</span>
+<span class="sd">	crossing_point_1_2 : float</span>
+<span class="sd">		another crossing point factor the circle center calculation</span>
+<span class="sd">	b : int</span>
+<span class="sd">		a parameter for the calculation of ellipses </span>
+<span class="sd">	Returns</span>
+<span class="sd">	-------</span>
+<span class="sd">		a pandas dataframe with several metrics computed: R2, center of circle, dist_to_OO, center of circle 1.2</span>
+
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="c1">#instantiate theta</span>
+	<span class="n">theta</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span>
+	<span class="c1">#create the data_id col with Reactions ids</span>
+	<span class="n">comp_freq</span> <span class="o">=</span> <span class="n">comp_freq</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+		<span class="n">data_id</span><span class="o">=</span><span class="n">comp_freq</span><span class="o">.</span><span class="n">index</span>
+		<span class="p">)</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+			<span class="n">R2</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">comp_freq</span><span class="p">[</span><span class="s1">&#39;f_ctrl&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">comp_freq</span><span class="p">[</span><span class="s1">&#39;f_treatment&#39;</span><span class="p">])</span> <span class="o">**</span><span class="mi">2</span>
+		<span class="p">)</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+			<span class="n">X</span> <span class="o">=</span> <span class="n">comp_freq</span><span class="p">[</span><span class="s1">&#39;f_ctrl_rescale&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">+</span> <span class="n">comp_freq</span><span class="p">[</span><span class="s1">&#39;f_treatment_rescale&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+		<span class="p">)</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+			<span class="n">Y</span> <span class="o">=</span> <span class="n">comp_freq</span><span class="p">[</span><span class="s1">&#39;f_treatment_rescale&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">-</span> <span class="n">comp_freq</span><span class="p">[</span><span class="s1">&#39;f_ctrl_rescale&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+		<span class="p">)</span>
+	<span class="n">comp_freq</span> <span class="o">=</span> <span class="n">comp_freq</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+			<span class="n">ellipse</span> <span class="o">=</span> <span class="p">(</span><span class="n">comp_freq</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">comp_freq</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">b</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+		<span class="p">)</span>
+	<span class="n">circle_center_crossing_point</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">comp_freq</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+		<span class="n">circle_center_crossing_point</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">circle_center_crossing_point</span><span class="p">,</span><span class="n">findCircleCenter</span><span class="p">(</span><span class="n">A</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">crossing_point</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">crossing_point</span><span class="p">],</span>
+										<span class="n">B</span><span class="o">=</span><span class="p">[</span><span class="n">crossing_point</span><span class="p">,</span><span class="n">crossing_point</span><span class="p">],</span>
+										<span class="n">C</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">comp_freq</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">3</span><span class="p">:</span><span class="mi">5</span><span class="p">]))])</span>
+	<span class="c1">#rename cols and rows</span>
+	<span class="n">circle_center_crossing_point</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">comp_freq</span><span class="o">.</span><span class="n">index</span>
+	<span class="n">circle_center_crossing_point</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="s1">&#39;y&#39;</span><span class="p">,</span><span class="s1">&#39;center_of_circle&#39;</span><span class="p">,</span><span class="s1">&#39;dist_to_OO&#39;</span><span class="p">]</span>
+	<span class="n">comp_freq</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">comp_freq</span><span class="p">,</span><span class="n">circle_center_crossing_point</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,[</span><span class="s1">&#39;center_of_circle&#39;</span><span class="p">,</span><span class="s1">&#39;dist_to_OO&#39;</span><span class="p">]]],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+	<span class="n">comp_freq</span> <span class="o">=</span> <span class="n">comp_freq</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+			<span class="n">center_of_circle_sqrt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">comp_freq</span><span class="p">[</span><span class="s1">&#39;center_of_circle&#39;</span><span class="p">])</span>
+		<span class="p">)</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+			<span class="n">center_of_circle_log</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">comp_freq</span><span class="p">[</span><span class="s1">&#39;center_of_circle&#39;</span><span class="p">])</span>
+		<span class="p">)</span>
+	<span class="n">circle_center_crossing_point_1_2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">comp_freq</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+		<span class="n">circle_center_crossing_point_1_2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">circle_center_crossing_point_1_2</span><span class="p">,</span><span class="n">findCircleCenter</span><span class="p">(</span><span class="n">A</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">crossing_point_1_2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">crossing_point_1_2</span><span class="p">],</span>
+										<span class="n">B</span><span class="o">=</span><span class="p">[</span><span class="n">crossing_point_1_2</span><span class="p">,</span><span class="n">crossing_point_1_2</span><span class="p">],</span>
+										<span class="n">C</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">comp_freq</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">3</span><span class="p">:</span><span class="mi">5</span><span class="p">]))])</span>
+	<span class="c1">#rename cols and rows</span>
+	<span class="n">circle_center_crossing_point_1_2</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">comp_freq</span><span class="o">.</span><span class="n">index</span>
+	<span class="n">circle_center_crossing_point_1_2</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="s1">&#39;y&#39;</span><span class="p">,</span><span class="s1">&#39;center_of_circle_1_2&#39;</span><span class="p">,</span><span class="s1">&#39;dist_to_OO_1_2&#39;</span><span class="p">]</span>
+	<span class="n">comp_freq</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">comp_freq</span><span class="p">,</span><span class="n">circle_center_crossing_point_1_2</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,[</span><span class="s1">&#39;center_of_circle_1_2&#39;</span><span class="p">,</span><span class="s1">&#39;dist_to_OO_1_2&#39;</span><span class="p">]]],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+	<span class="n">comp_freq</span> <span class="o">=</span> <span class="n">comp_freq</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+			<span class="n">center_of_circle_1_2_sqrt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">comp_freq</span><span class="p">[</span><span class="s1">&#39;center_of_circle_1_2&#39;</span><span class="p">])</span>
+		<span class="p">)</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+			<span class="n">center_of_circle_1_2_log</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">comp_freq</span><span class="p">[</span><span class="s1">&#39;center_of_circle_1_2&#39;</span><span class="p">])</span>
+		<span class="p">)</span>
+	<span class="k">return</span> <span class="n">comp_freq</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Louison Fresnais.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
