@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mana Modeller modules &mdash; manamodeller 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=2389946f"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Documentation for Mana Modeller!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            manamodeller
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Mana Modeller modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-manamodeller.batchs">batchs module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#manamodeller.batchs.write_div_enum_script"><code class="docutils literal notranslate"><span class="pre">write_div_enum_script()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manamodeller.batchs.write_rxn_enum_script"><code class="docutils literal notranslate"><span class="pre">write_rxn_enum_script()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-manamodeller.dars">dars module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#manamodeller.dars.calculate_freq_ctrls"><code class="docutils literal notranslate"><span class="pre">calculate_freq_ctrls()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manamodeller.dars.calculate_frequencies"><code class="docutils literal notranslate"><span class="pre">calculate_frequencies()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manamodeller.dars.calculate_frequencies_for_dir"><code class="docutils literal notranslate"><span class="pre">calculate_frequencies_for_dir()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manamodeller.dars.compute_scores"><code class="docutils literal notranslate"><span class="pre">compute_scores()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manamodeller.dars.findCircleCenter"><code class="docutils literal notranslate"><span class="pre">findCircleCenter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manamodeller.dars.rescale_and_rotate"><code class="docutils literal notranslate"><span class="pre">rescale_and_rotate()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manamodeller.dars.rotate"><code class="docutils literal notranslate"><span class="pre">rotate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-manamodeller.modelling">modelling module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#manamodeller.modelling.eval_gpr_activity"><code class="docutils literal notranslate"><span class="pre">eval_gpr_activity()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manamodeller.modelling.find_high_low_exprs"><code class="docutils literal notranslate"><span class="pre">find_high_low_exprs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manamodeller.modelling.find_reactions_expression_levels"><code class="docutils literal notranslate"><span class="pre">find_reactions_expression_levels()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manamodeller.modelling.fullname_equation"><code class="docutils literal notranslate"><span class="pre">fullname_equation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manamodeller.modelling.get_GPR_reactions"><code class="docutils literal notranslate"><span class="pre">get_GPR_reactions()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manamodeller.modelling.get_gene_list"><code class="docutils literal notranslate"><span class="pre">get_gene_list()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manamodeller.modelling.get_reactions_ids"><code class="docutils literal notranslate"><span class="pre">get_reactions_ids()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manamodeller.modelling.identify_model_gene_ids"><code class="docutils literal notranslate"><span class="pre">identify_model_gene_ids()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manamodeller.modelling.map_single_column"><code class="docutils literal notranslate"><span class="pre">map_single_column()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manamodeller.modelling.preprocess_data"><code class="docutils literal notranslate"><span class="pre">preprocess_data()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-manamodeller.results_analysis">results_analysis module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#manamodeller.results_analysis.dendro_reactions"><code class="docutils literal notranslate"><span class="pre">dendro_reactions()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manamodeller.results_analysis.extract_reactions_from_clusters"><code class="docutils literal notranslate"><span class="pre">extract_reactions_from_clusters()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manamodeller.results_analysis.generate_annotation_table"><code class="docutils literal notranslate"><span class="pre">generate_annotation_table()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manamodeller.results_analysis.get_node_list"><code class="docutils literal notranslate"><span class="pre">get_node_list()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manamodeller.results_analysis.visualize_gml"><code class="docutils literal notranslate"><span class="pre">visualize_gml()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-manamodeller.results_processing">results_processing module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#manamodeller.results_processing.concatenate_csv"><code class="docutils literal notranslate"><span class="pre">concatenate_csv()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manamodeller.results_processing.concatenate_reaction_div_enum"><code class="docutils literal notranslate"><span class="pre">concatenate_reaction_div_enum()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manamodeller.results_processing.concatenate_solutions"><code class="docutils literal notranslate"><span class="pre">concatenate_solutions()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manamodeller.results_processing.remove_done_batchs"><code class="docutils literal notranslate"><span class="pre">remove_done_batchs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manamodeller.results_processing.remove_zerobiomass_solutions"><code class="docutils literal notranslate"><span class="pre">remove_zerobiomass_solutions()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-manamodeller.utils">utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#manamodeller.utils.launch_multi_proc"><code class="docutils literal notranslate"><span class="pre">launch_multi_proc()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manamodeller.utils.make_csvs"><code class="docutils literal notranslate"><span class="pre">make_csvs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manamodeller.utils.make_pickle"><code class="docutils literal notranslate"><span class="pre">make_pickle()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manamodeller.utils.worker"><code class="docutils literal notranslate"><span class="pre">worker()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-manamodeller">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">manamodeller</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Mana Modeller modules</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/manamodeller.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="mana-modeller-modules">
+<h1>Mana Modeller modules<a class="headerlink" href="#mana-modeller-modules" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-manamodeller.batchs">
+<span id="batchs-module"></span><h2>batchs module<a class="headerlink" href="#module-manamodeller.batchs" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="manamodeller.batchs.write_div_enum_script">
+<span class="sig-prename descclassname"><span class="pre">manamodeller.batchs.</span></span><span class="sig-name descname"><span class="pre">write_div_enum_script</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">script_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_directory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rxn_enum_set_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_directory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modelfile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weightfile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reactionFile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prev_sol_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'prev_sol_dir/'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'log_dir'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'MANA'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dist_anneal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">para_batchs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/manamodeller/batchs.html#write_div_enum_script"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#manamodeller.batchs.write_div_enum_script" title="Permalink to this definition"></a></dt>
+<dd><p>write_div_enum_script.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>script_path</strong> (<em>str</em>) – path to the diversity_enum.py dexom python script</p></li>
+<li><p><strong>batch_directory</strong> (<em>str</em>) – path to the directory were batch files should be written</p></li>
+<li><p><strong>rxn_enum_set_dir</strong> (<em>str</em>) – path to the directory of processed reaction-enum results</p></li>
+<li><p><strong>output_directory</strong> (<em>str</em>) – path to the directory were diversity-enum modelling results should be written</p></li>
+<li><p><strong>modelfile</strong> (<em>str</em>) – path to the model’s json file</p></li>
+<li><p><strong>weightfile</strong> (<em>str</em>) – path to the csvs file that contains binarized reactions activity (according to transcriptomic data)</p></li>
+<li><p><strong>reactionFile</strong> (<em>str</em>) – path to the file that contains the list of reactions in the model</p></li>
+<li><p><strong>prev_sol_dir</strong> (<em>str</em>) – path to the directory were reaction-enum solutions used as starting point for the diversity enumeration
+process should be saved</p></li>
+<li><p><strong>log_dir</strong> (<em>str</em>) – path to the directory were log files should be stored</p></li>
+<li><p><strong>env</strong> (<em>str</em>) – name of the anaconda environment to be activated</p></li>
+<li><p><strong>dist_anneal</strong> (<em>float</em>) – dexom-python parameter, 0&lt;=a&lt;=1 controls the distance between each successive solution</p></li>
+<li><p><strong>obj_tol</strong> (<em>float</em>) – dexom-python parameter, objective value tolerance, as a fraction of the original value</p></li>
+<li><p><strong>iters</strong> (<em>int</em>) – dexom-python parameter, maximal number of iterations</p></li>
+<li><p><strong>para_batchs</strong> (<em>boolean</em>) – if True, launch each batch file independantly (instead of parallel on conditions, parallel on batch)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>write batch files ready to launch on a adequatly prepared slurm computing platform</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="manamodeller.batchs.write_rxn_enum_script">
+<span class="sig-prename descclassname"><span class="pre">manamodeller.batchs.</span></span><span class="sig-name descname"><span class="pre">write_rxn_enum_script</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">script_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_directory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_directory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modelfile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weightfile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reactionFile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'log_dir'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'MANA'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">para_batchs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/manamodeller/batchs.html#write_rxn_enum_script"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#manamodeller.batchs.write_rxn_enum_script" title="Permalink to this definition"></a></dt>
+<dd><p>write_rxn_enum_script.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>script_path</strong> (<em>str</em>) – path to the diversity_enum.py dexom python script</p></li>
+<li><p><strong>batch_directory</strong> (<em>str</em>) – path to the directory were batch files should be written</p></li>
+<li><p><strong>output_directory</strong> (<em>str</em>) – path to the directory were diversity-enum modelling results should be written</p></li>
+<li><p><strong>modelfile</strong> (<em>str</em>) – path to the model’s json file</p></li>
+<li><p><strong>weightfile</strong> (<em>str</em>) – path to the csvs file that contains binarized reactions activity (according to transcriptomic data)</p></li>
+<li><p><strong>reactionFile</strong> (<em>str</em>) – path to the file that contains the list of reactions in the model</p></li>
+<li><p><strong>log_dir</strong> (<em>str</em>) – path to the directory were log files should be stored</p></li>
+<li><p><strong>env</strong> (<em>str</em>) – name of the anaconda environment to be activated</p></li>
+<li><p><strong>obj_tol</strong> (<em>float</em>) – dexom-python parameter, objective value tolerance, as a fraction of the original value</p></li>
+<li><p><strong>iters</strong> (<em>int</em>) – dexom-python parameter, maximal number of iterations</p></li>
+<li><p><strong>para_batchs</strong> (<em>boolean</em>) – if True, launch each batch file independantly (instead of parallel on conditions, parallel on batch)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>write batch files ready to launch on a adequatly prepared slurm computing platform</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-manamodeller.dars">
+<span id="dars-module"></span><h2>dars module<a class="headerlink" href="#module-manamodeller.dars" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="manamodeller.dars.calculate_freq_ctrls">
+<span class="sig-prename descclassname"><span class="pre">manamodeller.dars.</span></span><span class="sig-name descname"><span class="pre">calculate_freq_ctrls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rListFile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all_cpds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pheno</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">working_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/manamodeller/dars.html#calculate_freq_ctrls"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#manamodeller.dars.calculate_freq_ctrls" title="Permalink to this definition"></a></dt>
+<dd><p>calculate_freq_ctrls.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rListFile</strong> (<em>str</em>) – the path to the model’s reactions list file</p></li>
+<li><p><strong>all_cpds</strong> (<em>str</em>) – the list of compounds to process, from the props.properties file</p></li>
+<li><p><strong>time</strong> (<em>str</em>) – the exposure time to consider</p></li>
+<li><p><strong>pheno</strong> (<em>pandas dataframe</em>) – the pandas data frame containing Open TG-Gates metadata.</p></li>
+<li><p><strong>working_path</strong> (<em>str</em>) – the root path of your working directory.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>return a pandas dataframe with the calculated frequencies</em></p></li>
+<li><p><em>for all controls partial enumeration results corresponding to input parameters</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="manamodeller.dars.calculate_frequencies">
+<span class="sig-prename descclassname"><span class="pre">manamodeller.dars.</span></span><span class="sig-name descname"><span class="pre">calculate_frequencies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/manamodeller/dars.html#calculate_frequencies"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#manamodeller.dars.calculate_frequencies" title="Permalink to this definition"></a></dt>
+<dd><p>calculate_frequencies.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>pandas dataframe</em>) – a dataframe containing the partial enumeration results</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – the name of the pandas Series</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a pandas series with the sum of partial enumeration results for each reaction.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="manamodeller.dars.calculate_frequencies_for_dir">
+<span class="sig-prename descclassname"><span class="pre">manamodeller.dars.</span></span><span class="sig-name descname"><span class="pre">calculate_frequencies_for_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">full_enum_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rList</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/manamodeller/dars.html#calculate_frequencies_for_dir"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#manamodeller.dars.calculate_frequencies_for_dir" title="Permalink to this definition"></a></dt>
+<dd><p>calculate_frequencies_for_dir.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>full_enum_path</strong> (<em>str</em>) – the path to the full_enum directory</p></li>
+<li><p><strong>rList</strong> (<em>list</em>) – the list of reactions in the model</p></li>
+<li><p><strong>output_file</strong> (<em>str</em>) – if not empty, the frequencies table is written in csv to the path provided in this param</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a pandas dataframe containing the frequencies table, of each csv file found in the full enum path.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="manamodeller.dars.compute_scores">
+<span class="sig-prename descclassname"><span class="pre">manamodeller.dars.</span></span><span class="sig-name descname"><span class="pre">compute_scores</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">comp_freq</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crossing_point</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crossing_point_1_2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/manamodeller/dars.html#compute_scores"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#manamodeller.dars.compute_scores" title="Permalink to this definition"></a></dt>
+<dd><p>compute_scores.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>comp_freq</strong> (<em>pandas dataframe</em>) – a pandas dataframe containing several metrics computed from activation frequencies</p></li>
+<li><p><strong>crossing_point</strong> (<em>int</em>) – a crossing point factor for the circle center calculation</p></li>
+<li><p><strong>crossing_point_1_2</strong> (<em>float</em>) – another crossing point factor the circle center calculation</p></li>
+<li><p><strong>b</strong> (<em>int</em>) – a parameter for the calculation of ellipses</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>a pandas dataframe with several metrics computed</strong></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>R2, center of circle, dist_to_OO, center of circle 1.2</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="manamodeller.dars.findCircleCenter">
+<span class="sig-prename descclassname"><span class="pre">manamodeller.dars.</span></span><span class="sig-name descname"><span class="pre">findCircleCenter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">C</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/manamodeller/dars.html#findCircleCenter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#manamodeller.dars.findCircleCenter" title="Permalink to this definition"></a></dt>
+<dd><p>findCircleCenter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>A</strong> (<em>list</em>) – a list containing x and y coordinates of point A, a point of the circle O</p></li>
+<li><p><strong>B</strong> (<em>list</em>) – a list containing x and y coordinates of point B, a point of the circle O</p></li>
+<li><p><strong>C</strong> (<em>list</em>) – a list containing x and y coordinates of point C, a point of the circle O</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>a pandas dataframe containing</strong></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>calculated properties of the circle O</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="manamodeller.dars.rescale_and_rotate">
+<span class="sig-prename descclassname"><span class="pre">manamodeller.dars.</span></span><span class="sig-name descname"><span class="pre">rescale_and_rotate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">comp_freq</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/manamodeller/dars.html#rescale_and_rotate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#manamodeller.dars.rescale_and_rotate" title="Permalink to this definition"></a></dt>
+<dd><p>rescale_and_rotate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>comp_freq</strong> (<em>pandas dataframe</em>) – a pandas dataframe containing several metrics computed from activation frequencies</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a pandas dataframe with f_ctrl and f_trt  that have been rescaled, rescaled and rotated</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="manamodeller.dars.rotate">
+<span class="sig-prename descclassname"><span class="pre">manamodeller.dars.</span></span><span class="sig-name descname"><span class="pre">rotate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vector</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotation_around</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/manamodeller/dars.html#rotate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#manamodeller.dars.rotate" title="Permalink to this definition"></a></dt>
+<dd><p>rotate.</p>
+<p>reference: <a class="reference external" href="https://en.wikipedia.org/wiki/Rotation_matrix#In_two_dimensions">https://en.wikipedia.org/wiki/Rotation_matrix#In_two_dimensions</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vector</strong> (<em>pandas dataframe</em>) – the activation frequencies dataframe to rotate</p></li>
+<li><p><strong>theta</strong> (<em>float</em>) – rotation angle in radians</p></li>
+<li><p><strong>rotation_around</strong> (<em>np.array</em>) – A point around which vector will be rotated around. Can be None</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The rotated dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-manamodeller.modelling">
+<span id="modelling-module"></span><h2>modelling module<a class="headerlink" href="#module-manamodeller.modelling" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="manamodeller.modelling.eval_gpr_activity">
+<span class="sig-prename descclassname"><span class="pre">manamodeller.modelling.</span></span><span class="sig-name descname"><span class="pre">eval_gpr_activity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gl</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/manamodeller/modelling.html#eval_gpr_activity"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#manamodeller.modelling.eval_gpr_activity" title="Permalink to this definition"></a></dt>
+<dd><p>eval_gpr_activity.</p>
+<p>This is an adaptation of the eval_gpr function available in cobrapy.
+Instead of evaluating if a GPR is active according to a list of knockout
+genes, it will evaluate if the GPR is regulated by a list of genes</p>
+<p>Exemple of usage :
+provide the list of Highly expressed genes and Lowly expressed genes
+Return all expressions that are True, thus Highly expressed</p>
+<p>evaluate compiled ast of gene_reaction_rule with list of active genes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>expr</strong> (<em>Expression</em>) – The ast of the gene reaction rule</p></li>
+<li><p><strong>gh</strong> (<em>list</em>) – list of highly expressed genes</p></li>
+<li><p><strong>gl</strong> (<em>list</em>) – list of lowly expressed genes</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the reaction is active with the given gh and gl lists
+otherwise false</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="manamodeller.modelling.find_high_low_exprs">
+<span class="sig-prename descclassname"><span class="pre">manamodeller.modelling.</span></span><span class="sig-name descname"><span class="pre">find_high_low_exprs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uarray_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold_dw_perc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold_up_perc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">75</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/manamodeller/modelling.html#find_high_low_exprs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#manamodeller.modelling.find_high_low_exprs" title="Permalink to this definition"></a></dt>
+<dd><p>find_high_low_exprs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>uarray_data</strong> (<em>pandas dataframe</em>) – Description of parameter <cite>uarray_data</cite>.</p></li>
+<li><p><strong>threshold_dw_perc</strong> (<em>int</em>) – The percentile below which we consider that genes are not expresed.</p></li>
+<li><p><strong>threshold_up_perc</strong> (<em>int</em>) – The percentile above which we consider that genes are highly expressed.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Return list of highly/lowly expressed gene .</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="manamodeller.modelling.find_reactions_expression_levels">
+<span class="sig-prename descclassname"><span class="pre">manamodeller.modelling.</span></span><span class="sig-name descname"><span class="pre">find_reactions_expression_levels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gprs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gl</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/manamodeller/modelling.html#find_reactions_expression_levels"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#manamodeller.modelling.find_reactions_expression_levels" title="Permalink to this definition"></a></dt>
+<dd><p>find_reactions_expression_levels.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gprs</strong> (<em>cobra gpr</em>) – A cobra gpr object, obtained from a cobra model</p></li>
+<li><p><strong>gh</strong> (<em>list</em>) – list of highly expressed genes</p></li>
+<li><p><strong>gl</strong> (<em>list</em>) – list of lowly expressed genes</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a tuple of three list.
+rh, is the list of reactions identified as active according to gene expression data
+rl, is the list of reactions identified as inactive according to gene expression data
+rn, is the list of reactions not constrained by gene expression data</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="manamodeller.modelling.fullname_equation">
+<span class="sig-prename descclassname"><span class="pre">manamodeller.modelling.</span></span><span class="sig-name descname"><span class="pre">fullname_equation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reaction</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/manamodeller/modelling.html#fullname_equation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#manamodeller.modelling.fullname_equation" title="Permalink to this definition"></a></dt>
+<dd><p>fullname_equation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>reaction</strong> (<em>cobra reaction</em>) – A cobra reaction object, obtained from a cobra model</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the reaction with complete metabolites names</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="manamodeller.modelling.get_GPR_reactions">
+<span class="sig-prename descclassname"><span class="pre">manamodeller.modelling.</span></span><span class="sig-name descname"><span class="pre">get_GPR_reactions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/manamodeller/modelling.html#get_GPR_reactions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#manamodeller.modelling.get_GPR_reactions" title="Permalink to this definition"></a></dt>
+<dd><p>get_GPR_reactions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>model</strong> (<em>cobra model</em>) – A cobra object, loaded with the cobra library</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a dataframe with all the reactions in the model having a GPR</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="manamodeller.modelling.get_gene_list">
+<span class="sig-prename descclassname"><span class="pre">manamodeller.modelling.</span></span><span class="sig-name descname"><span class="pre">get_gene_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/manamodeller/modelling.html#get_gene_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#manamodeller.modelling.get_gene_list" title="Permalink to this definition"></a></dt>
+<dd><p>get_gene_list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>model</strong> (<em>cobra model</em>) – A cobra object, loaded with the cobra library</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a list containing all the genes in the model</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="manamodeller.modelling.get_reactions_ids">
+<span class="sig-prename descclassname"><span class="pre">manamodeller.modelling.</span></span><span class="sig-name descname"><span class="pre">get_reactions_ids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/manamodeller/modelling.html#get_reactions_ids"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#manamodeller.modelling.get_reactions_ids" title="Permalink to this definition"></a></dt>
+<dd><p>get_reactions_ids.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>model</strong> (<em>cobra model</em>) – A cobra object, loaded with the cobra library</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a dataframe with all the reactions and eventually their GPR</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="manamodeller.modelling.identify_model_gene_ids">
+<span class="sig-prename descclassname"><span class="pre">manamodeller.modelling.</span></span><span class="sig-name descname"><span class="pre">identify_model_gene_ids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/manamodeller/modelling.html#identify_model_gene_ids"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#manamodeller.modelling.identify_model_gene_ids" title="Permalink to this definition"></a></dt>
+<dd><p>identify_model_gene_ids.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>model</strong> (<em>cobra model</em>) – A cobra object, loaded with the cobra library</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The type of gene identifiers used in the model</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="manamodeller.modelling.map_single_column">
+<span class="sig-prename descclassname"><span class="pre">manamodeller.modelling.</span></span><span class="sig-name descname"><span class="pre">map_single_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hgnc_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_to_add</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/manamodeller/modelling.html#map_single_column"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#manamodeller.modelling.map_single_column" title="Permalink to this definition"></a></dt>
+<dd><p>map_single_column.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>pandas dataframe</em>) – a gene expression dataset</p></li>
+<li><p><strong>hgnc_data</strong> (<em>pandas dataframe</em>) – a hgnc database annotation dataframe</p></li>
+<li><p><strong>col_to_add</strong> (<em>str</em>) – the name of the identifier column to map</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the gene expressed dataframe with the mapped identifier added</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas dataframe</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="manamodeller.modelling.preprocess_data">
+<span class="sig-prename descclassname"><span class="pre">manamodeller.modelling.</span></span><span class="sig-name descname"><span class="pre">preprocess_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gene_id_col</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pickle_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">csvs_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold_dw_perc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold_up_perc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">75</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/manamodeller/modelling.html#preprocess_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#manamodeller.modelling.preprocess_data" title="Permalink to this definition"></a></dt>
+<dd><p>preprocess_data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>pandas dataframe</em>) – a gene expression dataset</p></li>
+<li><p><strong>gene_id_col</strong> (<em>str</em>) – the name of the gene identifier column</p></li>
+<li><p><strong>model</strong> (<em>cobra model</em>) – A cobra object, loaded with the cobra library</p></li>
+<li><p><strong>pickle</strong> (<em>str</em>) – if not empty, write pkl files containing categorized reactions activity at given location</p></li>
+<li><p><strong>csvs</strong> (<em>str</em>) – if not empty, write csv files containing categorized reactions activity at given location</p></li>
+<li><p><strong>threshold_dw_perc</strong> (<em>int</em>) – The percentile below which we consider that genes are not expresed.</p></li>
+<li><p><strong>threshold_up_perc</strong> (<em>int</em>) – The percentile above which we consider that genes are highly expressed.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Write a csv or a pickle with for categorized reactions activity</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-manamodeller.results_analysis">
+<span id="results-analysis-module"></span><h2>results_analysis module<a class="headerlink" href="#module-manamodeller.results_analysis" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="manamodeller.results_analysis.dendro_reactions">
+<span class="sig-prename descclassname"><span class="pre">manamodeller.results_analysis.</span></span><span class="sig-name descname"><span class="pre">dendro_reactions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'No</span> <span class="pre">title</span> <span class="pre">set'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/manamodeller/results_analysis.html#dendro_reactions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#manamodeller.results_analysis.dendro_reactions" title="Permalink to this definition"></a></dt>
+<dd><p>dendro_reactions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>matrix</strong> (<em>pandas dataframe</em>) – a distance matrix</p></li>
+<li><p><strong>title</strong> (<em>str</em>) – the title of the dendrogram</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a scipy linkage object and show plot the dendrogram</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="manamodeller.results_analysis.extract_reactions_from_clusters">
+<span class="sig-prename descclassname"><span class="pre">manamodeller.results_analysis.</span></span><span class="sig-name descname"><span class="pre">extract_reactions_from_clusters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_files</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cluster'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/manamodeller/results_analysis.html#extract_reactions_from_clusters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#manamodeller.results_analysis.extract_reactions_from_clusters" title="Permalink to this definition"></a></dt>
+<dd><p>extract_reactions_from_clusters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>matrix</strong> (<em>pandas dataframe</em>) – a distance matrix</p></li>
+<li><p><strong>title</strong> (<em>str</em>) – the title of dendrograms plots</p></li>
+<li><p><strong>write_files</strong> (<em>boolean</em>) – if true, write cluster’s reaction files</p></li>
+<li><p><strong>file_prefix</strong> (<em>str</em>) – prefix to add when saving cluster’s reaction file</p></li>
+<li><p><strong>header</strong> (<em>boolean</em>) – if true, add a header to the cluster’s reaction file</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Write a csv or a pickle with for categorized reactions activity</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="manamodeller.results_analysis.generate_annotation_table">
+<span class="sig-prename descclassname"><span class="pre">manamodeller.results_analysis.</span></span><span class="sig-name descname"><span class="pre">generate_annotation_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cluster_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hgnc_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DARs_direction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputFile</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/manamodeller/results_analysis.html#generate_annotation_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#manamodeller.results_analysis.generate_annotation_table" title="Permalink to this definition"></a></dt>
+<dd><p>generate_annotation_table.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cluster_file</strong> (<em>str</em>) – path to the tsv file containg current cluster’s DARs</p></li>
+<li><p><strong>model</strong> (<em>cobra model</em>) – A cobra object, loaded with the cobra library</p></li>
+<li><p><strong>hgnc_data</strong> (<em>pandas dataframe</em>) – a hgnc database annotation dataframe</p></li>
+<li><p><strong>DARs_direction</strong> (<em>str</em>) – the path to the tsv file for the molecule associated with current cluster to get DARs’ direction</p></li>
+<li><p><strong>outputFile</strong> (<em>str</em>) – path and name of the outputFile (xlsx file)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Write an excel file with one reaction per line and corresponding annotations in columns</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="manamodeller.results_analysis.get_node_list">
+<span class="sig-prename descclassname"><span class="pre">manamodeller.results_analysis.</span></span><span class="sig-name descname"><span class="pre">get_node_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gml_file</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/manamodeller/results_analysis.html#get_node_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#manamodeller.results_analysis.get_node_list" title="Permalink to this definition"></a></dt>
+<dd><p>get_node_list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>gml_file</strong> (<em>str</em>) – the path to the gml file</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a list containing nodes ids from the gml file</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="manamodeller.results_analysis.visualize_gml">
+<span class="sig-prename descclassname"><span class="pre">manamodeller.results_analysis.</span></span><span class="sig-name descname"><span class="pre">visualize_gml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gml_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['1000px',</span> <span class="pre">'1000px']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">notebook</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/manamodeller/results_analysis.html#visualize_gml"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#manamodeller.results_analysis.visualize_gml" title="Permalink to this definition"></a></dt>
+<dd><p>visualize_gml.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gml_file</strong> (<em>str</em>) – the path to the gml file</p></li>
+<li><p><strong>window_size</strong> (<em>list</em>) – the list of x and y pixel sizes for the output window</p></li>
+<li><p><strong>notebook</strong> (<em>boolean</em>) – if true enable the pyvis optimized visualisation for notebooks</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>an interactive visualisation window of the graph</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-manamodeller.results_processing">
+<span id="results-processing-module"></span><h2>results_processing module<a class="headerlink" href="#module-manamodeller.results_processing" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="manamodeller.results_processing.concatenate_csv">
+<span class="sig-prename descclassname"><span class="pre">manamodeller.results_processing.</span></span><span class="sig-name descname"><span class="pre">concatenate_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filenames</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">single_csv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_suffix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/manamodeller/results_processing.html#concatenate_csv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#manamodeller.results_processing.concatenate_csv" title="Permalink to this definition"></a></dt>
+<dd><p>concatenate_csv.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filenames</strong> (<em>str</em>) – list of csv files to concatenate into one csv file</p></li>
+<li><p><strong>out_dir</strong> (<em>str</em>) – path to the concatenated csv output directory</p></li>
+<li><p><strong>col_index</strong> (<em>str</em>) – column name of a column to be used as index (optional)</p></li>
+<li><p><strong>single_csv</strong> (<em>boolean</em>) – option for the concatenate_csv function, if True all solutions will be stored in a single csv file</p></li>
+<li><p><strong>index_suffix</strong> (<em>str</em>) – suffix to add to csv’s row index</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>write the concatenated csv in the</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="manamodeller.results_processing.concatenate_reaction_div_enum">
+<span class="sig-prename descclassname"><span class="pre">manamodeller.results_processing.</span></span><span class="sig-name descname"><span class="pre">concatenate_reaction_div_enum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path_concat_rxn_enum</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path_concat_div_enum</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">single_csv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ncpus</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/manamodeller/results_processing.html#concatenate_reaction_div_enum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#manamodeller.results_processing.concatenate_reaction_div_enum" title="Permalink to this definition"></a></dt>
+<dd><p>concatenate_reaction_div_enum.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path_concat_rxn_enum</strong> (<em>str</em>) – path to the concatenated reaction enum directory</p></li>
+<li><p><strong>path_concat_div_enum</strong> (<em>str</em>) – path to the concatenated diversity enum directory</p></li>
+<li><p><strong>out_dir</strong> (<em>str</em>) – path to the csvs output directory</p></li>
+<li><p><strong>col_index</strong> (<em>str</em>) – column name of a column to be used as index (optional)</p></li>
+<li><p><strong>single_csv</strong> (<em>boolean</em>) – option for the concatenate_csv function, if True all solutions will be stored in a single csv file</p></li>
+<li><p><strong>ncpus</strong> (<em>int</em>) – the number of cpus allocated, will enable parallel processing</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a JoinableQueue Object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="manamodeller.results_processing.concatenate_solutions">
+<span class="sig-prename descclassname"><span class="pre">manamodeller.results_processing.</span></span><span class="sig-name descname"><span class="pre">concatenate_solutions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">csv_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">single_csv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ncpus</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restart</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/manamodeller/results_processing.html#concatenate_solutions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#manamodeller.results_processing.concatenate_solutions" title="Permalink to this definition"></a></dt>
+<dd><p>concatenate_solutions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>csv_dir</strong> (<em>str</em>) – path to the csvs to concatenate directory</p></li>
+<li><p><strong>out_dir</strong> (<em>str</em>) – path to the csvs output directory</p></li>
+<li><p><strong>col_index</strong> (<em>str</em>) – column name of a column to be used as index (optional)</p></li>
+<li><p><strong>single_csv</strong> (<em>boolean</em>) – option for the concatenate_csv function, if True all solutions will be stored in a single csv file</p></li>
+<li><p><strong>ncpus</strong> (<em>int</em>) – the number of cpus allocated, will enable parallel processing</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a JoinableQueue Object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="manamodeller.results_processing.remove_done_batchs">
+<span class="sig-prename descclassname"><span class="pre">manamodeller.results_processing.</span></span><span class="sig-name descname"><span class="pre">remove_done_batchs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">batch_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">launch_undone</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relax_param</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enum_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'reaction_enum'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">para_batch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'MANA'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/manamodeller/results_processing.html#remove_done_batchs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#manamodeller.results_processing.remove_done_batchs" title="Permalink to this definition"></a></dt>
+<dd><p>remove_done_batchs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>batch_dir</strong> (<em>str</em>) – path to the batchs directory</p></li>
+<li><p><strong>result_dir</strong> (<em>str</em>) – path to the modelling result directory</p></li>
+<li><p><strong>launch_undone</strong> (<em>boolean</em>) – If True, write the master bash file to launch all failed batchs</p></li>
+<li><p><strong>relax_param</strong> (<em>boolean</em>) – If True, relax the mipgap tolerance parameter</p></li>
+<li><p><strong>enum_type</strong> (<em>str</em>) – string indicating which type of enumeration is being processed (optional)</p></li>
+<li><p><strong>para_batch</strong> (<em>boolean</em>) – if True, launch each batch file independantly (instead of parallel on conditions, parallel on batch)</p></li>
+<li><p><strong>env</strong> (<em>str</em>) – </p></li>
+<li><p><strong>activated</strong> (<em>name</em><em> of </em><em>the anaconda environment to be</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a list with failed batch names</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="manamodeller.results_processing.remove_zerobiomass_solutions">
+<span class="sig-prename descclassname"><span class="pre">manamodeller.results_processing.</span></span><span class="sig-name descname"><span class="pre">remove_zerobiomass_solutions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">enum_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reaction_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">','</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/manamodeller/results_processing.html#remove_zerobiomass_solutions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#manamodeller.results_processing.remove_zerobiomass_solutions" title="Permalink to this definition"></a></dt>
+<dd><p>remove_zerobiomass_solutions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>enum_dir</strong> (<em>str</em>) – the path to the enumeration directory</p></li>
+<li><p><strong>reaction_list</strong> (<em>str</em>) – the path to the reaction_list directory</p></li>
+<li><p><strong>separator</strong> (<em>str</em>) – the character used to separate columns in the file</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>overwrite the csv file without solutions with 0 flux in biomass reaction</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-manamodeller.utils">
+<span id="utils-module"></span><h2>utils module<a class="headerlink" href="#module-manamodeller.utils" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="manamodeller.utils.launch_multi_proc">
+<span class="sig-prename descclassname"><span class="pre">manamodeller.utils.</span></span><span class="sig-name descname"><span class="pre">launch_multi_proc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_workers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/manamodeller/utils.html#launch_multi_proc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#manamodeller.utils.launch_multi_proc" title="Permalink to this definition"></a></dt>
+<dd><p>launch_multi_proc.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>num_workers</strong> (<em>int</em>) – the number of workers which will define the number of allowed parallel threads</p></li>
+<li><p><strong>q</strong> (<em>JoinableQueue</em>) – a JoinableQueue object filled with tasks to perform</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="manamodeller.utils.make_csvs">
+<span class="sig-prename descclassname"><span class="pre">manamodeller.utils.</span></span><span class="sig-name descname"><span class="pre">make_csvs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">celfilename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/manamodeller/utils.html#make_csvs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#manamodeller.utils.make_csvs" title="Permalink to this definition"></a></dt>
+<dd><p>make_csvs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>list</em>) – list of lists with data to be transformed into a pandas dataframe</p></li>
+<li><p><strong>out_folder</strong> (<em>str</em>) – the path where csvs files will be saved</p></li>
+<li><p><strong>celfilename</strong> (<em>str</em>) – the initial CEL filename (used as identifier)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>an interactive visualisation window of the graph</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="manamodeller.utils.make_pickle">
+<span class="sig-prename descclassname"><span class="pre">manamodeller.utils.</span></span><span class="sig-name descname"><span class="pre">make_pickle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/manamodeller/utils.html#make_pickle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#manamodeller.utils.make_pickle" title="Permalink to this definition"></a></dt>
+<dd><p>make_pickle.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>object</strong> (<em>pkl</em>) – the pkl object to save</p></li>
+<li><p><strong>filename</strong> (<em>str</em>) – the path and filename for the pickle file</p></li>
+<li><p><strong>notebook</strong> (<em>boolean</em>) – if true enable the pyvis optimized visualisation for notebooks</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>write a .pkl file at the designated location</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="manamodeller.utils.worker">
+<span class="sig-prename descclassname"><span class="pre">manamodeller.utils.</span></span><span class="sig-name descname"><span class="pre">worker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_finish</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/manamodeller/utils.html#worker"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#manamodeller.utils.worker" title="Permalink to this definition"></a></dt>
+<dd><p>worker.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>q</strong> (<em>JoinableQueue</em>) – a JoinableQueue object filled with tasks to perform</p></li>
+<li><p><strong>_finish</strong> (<em>boolean</em>) – a boolean value indicating if the worker should process elements from the JoinableQueue</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-manamodeller">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-manamodeller" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Documentation for Mana Modeller!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Louison Fresnais.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
