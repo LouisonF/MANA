@@ -248,7 +248,7 @@ def find_high_low_exprs(uarray_data,threshold_dw_perc=25,threshold_up_perc=75):
 	threshold_dw_perc : int
 		The percentile below which we consider that genes are not expresed.
 	threshold_up_perc : int
-		Ther percentile above which we consider that genes are highly expressed.
+		The percentile above which we consider that genes are highly expressed.
 
 	Returns
 	-------
@@ -268,7 +268,7 @@ def find_high_low_exprs(uarray_data,threshold_dw_perc=25,threshold_up_perc=75):
 		high_exprs = uarray_data.loc[uarray_data.iloc[:,] >= threshold_up]
 	return [high_exprs,low_exprs]
 
-def preprocess_data(data,gene_id_col,model,pickle_path="",csvs_path=""):
+def preprocess_data(data,gene_id_col,model,pickle_path="",csvs_path="", threshold_dw_perc = 25, threshold_up_perc = 75):
 	"""preprocess_data.
 
 	Parameters
@@ -283,6 +283,10 @@ def preprocess_data(data,gene_id_col,model,pickle_path="",csvs_path=""):
 		if not empty, write pkl files containing categorized reactions activity at given location
 	csvs : str
 		if not empty, write csv files containing categorized reactions activity at given location
+	threshold_dw_perc : int
+		The percentile below which we consider that genes are not expresed.
+	threshold_up_perc : int
+		The percentile above which we consider that genes are highly expressed.
 
 	Returns
 	-------
@@ -290,14 +294,14 @@ def preprocess_data(data,gene_id_col,model,pickle_path="",csvs_path=""):
 
 	"""
 	pbar = tqdm(total=len(data.filter(like=".CEL",axis=1).columns))
-	suffix = '_rh_rl_zscores_75_25'
+	suffix = '_rh_rl_zscores_'+str(threshold_dw_perc)+'_'+str(threshold_up_perc)
 	gprs = get_GPR_reactions(model)
 	for i in range(len(data.columns)):
 		uarray = data.columns[i]
 		if ('.CEL' in uarray):
 			uarray_data = data[uarray]
 			uarray_data.index = data[gene_id_col]
-			gh,gl = find_high_low_exprs(uarray_data,25,75)
+			gh,gl = find_high_low_exprs(uarray_data,threshold_dw_perc,threshold_up_perc)
 			rh,rl,rn = find_reactions_expression_levels(gprs,gh,gl)
 			if pickle_path != "":
 				picklef = uarray+suffix
