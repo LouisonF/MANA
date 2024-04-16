@@ -1478,7 +1478,7 @@
 },
 {
 "id":"hdcoa[x]",
-"name":"_LPAREN_e_RPAREN_-hexadec-2-enoyl-CoA(4-)",
+"name":"(E)-hexadec-2-enoyl-CoA(4-)",
 "compartment":"x",
 "formula":"C37H60N7O17P3S"
 },
@@ -3458,7 +3458,7 @@
 },
 {
 "id":"hdcoa[c]",
-"name":"_LPAREN_e_RPAREN_-hexadec-2-enoyl-CoA(4-)",
+"name":"(E)-hexadec-2-enoyl-CoA(4-)",
 "compartment":"c",
 "formula":"C37H60N7O17P3S"
 },
@@ -3482,7 +3482,7 @@
 },
 {
 "id":"hdcoa[m]",
-"name":"_LPAREN_e_RPAREN_-hexadec-2-enoyl-CoA(4-)",
+"name":"(E)-hexadec-2-enoyl-CoA(4-)",
 "compartment":"m",
 "formula":"C37H60N7O17P3S"
 },
@@ -14726,7 +14726,7 @@
 },
 {
 "id":"hdcoa[r]",
-"name":"_LPAREN_e_RPAREN_-hexadec-2-enoyl-CoA(4-)",
+"name":"(E)-hexadec-2-enoyl-CoA(4-)",
 "compartment":"r",
 "formula":"C37H60N7O17P3S"
 },
@@ -17468,7 +17468,7 @@
 },
 {
 "id":"CE5586[c]",
-"name":"N-[_LPAREN_e_RPAREN_-4-ammoniobutylidene]propane-1,3-diaminium",
+"name":"N-[(E)-4-ammoniobutylidene]propane-1,3-diaminium",
 "compartment":"c",
 "formula":"C7H20N3"
 },
@@ -18530,7 +18530,7 @@
 },
 {
 "id":"CE2577[c]",
-"name":"_LPAREN_e_RPAREN_-4-oxonon-2-enal",
+"name":"(E)-4-oxonon-2-enal",
 "compartment":"c",
 "formula":"C9H14O2"
 },
@@ -20438,7 +20438,7 @@
 },
 {
 "id":"CE2038[x]",
-"name":"_LPAREN_e_RPAREN_-2,3-didehydropristanoyl-CoA",
+"name":"(E)-2,3-didehydropristanoyl-CoA",
 "compartment":"x",
 "formula":"C40H70N7O17P3S"
 },
@@ -22286,7 +22286,7 @@
 },
 {
 "id":"CE2061[c]",
-"name":"trans-4,5-epoxy-2_LPAREN_e_RPAREN_-decenal",
+"name":"trans-4,5-epoxy-2(E)-decenal",
 "compartment":"c",
 "formula":"C10H16O2"
 },
@@ -26936,7 +26936,7 @@
 },
 {
 "id":"hestratriol[e]",
-"name":"hestratriol_LPAREN_e_RPAREN_",
+"name":"hestratriol(e)",
 "compartment":"e",
 "formula":"C18H24O3"
 },
@@ -31943,6 +31943,12 @@
 "name":"c11_trimethylcoa_x",
 "compartment":"x",
 "formula":"C35H58N7O17P3S"
+},
+{
+"id":"biomass[c]",
+"name":"M_biomass_c",
+"compartment":"c",
+"formula":""
 }
 ],
 "reactions":[
@@ -35336,7 +35342,7 @@
 },
 {
 "id":"AMPTASECGe",
-"name":"alanyl aminopeptidase (cys-gly) _LPAREN_e_RPAREN_",
+"name":"alanyl aminopeptidase (cys-gly) (e)",
 "metabolites":{
 "cgly[e]":-1.0,
 "cys_L[e]":1.0,
@@ -46358,7 +46364,7 @@
 },
 {
 "id":"GTHPe",
-"name":"glutathione peroxidase _LPAREN_e_RPAREN_",
+"name":"glutathione peroxidase (e)",
 "metabolites":{
 "gthox[e]":1.0,
 "gthrd[e]":-2.0,
@@ -98183,7 +98189,7 @@
 },
 {
 "id":"GTMLTe",
-"name":"g-glutamyltransferase _LPAREN_e_RPAREN_",
+"name":"g-glutamyltransferase (e)",
 "metabolites":{
 "ala_L[c]":-1.0,
 "cgly[e]":1.0,
@@ -124162,7 +124168,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_10fthf_LPAREN_e_RPAREN_",
+"id":"EX_10fthf(e)",
 "name":"10-Formyltetrahydrofolate exchange",
 "metabolites":{
 "10fthf[e]":-1.0
@@ -124173,7 +124179,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_11_cis_retfa_LPAREN_e_RPAREN_",
+"id":"EX_11_cis_retfa(e)",
 "name":"fatty acid 11-cis-retinol exchange",
 "metabolites":{
 "11_cis_retfa[e]":-1.0
@@ -124184,7 +124190,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_13_cis_retnglc_LPAREN_e_RPAREN_",
+"id":"EX_13_cis_retnglc(e)",
 "name":"13-cis-retinoyl glucuronide exchange",
 "metabolites":{
 "13_cis_retnglc[e]":-1.0
@@ -124195,7 +124201,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_1glyc_hs_LPAREN_e_RPAREN_",
+"id":"EX_1glyc_hs(e)",
 "name":"1 acyl phosphoglycerol exchange",
 "metabolites":{
 "1glyc_hs[e]":-1.0
@@ -124206,7 +124212,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_1mncam_LPAREN_e_RPAREN_",
+"id":"EX_1mncam(e)",
 "name":"1-Methylnicotinamide exchange",
 "metabolites":{
 "1mncam[e]":-1.0
@@ -124217,7 +124223,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_2425dhvitd2_LPAREN_e_RPAREN_",
+"id":"EX_2425dhvitd2(e)",
 "name":"24R,25-Dihyoxyvitamin D2 exchange",
 "metabolites":{
 "2425dhvitd2[e]":-1.0
@@ -124228,7 +124234,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_2425dhvitd3_LPAREN_e_RPAREN_",
+"id":"EX_2425dhvitd3(e)",
 "name":"24R,25-Dihydroxyvitamin D3 exchange",
 "metabolites":{
 "2425dhvitd3[e]":-1.0
@@ -124239,7 +124245,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_24nph_LPAREN_e_RPAREN_",
+"id":"EX_24nph(e)",
 "name":"2,4 dihydroxy nitrophenol exchange",
 "metabolites":{
 "24nph[e]":-1.0
@@ -124250,7 +124256,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_25hvitd2_LPAREN_e_RPAREN_",
+"id":"EX_25hvitd2(e)",
 "name":"25-Hydroxyvitamin D2 exchange",
 "metabolites":{
 "25hvitd2[e]":-1.0
@@ -124261,7 +124267,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_25hvitd3_LPAREN_e_RPAREN_",
+"id":"EX_25hvitd3(e)",
 "name":"25-Hydroxyvitamin D3 exchange",
 "metabolites":{
 "25hvitd3[e]":-1.0
@@ -124272,7 +124278,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_2hb_LPAREN_e_RPAREN_",
+"id":"EX_2hb(e)",
 "name":"2-Hydroxybutyrate exchange",
 "metabolites":{
 "2hb[e]":-1.0
@@ -124283,7 +124289,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_2mcit_LPAREN_e_RPAREN_",
+"id":"EX_2mcit(e)",
 "name":"2-Methylcitrate exchange",
 "metabolites":{
 "2mcit[e]":-1.0
@@ -124294,7 +124300,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_34dhoxpeg_LPAREN_e_RPAREN_",
+"id":"EX_34dhoxpeg(e)",
 "name":"3,4-Dihydroxyphenylethyleneglycol exchange",
 "metabolites":{
 "34dhoxpeg[e]":-1.0
@@ -124305,7 +124311,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_34dhphe_LPAREN_e_RPAREN_",
+"id":"EX_34dhphe(e)",
 "name":"3,4-Dihydroxy-L-phenylalanine exchange",
 "metabolites":{
 "34dhphe[e]":-1.0
@@ -124316,7 +124322,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_35cgmp_LPAREN_e_RPAREN_",
+"id":"EX_35cgmp(e)",
 "name":"3,5-Cyclic GMP exchange",
 "metabolites":{
 "35cgmp[e]":-1.0
@@ -124327,7 +124333,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_3aib_LPAREN_e_RPAREN_",
+"id":"EX_3aib(e)",
 "name":"L-3-Amino-isobutanoate exchange",
 "metabolites":{
 "3aib[e]":-1.0
@@ -124338,7 +124344,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_3aib_D_LPAREN_e_RPAREN_",
+"id":"EX_3aib_D(e)",
 "name":"D-3-Amino-isobutanoate exchange",
 "metabolites":{
 "3aib_D[e]":-1.0
@@ -124349,7 +124355,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_3mlda_LPAREN_e_RPAREN_",
+"id":"EX_3mlda(e)",
 "name":"3-Methylimidazoleacetic acid exchange",
 "metabolites":{
 "3mlda[e]":-1.0
@@ -124360,7 +124366,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_4abut_LPAREN_e_RPAREN_",
+"id":"EX_4abut(e)",
 "name":"4-Aminobutanoate exchange",
 "metabolites":{
 "4abut[e]":-1.0
@@ -124371,7 +124377,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_4hdebrisoquine_LPAREN_e_RPAREN_",
+"id":"EX_4hdebrisoquine(e)",
 "name":"4 hydroxy debrisoquine exchange",
 "metabolites":{
 "4hdebrisoquine[e]":-1.0
@@ -124382,7 +124388,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_4hphac_LPAREN_e_RPAREN_",
+"id":"EX_4hphac(e)",
 "name":"4-Hydroxyphenylacetate exchange",
 "metabolites":{
 "4hphac[e]":-1.0
@@ -124393,7 +124399,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_4mptnl_LPAREN_e_RPAREN_",
+"id":"EX_4mptnl(e)",
 "name":"4-methylpentanal Exchange",
 "metabolites":{
 "4mptnl[e]":-1.0
@@ -124404,7 +124410,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_4mtolbutamide_LPAREN_e_RPAREN_",
+"id":"EX_4mtolbutamide(e)",
 "name":"4 hydroxy tolbutamide exchange",
 "metabolites":{
 "4mtolbutamide[e]":-1.0
@@ -124415,7 +124421,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_4nph_LPAREN_e_RPAREN_",
+"id":"EX_4nph(e)",
 "name":"4-Nitrophenol exchange",
 "metabolites":{
 "4nph[e]":-1.0
@@ -124426,7 +124432,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_4nphsf_LPAREN_e_RPAREN_",
+"id":"EX_4nphsf(e)",
 "name":"4-Nitrophenyl sulfate exchange",
 "metabolites":{
 "4nphsf[e]":-1.0
@@ -124437,7 +124443,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_4pyrdx_LPAREN_e_RPAREN_",
+"id":"EX_4pyrdx(e)",
 "name":"4-Pyridoxate exchange",
 "metabolites":{
 "4pyrdx[e]":-1.0
@@ -124448,7 +124454,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_5adtststerone_LPAREN_e_RPAREN_",
+"id":"EX_5adtststerone(e)",
 "name":"5alpha-Dihydrotestosterone exchange",
 "metabolites":{
 "5adtststerone[e]":-1.0
@@ -124459,7 +124465,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_5adtststeroneglc_LPAREN_e_RPAREN_",
+"id":"EX_5adtststeroneglc(e)",
 "name":"5alpha-Dihydrotestosterone glucuronide exchange",
 "metabolites":{
 "5adtststeroneglc[e]":-1.0
@@ -124470,7 +124476,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_5fthf_LPAREN_e_RPAREN_",
+"id":"EX_5fthf(e)",
 "name":"5-Formyltetrahydrofolate exchange",
 "metabolites":{
 "5fthf[e]":-1.0
@@ -124481,7 +124487,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_5homeprazole_LPAREN_e_RPAREN_",
+"id":"EX_5homeprazole(e)",
 "name":"5 hydroxy omeprazole exchange",
 "metabolites":{
 "5homeprazole[e]":-1.0
@@ -124492,7 +124498,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_5htrp_LPAREN_e_RPAREN_",
+"id":"EX_5htrp(e)",
 "name":"5-Hydroxy-L-tryptophan exchange",
 "metabolites":{
 "5htrp[e]":-1.0
@@ -124503,7 +124509,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_5mthf_LPAREN_e_RPAREN_",
+"id":"EX_5mthf(e)",
 "name":"exchange reaction for 5-Methyltetrahydrofolate",
 "metabolites":{
 "5mthf[e]":-1.0
@@ -124514,7 +124520,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_6htststerone_LPAREN_e_RPAREN_",
+"id":"EX_6htststerone(e)",
 "name":"6 beta hydroxy testosterone exchange",
 "metabolites":{
 "6htststerone[e]":-1.0
@@ -124525,7 +124531,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_9_cis_retfa_LPAREN_e_RPAREN_",
+"id":"EX_9_cis_retfa(e)",
 "name":"fatty acid 9-cis-retinol exchange",
 "metabolites":{
 "9_cis_retfa[e]":-1.0
@@ -124536,7 +124542,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_abt_LPAREN_e_RPAREN_",
+"id":"EX_abt(e)",
 "name":"L-Arabinitol exchange",
 "metabolites":{
 "abt[e]":-1.0
@@ -124547,7 +124553,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ac_LPAREN_e_RPAREN_",
+"id":"EX_ac(e)",
 "name":"Acetate exchange",
 "metabolites":{
 "ac[e]":-1.0
@@ -124558,7 +124564,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_acac_LPAREN_e_RPAREN_",
+"id":"EX_acac(e)",
 "name":"Acetoacetate exchange",
 "metabolites":{
 "acac[e]":-1.0
@@ -124569,7 +124575,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_acald_LPAREN_e_RPAREN_",
+"id":"EX_acald(e)",
 "name":"Acetaldehyde exchange",
 "metabolites":{
 "acald[e]":-1.0
@@ -124580,7 +124586,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_acetone_LPAREN_e_RPAREN_",
+"id":"EX_acetone(e)",
 "name":"Acetone exchange",
 "metabolites":{
 "acetone[e]":-1.0
@@ -124591,7 +124597,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_acgalfucgalacgalfuc12gal14acglcgalgluside_hs_LPAREN_e_RPAREN_",
+"id":"EX_acgalfucgalacgalfuc12gal14acglcgalgluside_hs(e)",
 "name":"Type IIIA glycolipid exchange",
 "metabolites":{
 "acgalfucgalacgalfuc12gal14acglcgalgluside_hs[e]":-1.0
@@ -124602,7 +124608,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_acgalfucgalacgalfucgalacglcgal14acglcgalgluside_hs_LPAREN_e_RPAREN_",
+"id":"EX_acgalfucgalacgalfucgalacglcgal14acglcgalgluside_hs(e)",
 "name":"Type IIIAb exchange",
 "metabolites":{
 "acgalfucgalacgalfucgalacglcgal14acglcgalgluside_hs[e]":-1.0
@@ -124613,7 +124619,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_acgam_LPAREN_e_RPAREN_",
+"id":"EX_acgam(e)",
 "name":"N-Acetyl-D-glucosamine exchange",
 "metabolites":{
 "acgam[e]":-1.0
@@ -124624,7 +124630,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ach_LPAREN_e_RPAREN_",
+"id":"EX_ach(e)",
 "name":"Acetylcholine exchange",
 "metabolites":{
 "ach[e]":-1.0
@@ -124635,7 +124641,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ade_LPAREN_e_RPAREN_",
+"id":"EX_ade(e)",
 "name":"Adenine exchange",
 "metabolites":{
 "ade[e]":-1.0
@@ -124646,7 +124652,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_adn_LPAREN_e_RPAREN_",
+"id":"EX_adn(e)",
 "name":"exchange reaction for Adenosine",
 "metabolites":{
 "adn[e]":-1.0
@@ -124668,7 +124674,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_adprbp_LPAREN_e_RPAREN_",
+"id":"EX_adprbp(e)",
 "name":"ADPribose 2-phosphate exchange",
 "metabolites":{
 "adprbp[e]":-1.0
@@ -124679,7 +124685,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_adprib_LPAREN_e_RPAREN_",
+"id":"EX_adprib(e)",
 "name":"ADPribose exchange",
 "metabolites":{
 "adprib[e]":-1.0
@@ -124690,7 +124696,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_adrn_LPAREN_e_RPAREN_",
+"id":"EX_adrn(e)",
 "name":"adrenic acid exchange",
 "metabolites":{
 "adrn[e]":-1.0
@@ -124701,7 +124707,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_adrnl_LPAREN_e_RPAREN_",
+"id":"EX_adrnl(e)",
 "name":"Adrenaline exchange",
 "metabolites":{
 "adrnl[e]":-1.0
@@ -124712,7 +124718,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_aflatoxin_LPAREN_e_RPAREN_",
+"id":"EX_aflatoxin(e)",
 "name":"aflatoxin B1 exchange",
 "metabolites":{
 "aflatoxin[e]":-1.0
@@ -124723,7 +124729,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ahandrostanglc_LPAREN_e_RPAREN_",
+"id":"EX_ahandrostanglc(e)",
 "name":"Etiocholan-3alpha-ol-17-one 3-glucuronide exchange",
 "metabolites":{
 "ahandrostanglc[e]":-1.0
@@ -124734,7 +124740,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ak2lgchol_hs_LPAREN_e_RPAREN_",
+"id":"EX_ak2lgchol_hs(e)",
 "name":"1-alkyl 2-lysoglycerol 3-phosphocholine exchange",
 "metabolites":{
 "ak2lgchol_hs[e]":-1.0
@@ -124745,7 +124751,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_akg_LPAREN_e_RPAREN_",
+"id":"EX_akg(e)",
 "name":"2-Oxoglutarate exchange",
 "metabolites":{
 "akg[e]":-1.0
@@ -124756,7 +124762,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ala_B_LPAREN_e_RPAREN_",
+"id":"EX_ala_B(e)",
 "name":"beta-Alanine exchange",
 "metabolites":{
 "ala_B[e]":-1.0
@@ -124767,7 +124773,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ala_D_LPAREN_e_RPAREN_",
+"id":"EX_ala_D(e)",
 "name":"D-Alanine exchange",
 "metabolites":{
 "ala_D[e]":-1.0
@@ -124778,7 +124784,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ala_L_LPAREN_e_RPAREN_",
+"id":"EX_ala_L(e)",
 "name":"exchange reaction for L-alanine",
 "metabolites":{
 "ala_L[e]":-1.0
@@ -124789,7 +124795,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_aldstrn_LPAREN_e_RPAREN_",
+"id":"EX_aldstrn(e)",
 "name":"Aldosterone exchange",
 "metabolites":{
 "aldstrn[e]":-1.0
@@ -124800,7 +124806,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_amp_LPAREN_e_RPAREN_",
+"id":"EX_amp(e)",
 "name":"AMP exchange",
 "metabolites":{
 "amp[e]":-1.0
@@ -124811,7 +124817,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_andrstrn_LPAREN_e_RPAREN_",
+"id":"EX_andrstrn(e)",
 "name":"Androsterone exchange",
 "metabolites":{
 "andrstrn[e]":-1.0
@@ -124822,7 +124828,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_andrstrnglc_LPAREN_e_RPAREN_",
+"id":"EX_andrstrnglc(e)",
 "name":"androsterone glucuronide exchange",
 "metabolites":{
 "andrstrnglc[e]":-1.0
@@ -124833,7 +124839,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_antipyrene_LPAREN_e_RPAREN_",
+"id":"EX_antipyrene(e)",
 "name":"antipyrene exchange",
 "metabolites":{
 "antipyrene[e]":-1.0
@@ -124844,7 +124850,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_apnnox_LPAREN_e_RPAREN_",
+"id":"EX_apnnox(e)",
 "name":"alpha-Pinene-oxide exchange",
 "metabolites":{
 "apnnox[e]":-1.0
@@ -124855,7 +124861,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_appnn_LPAREN_e_RPAREN_",
+"id":"EX_appnn(e)",
 "name":"(+)-alpha-Pinene exchange",
 "metabolites":{
 "appnn[e]":-1.0
@@ -124866,7 +124872,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_aprgstrn_LPAREN_e_RPAREN_",
+"id":"EX_aprgstrn(e)",
 "name":"20alpha-Hydroxyprogesterone exchange",
 "metabolites":{
 "aprgstrn[e]":-1.0
@@ -124877,7 +124883,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_aqcobal_LPAREN_e_RPAREN_",
+"id":"EX_aqcobal(e)",
 "name":"Aquacob(III)alamin exchange",
 "metabolites":{
 "aqcobal[e]":-1.0
@@ -124888,7 +124894,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_arab_L_LPAREN_e_RPAREN_",
+"id":"EX_arab_L(e)",
 "name":"L-Arabinose exchange",
 "metabolites":{
 "arab_L[e]":-1.0
@@ -124899,7 +124905,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_arach_LPAREN_e_RPAREN_",
+"id":"EX_arach(e)",
 "name":"exchange reaction for arachidate",
 "metabolites":{
 "arach[e]":-1.0
@@ -124910,7 +124916,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_arachd_LPAREN_e_RPAREN_",
+"id":"EX_arachd(e)",
 "name":"nC20:4 exchange",
 "metabolites":{
 "arachd[e]":-1.0
@@ -124921,7 +124927,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_arg_L_LPAREN_e_RPAREN_",
+"id":"EX_arg_L(e)",
 "name":"L-Arginine exchange",
 "metabolites":{
 "arg_L[e]":-1.0
@@ -124932,7 +124938,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ascb_L_LPAREN_e_RPAREN_",
+"id":"EX_ascb_L(e)",
 "name":"L-Ascorbate exchange",
 "metabolites":{
 "ascb_L[e]":-1.0
@@ -124943,7 +124949,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_asn_L_LPAREN_e_RPAREN_",
+"id":"EX_asn_L(e)",
 "name":"exchange reaction for L-asparagine",
 "metabolites":{
 "asn_L[e]":-1.0
@@ -124954,7 +124960,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_asp_D_LPAREN_e_RPAREN_",
+"id":"EX_asp_D(e)",
 "name":"D-Aspartate exchange",
 "metabolites":{
 "asp_D[e]":-1.0
@@ -124965,7 +124971,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_asp_L_LPAREN_e_RPAREN_",
+"id":"EX_asp_L(e)",
 "name":"L-Aspartate exchange",
 "metabolites":{
 "asp_L[e]":-1.0
@@ -124976,7 +124982,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_atp_LPAREN_e_RPAREN_",
+"id":"EX_atp(e)",
 "name":"ATP exchange",
 "metabolites":{
 "atp[e]":-1.0
@@ -124987,7 +124993,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_avite1_LPAREN_e_RPAREN_",
+"id":"EX_avite1(e)",
 "name":"alpha-Tocopherol exchange",
 "metabolites":{
 "avite1[e]":-1.0
@@ -124998,7 +125004,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_avite2_LPAREN_e_RPAREN_",
+"id":"EX_avite2(e)",
 "name":"alpha-Tocotrienol exchange",
 "metabolites":{
 "avite2[e]":-1.0
@@ -125009,7 +125015,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_bhb_LPAREN_e_RPAREN_",
+"id":"EX_bhb(e)",
 "name":"(R)-3-Hydroxybutanoate transport via H+ symport",
 "metabolites":{
 "bhb[e]":-1.0
@@ -125020,7 +125026,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_bildglcur_LPAREN_e_RPAREN_",
+"id":"EX_bildglcur(e)",
 "name":"Bilirubin beta-diglucuronide exchange",
 "metabolites":{
 "bildglcur[e]":-1.0
@@ -125031,7 +125037,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_bilglcur_LPAREN_e_RPAREN_",
+"id":"EX_bilglcur(e)",
 "name":"exchange reaction for blirubin mono-glucuronide",
 "metabolites":{
 "bilglcur[e]":-1.0
@@ -125042,7 +125048,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_bilirub_LPAREN_e_RPAREN_",
+"id":"EX_bilirub(e)",
 "name":"Bilirubin exchange",
 "metabolites":{
 "bilirub[e]":-1.0
@@ -125053,7 +125059,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_biocyt_LPAREN_e_RPAREN_",
+"id":"EX_biocyt(e)",
 "name":"Biocytin exchange",
 "metabolites":{
 "biocyt[e]":-1.0
@@ -125064,7 +125070,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_btn_LPAREN_e_RPAREN_",
+"id":"EX_btn(e)",
 "name":"Biotin exchange",
 "metabolites":{
 "btn[e]":-1.0
@@ -125075,7 +125081,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_but_LPAREN_e_RPAREN_",
+"id":"EX_but(e)",
 "name":"Butyrate (n-C4:0) exchange",
 "metabolites":{
 "but[e]":-1.0
@@ -125086,7 +125092,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_bvite_LPAREN_e_RPAREN_",
+"id":"EX_bvite(e)",
 "name":"beta-tocopherol exchange",
 "metabolites":{
 "bvite[e]":-1.0
@@ -125097,7 +125103,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_bz_LPAREN_e_RPAREN_",
+"id":"EX_bz(e)",
 "name":"Benzoate exchange",
 "metabolites":{
 "bz[e]":-1.0
@@ -125108,7 +125114,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ca2_LPAREN_e_RPAREN_",
+"id":"EX_ca2(e)",
 "name":"Calcium exchange",
 "metabolites":{
 "ca2[e]":-1.0
@@ -125119,7 +125125,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_camp_LPAREN_e_RPAREN_",
+"id":"EX_camp(e)",
 "name":"cAMP exchange",
 "metabolites":{
 "camp[e]":-1.0
@@ -125130,7 +125136,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_caro_LPAREN_e_RPAREN_",
+"id":"EX_caro(e)",
 "name":"beta-Carotene exchange",
 "metabolites":{
 "caro[e]":-1.0
@@ -125141,8 +125147,8 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_carveol_LPAREN_e_RPAREN_",
-"name":"_LPAREN_e_RPAREN_-carveol exchange",
+"id":"EX_carveol(e)",
+"name":"(E)-carveol exchange",
 "metabolites":{
 "carveol[e]":-1.0
 },
@@ -125152,7 +125158,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_cgly_LPAREN_e_RPAREN_",
+"id":"EX_cgly(e)",
 "name":"Cys-Gly exchange",
 "metabolites":{
 "cgly[e]":-1.0
@@ -125163,7 +125169,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_chol_LPAREN_e_RPAREN_",
+"id":"EX_chol(e)",
 "name":"exchange reaction for Choline",
 "metabolites":{
 "chol[e]":-1.0
@@ -125174,7 +125180,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_cholate_LPAREN_e_RPAREN_",
+"id":"EX_cholate(e)",
 "name":"exchange reaction for cholate",
 "metabolites":{
 "cholate[e]":-1.0
@@ -125185,7 +125191,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_chsterol_LPAREN_e_RPAREN_",
+"id":"EX_chsterol(e)",
 "name":"exchange reaction for cholesterol",
 "metabolites":{
 "chsterol[e]":-1.0
@@ -125196,7 +125202,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_chtn_LPAREN_e_RPAREN_",
+"id":"EX_chtn(e)",
 "name":"chitin exchange",
 "metabolites":{
 "chtn[e]":-1.0
@@ -125207,7 +125213,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_cit_LPAREN_e_RPAREN_",
+"id":"EX_cit(e)",
 "name":"Citrate exchange",
 "metabolites":{
 "cit[e]":-1.0
@@ -125218,7 +125224,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_cl_LPAREN_e_RPAREN_",
+"id":"EX_cl(e)",
 "name":"exchange reaction for Chloride",
 "metabolites":{
 "cl[e]":-1.0
@@ -125229,7 +125235,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_CLPND_LPAREN_e_RPAREN_",
+"id":"EX_CLPND(e)",
 "name":"clupanodonic acid (docosapentaenoic (n-3)) exchange",
 "metabolites":{
 "clpnd[e]":-1.0
@@ -125240,7 +125246,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_cmp_LPAREN_e_RPAREN_",
+"id":"EX_cmp(e)",
 "name":"CMP exchange",
 "metabolites":{
 "cmp[e]":-1.0
@@ -125251,7 +125257,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_co_LPAREN_e_RPAREN_",
+"id":"EX_co(e)",
 "name":"Carbon monoxide exchange",
 "metabolites":{
 "co[e]":-1.0
@@ -125262,7 +125268,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_co2_LPAREN_e_RPAREN_",
+"id":"EX_co2(e)",
 "name":"CO2 exchange",
 "metabolites":{
 "co2[e]":-1.0
@@ -125273,7 +125279,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_coumarin_LPAREN_e_RPAREN_",
+"id":"EX_coumarin(e)",
 "name":"coumarin exchange",
 "metabolites":{
 "coumarin[e]":-1.0
@@ -125284,7 +125290,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_creat_LPAREN_e_RPAREN_",
+"id":"EX_creat(e)",
 "name":"Creatine exchange",
 "metabolites":{
 "creat[e]":-1.0
@@ -125295,7 +125301,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_crmp_hs_LPAREN_e_RPAREN_",
+"id":"EX_crmp_hs(e)",
 "name":"Ceramide 1-phosphate exchange",
 "metabolites":{
 "crmp_hs[e]":-1.0
@@ -125306,7 +125312,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_crn_LPAREN_e_RPAREN_",
+"id":"EX_crn(e)",
 "name":"exchange reaction for L-Carnitine",
 "metabolites":{
 "crn[e]":-1.0
@@ -125317,7 +125323,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_crtsl_LPAREN_e_RPAREN_",
+"id":"EX_crtsl(e)",
 "name":"cortisol Exchange",
 "metabolites":{
 "crtsl[e]":-1.0
@@ -125328,7 +125334,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_crtstrn_LPAREN_e_RPAREN_",
+"id":"EX_crtstrn(e)",
 "name":"corticosterone  Exchange",
 "metabolites":{
 "crtstrn[e]":-1.0
@@ -125339,7 +125345,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_crvnc_LPAREN_e_RPAREN_",
+"id":"EX_crvnc(e)",
 "name":"nC22:6 exchange",
 "metabolites":{
 "crvnc[e]":-1.0
@@ -125350,7 +125356,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_csn_LPAREN_e_RPAREN_",
+"id":"EX_csn(e)",
 "name":"Cytosine exchange",
 "metabolites":{
 "csn[e]":-1.0
@@ -125361,7 +125367,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_cyan_LPAREN_e_RPAREN_",
+"id":"EX_cyan(e)",
 "name":"Hydrogen cyanide exchange",
 "metabolites":{
 "cyan[e]":-1.0
@@ -125372,7 +125378,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_cys_L_LPAREN_e_RPAREN_",
+"id":"EX_cys_L(e)",
 "name":"exchange reaction for L-cysteine",
 "metabolites":{
 "cys_L[e]":-1.0
@@ -125383,7 +125389,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_cytd_LPAREN_e_RPAREN_",
+"id":"EX_cytd(e)",
 "name":"exchange reaction for Cytidine",
 "metabolites":{
 "cytd[e]":-1.0
@@ -125394,7 +125400,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_dad_2_LPAREN_e_RPAREN_",
+"id":"EX_dad_2(e)",
 "name":"exchange reaction for 2-deoxyadenosine",
 "metabolites":{
 "dad_2[e]":-1.0
@@ -125405,7 +125411,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_dag_hs_LPAREN_e_RPAREN_",
+"id":"EX_dag_hs(e)",
 "name":"exchange reaction for diglyceride",
 "metabolites":{
 "dag_hs[e]":-1.0
@@ -125416,7 +125422,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_dcsptn1_LPAREN_e_RPAREN_",
+"id":"EX_dcsptn1(e)",
 "name":"docosa-4,7,10,13,16-pentaenoic acid (n-6) exchange",
 "metabolites":{
 "dcsptn1[e]":-1.0
@@ -125427,7 +125433,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_dcyt_LPAREN_e_RPAREN_",
+"id":"EX_dcyt(e)",
 "name":"exchange reaction for Deoxycytidine",
 "metabolites":{
 "dcyt[e]":-1.0
@@ -125438,7 +125444,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_debrisoquine_LPAREN_e_RPAREN_",
+"id":"EX_debrisoquine(e)",
 "name":"debrisoquine exchange",
 "metabolites":{
 "debrisoquine[e]":-1.0
@@ -125449,7 +125455,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_dgchol_LPAREN_e_RPAREN_",
+"id":"EX_dgchol(e)",
 "name":"Chenodeoxyglycocholate exchange",
 "metabolites":{
 "dgchol[e]":-1.0
@@ -125460,7 +125466,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_dgsn_LPAREN_e_RPAREN_",
+"id":"EX_dgsn(e)",
 "name":"exchange reaction for Deoxyguanosine",
 "metabolites":{
 "dgsn[e]":-1.0
@@ -125471,7 +125477,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_dhdascb_LPAREN_e_RPAREN_",
+"id":"EX_dhdascb(e)",
 "name":"exchange reaction for dehydroascorbide(1-)",
 "metabolites":{
 "dhdascb[e]":-1.0
@@ -125482,7 +125488,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_dheas_LPAREN_e_RPAREN_",
+"id":"EX_dheas(e)",
 "name":"Dehydroepiandrosterone sulfate exchange",
 "metabolites":{
 "dheas[e]":-1.0
@@ -125493,7 +125499,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_dhf_LPAREN_e_RPAREN_",
+"id":"EX_dhf(e)",
 "name":"7,8-Dihydrofolate exchange",
 "metabolites":{
 "dhf[e]":-1.0
@@ -125504,7 +125510,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_digalsgalside_hs_LPAREN_e_RPAREN_",
+"id":"EX_digalsgalside_hs(e)",
 "name":"Digalactosylceramidesulfate exchange",
 "metabolites":{
 "digalsgalside_hs[e]":-1.0
@@ -125515,7 +125521,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_din_LPAREN_e_RPAREN_",
+"id":"EX_din(e)",
 "name":"exchange reaction for Deoxyinosine",
 "metabolites":{
 "din[e]":-1.0
@@ -125526,7 +125532,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_dlnlcg_LPAREN_e_RPAREN_",
+"id":"EX_dlnlcg(e)",
 "name":"dihomo-gamma-linolenic acid (n-6) exchange",
 "metabolites":{
 "dlnlcg[e]":-1.0
@@ -125537,7 +125543,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_dmantipyrine_LPAREN_e_RPAREN_",
+"id":"EX_dmantipyrine(e)",
 "name":"demethylated antipyrine exchange",
 "metabolites":{
 "dmantipyrine[e]":-1.0
@@ -125548,7 +125554,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_dmhptcrn_LPAREN_e_RPAREN_",
+"id":"EX_dmhptcrn(e)",
 "name":"2,6 dimethylheptanoyl carnitine exchange",
 "metabolites":{
 "dmhptcrn[e]":-1.0
@@ -125559,7 +125565,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_dopa_LPAREN_e_RPAREN_",
+"id":"EX_dopa(e)",
 "name":"Dopamine exchange",
 "metabolites":{
 "dopa[e]":-1.0
@@ -125570,7 +125576,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_dopasf_LPAREN_e_RPAREN_",
+"id":"EX_dopasf(e)",
 "name":"Dopamine 3-O-sulfate exchange",
 "metabolites":{
 "dopasf[e]":-1.0
@@ -125581,7 +125587,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_drib_LPAREN_e_RPAREN_",
+"id":"EX_drib(e)",
 "name":"Deoxyribose exchange",
 "metabolites":{
 "drib[e]":-1.0
@@ -125592,7 +125598,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_duri_LPAREN_e_RPAREN_",
+"id":"EX_duri(e)",
 "name":"exchange reaction for Deoxyuridine",
 "metabolites":{
 "duri[e]":-1.0
@@ -125603,7 +125609,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_eaflatoxin_LPAREN_e_RPAREN_",
+"id":"EX_eaflatoxin(e)",
 "name":"8,9 epxoy aflatoxin B1 exchange",
 "metabolites":{
 "eaflatoxin[e]":-1.0
@@ -125614,7 +125620,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ebastine_LPAREN_e_RPAREN_",
+"id":"EX_ebastine(e)",
 "name":"ebastine exchange",
 "metabolites":{
 "ebastine[e]":-1.0
@@ -125625,7 +125631,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ebastineoh_LPAREN_e_RPAREN_",
+"id":"EX_ebastineoh(e)",
 "name":"hydroxylated ebastine exchange",
 "metabolites":{
 "ebastineoh[e]":-1.0
@@ -125636,7 +125642,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_eicostet_LPAREN_e_RPAREN_",
+"id":"EX_eicostet(e)",
 "name":"eicosatetranoic acid exchange",
 "metabolites":{
 "eicostet[e]":-1.0
@@ -125647,7 +125653,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_elaid_LPAREN_e_RPAREN_",
+"id":"EX_elaid(e)",
 "name":"elaidic acid exchange",
 "metabolites":{
 "elaid[e]":-1.0
@@ -125658,7 +125664,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_estradiol_LPAREN_e_RPAREN_",
+"id":"EX_estradiol(e)",
 "name":"estradiol exchange",
 "metabolites":{
 "estradiol[e]":-1.0
@@ -125669,7 +125675,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_estradiolglc_LPAREN_e_RPAREN_",
+"id":"EX_estradiolglc(e)",
 "name":"estradiol glucuronide exchange",
 "metabolites":{
 "estradiolglc[e]":-1.0
@@ -125680,7 +125686,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_estriolglc_LPAREN_e_RPAREN_",
+"id":"EX_estriolglc(e)",
 "name":"16-Glucuronide-estriol exchange",
 "metabolites":{
 "estriolglc[e]":-1.0
@@ -125691,7 +125697,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_estroneglc_LPAREN_e_RPAREN_",
+"id":"EX_estroneglc(e)",
 "name":"estrone glucuronide exchange",
 "metabolites":{
 "estroneglc[e]":-1.0
@@ -125702,7 +125708,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_estrones_LPAREN_e_RPAREN_",
+"id":"EX_estrones(e)",
 "name":"Estrone 3-sulfate exchange",
 "metabolites":{
 "estrones[e]":-1.0
@@ -125713,7 +125719,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_etoh_LPAREN_e_RPAREN_",
+"id":"EX_etoh(e)",
 "name":"Ethanol exchange",
 "metabolites":{
 "etoh[e]":-1.0
@@ -125724,7 +125730,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_fe2_LPAREN_e_RPAREN_",
+"id":"EX_fe2(e)",
 "name":"EX fe2(u)",
 "metabolites":{
 "fe2[e]":-1.0
@@ -125735,7 +125741,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_fe3_LPAREN_e_RPAREN_",
+"id":"EX_fe3(e)",
 "name":"Fe3+ exchange",
 "metabolites":{
 "fe3[e]":-1.0
@@ -125746,7 +125752,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_fol_LPAREN_e_RPAREN_",
+"id":"EX_fol(e)",
 "name":"exchange reaction for Folate",
 "metabolites":{
 "fol[e]":-1.0
@@ -125757,7 +125763,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_for_LPAREN_e_RPAREN_",
+"id":"EX_for(e)",
 "name":"Formate exchange",
 "metabolites":{
 "for[e]":-1.0
@@ -125768,7 +125774,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_fru_LPAREN_e_RPAREN_",
+"id":"EX_fru(e)",
 "name":"exchange reaction for D-Fructose",
 "metabolites":{
 "fru[e]":-1.0
@@ -125779,7 +125785,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_fuc13galacglcgal14acglcgalgluside_hs_LPAREN_e_RPAREN_",
+"id":"EX_fuc13galacglcgal14acglcgalgluside_hs(e)",
 "name":"III3Fuc-nLc6Cer exchange",
 "metabolites":{
 "fuc13galacglcgal14acglcgalgluside_hs[e]":-1.0
@@ -125790,7 +125796,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_fuc14galacglcgalgluside_hs_LPAREN_e_RPAREN_",
+"id":"EX_fuc14galacglcgalgluside_hs(e)",
 "name":"Lea glycolipid exchange",
 "metabolites":{
 "fuc14galacglcgalgluside_hs[e]":-1.0
@@ -125801,7 +125807,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_fucacgalfucgalacglcgalgluside_hs_LPAREN_e_RPAREN_",
+"id":"EX_fucacgalfucgalacglcgalgluside_hs(e)",
 "name":"(Gal)2 (GalNAc)1 (Glc)1 (GlcNAc)1 (LFuc)2 (Cer)1 exchange",
 "metabolites":{
 "fucacgalfucgalacglcgalgluside_hs[e]":-1.0
@@ -125812,7 +125818,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_fucacngal14acglcgalgluside_hs_LPAREN_e_RPAREN_",
+"id":"EX_fucacngal14acglcgalgluside_hs(e)",
 "name":"IV3-a-NeuAc,III3-a-Fuc-nLc4Cer exchange",
 "metabolites":{
 "fucacngal14acglcgalgluside_hs[e]":-1.0
@@ -125823,7 +125829,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_fucfuc12gal14acglcgalgluside_hs_LPAREN_e_RPAREN_",
+"id":"EX_fucfuc12gal14acglcgalgluside_hs(e)",
 "name":"Ley glycolipid exchange",
 "metabolites":{
 "fucfuc12gal14acglcgalgluside_hs[e]":-1.0
@@ -125834,7 +125840,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_fucfuc132galacglcgal14acglcgalgluside_hs_LPAREN_e_RPAREN_",
+"id":"EX_fucfuc132galacglcgal14acglcgalgluside_hs(e)",
 "name":"V3Fuc,III3Fuc-nLc6Cer exchange",
 "metabolites":{
 "fucfuc132galacglcgal14acglcgalgluside_hs[e]":-1.0
@@ -125845,7 +125851,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_fucfucfucgalacglc13galacglcgal14acglcgalgluside_hs_LPAREN_e_RPAREN_",
+"id":"EX_fucfucfucgalacglc13galacglcgal14acglcgalgluside_hs(e)",
 "name":"(Gal)4 (Glc)1 (GlcNAc)3 (LFuc)3 (Cer)1 exchange",
 "metabolites":{
 "fucfucfucgalacglc13galacglcgal14acglcgalgluside_hs[e]":-1.0
@@ -125856,7 +125862,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_fucfucfucgalacglcgal14acglcgalgluside_hs_LPAREN_e_RPAREN_",
+"id":"EX_fucfucfucgalacglcgal14acglcgalgluside_hs(e)",
 "name":"(Gal)3 (Glc)1 (GlcNAc)2 (LFuc)3 (Cer)1 exchange",
 "metabolites":{
 "fucfucfucgalacglcgal14acglcgalgluside_hs[e]":-1.0
@@ -125867,7 +125873,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_fucfucgalacglcgalgluside_hs_LPAREN_e_RPAREN_",
+"id":"EX_fucfucgalacglcgalgluside_hs(e)",
 "name":"Leb glycolipid exchange",
 "metabolites":{
 "fucfucgalacglcgalgluside_hs[e]":-1.0
@@ -125878,7 +125884,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_fucgal14acglcgalgluside_hs_LPAREN_e_RPAREN_",
+"id":"EX_fucgal14acglcgalgluside_hs(e)",
 "name":"Lacto-N-fucopentaosyl III ceramide exchange",
 "metabolites":{
 "fucgal14acglcgalgluside_hs[e]":-1.0
@@ -125889,7 +125895,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_fucgalfucgalacglcgalgluside_hs_LPAREN_e_RPAREN_",
+"id":"EX_fucgalfucgalacglcgalgluside_hs(e)",
 "name":"(Gal)3 (Glc)1 (GlcNAc)1 (LFuc)2 (Cer)1 exchange",
 "metabolites":{
 "fucgalfucgalacglcgalgluside_hs[e]":-1.0
@@ -125900,7 +125906,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_fucgalgbside_hs_LPAREN_e_RPAREN_",
+"id":"EX_fucgalgbside_hs(e)",
 "name":"fucosyl galactosylgloboside (homo sapiens) exchange",
 "metabolites":{
 "fucgalgbside_hs[e]":-1.0
@@ -125911,7 +125917,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_fuc_L_LPAREN_e_RPAREN_",
+"id":"EX_fuc_L(e)",
 "name":"L-Fucose exchange",
 "metabolites":{
 "fuc_L[e]":-1.0
@@ -125922,7 +125928,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_gal_LPAREN_e_RPAREN_",
+"id":"EX_gal(e)",
 "name":"exchange reaction for D-Galactose",
 "metabolites":{
 "gal[e]":-1.0
@@ -125933,7 +125939,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_galacglcgalgbside_hs_LPAREN_e_RPAREN_",
+"id":"EX_galacglcgalgbside_hs(e)",
 "name":"Gal-GlcNAc-Gal globoside (homo sapiens) exchange",
 "metabolites":{
 "galacglcgalgbside_hs[e]":-1.0
@@ -125944,7 +125950,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_galfuc12gal14acglcgalgluside_hs_LPAREN_e_RPAREN_",
+"id":"EX_galfuc12gal14acglcgalgluside_hs(e)",
 "name":"(Gal)3 (Glc)1 (GlcNAc)1 (LFuc)1 (Cer)1 exchange",
 "metabolites":{
 "galfuc12gal14acglcgalgluside_hs[e]":-1.0
@@ -125955,7 +125961,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_galfucgalacglcgal14acglcgalgluside_hs_LPAREN_e_RPAREN_",
+"id":"EX_galfucgalacglcgal14acglcgalgluside_hs(e)",
 "name":"(Gal)4 (Glc)1 (GlcNAc)2 (LFuc)1 (Cer)1 exchange",
 "metabolites":{
 "galfucgalacglcgal14acglcgalgluside_hs[e]":-1.0
@@ -125966,7 +125972,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_galgalfucfucgalacglcgalacglcgal14acglcgalgluside_hs_LPAREN_e_RPAREN_",
+"id":"EX_galgalfucfucgalacglcgalacglcgal14acglcgalgluside_hs(e)",
 "name":"(Gal)6 (Glc)1 (GlcNAc)3 (LFuc)2 (Cer)1 exchange",
 "metabolites":{
 "galgalfucfucgalacglcgalacglcgal14acglcgalgluside_hs[e]":-1.0
@@ -125977,7 +125983,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_galgalgalthcrm_hs_LPAREN_e_RPAREN_",
+"id":"EX_galgalgalthcrm_hs(e)",
 "name":"Gal-Gal-Gal-Gal-Gal-Glc-Cer (homo sapiens) exchange",
 "metabolites":{
 "galgalgalthcrm_hs[e]":-1.0
@@ -125988,7 +125994,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_gam_LPAREN_e_RPAREN_",
+"id":"EX_gam(e)",
 "name":"exchange reaction for D-Glucosamine",
 "metabolites":{
 "gam[e]":-1.0
@@ -125999,7 +126005,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_gbside_hs_LPAREN_e_RPAREN_",
+"id":"EX_gbside_hs(e)",
 "name":"globoside (homo sapiens) exchange",
 "metabolites":{
 "gbside_hs[e]":-1.0
@@ -126010,7 +126016,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_gchola_LPAREN_e_RPAREN_",
+"id":"EX_gchola(e)",
 "name":"Glycocholate exchange",
 "metabolites":{
 "gchola[e]":-1.0
@@ -126021,7 +126027,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_gdp_LPAREN_e_RPAREN_",
+"id":"EX_gdp(e)",
 "name":"GDP exchange",
 "metabolites":{
 "gdp[e]":-1.0
@@ -126032,7 +126038,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_glc_LPAREN_e_RPAREN_",
+"id":"EX_glc(e)",
 "name":"D-Glucose exchange",
 "metabolites":{
 "glc_D[e]":-1.0
@@ -126043,7 +126049,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_gln_L_LPAREN_e_RPAREN_",
+"id":"EX_gln_L(e)",
 "name":"exchange reaction for L-glutamine",
 "metabolites":{
 "gln_L[e]":-1.0
@@ -126054,7 +126060,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_gluala_LPAREN_e_RPAREN_",
+"id":"EX_gluala(e)",
 "name":"5-L-Glutamyl-L-alanine exchange",
 "metabolites":{
 "gluala[e]":-1.0
@@ -126065,7 +126071,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_glu_L_LPAREN_e_RPAREN_",
+"id":"EX_glu_L(e)",
 "name":"L-Glutamate exchange",
 "metabolites":{
 "glu_L[e]":-1.0
@@ -126076,7 +126082,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_gly_LPAREN_e_RPAREN_",
+"id":"EX_gly(e)",
 "name":"exchange reaction for Glycine",
 "metabolites":{
 "gly[e]":-1.0
@@ -126087,7 +126093,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_glyb_LPAREN_e_RPAREN_",
+"id":"EX_glyb(e)",
 "name":"Glycine betaine exchange",
 "metabolites":{
 "glyb[e]":-1.0
@@ -126098,7 +126104,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_glyc_LPAREN_e_RPAREN_",
+"id":"EX_glyc(e)",
 "name":"Glycerol exchange",
 "metabolites":{
 "glyc[e]":-1.0
@@ -126109,7 +126115,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_glyc_S_LPAREN_e_RPAREN_",
+"id":"EX_glyc_S(e)",
 "name":"(S)-Glycerate exchange",
 "metabolites":{
 "glyc_S[e]":-1.0
@@ -126120,7 +126126,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_glygn2_LPAREN_e_RPAREN_",
+"id":"EX_glygn2(e)",
 "name":"glycogen, structure 2 (glycogenin-1,6-{7[1,4-Glc], 4[1,4-Glc]}) exchange",
 "metabolites":{
 "glygn2[e]":-1.0
@@ -126131,7 +126137,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_glygn4_LPAREN_e_RPAREN_",
+"id":"EX_glygn4(e)",
 "name":"exchange reaction for glycogen, structure 4 (glycogenin-1,6-{2[1,4-Glc], [1,4-Glc]})",
 "metabolites":{
 "glygn4[e]":-1.0
@@ -126142,7 +126148,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_glygn5_LPAREN_e_RPAREN_",
+"id":"EX_glygn5(e)",
 "name":"exchange reaction for glycogen, structure 5 (glycogenin-2[1,4-Glc])",
 "metabolites":{
 "glygn5[e]":-1.0
@@ -126153,7 +126159,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_gmp_LPAREN_e_RPAREN_",
+"id":"EX_gmp(e)",
 "name":"GMP exchange",
 "metabolites":{
 "gmp[e]":-1.0
@@ -126164,7 +126170,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_gsn_LPAREN_e_RPAREN_",
+"id":"EX_gsn(e)",
 "name":"exchange reaction for Guanosine",
 "metabolites":{
 "gsn[e]":-1.0
@@ -126175,7 +126181,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_gt1a_hs_LPAREN_e_RPAREN_",
+"id":"EX_gt1a_hs(e)",
 "name":"GT1a (homo sapiens) exchange",
 "metabolites":{
 "gt1a_hs[e]":-1.0
@@ -126186,7 +126192,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_gthox_LPAREN_e_RPAREN_",
+"id":"EX_gthox(e)",
 "name":"Oxidized glutathione exchange",
 "metabolites":{
 "gthox[e]":-1.0
@@ -126197,7 +126203,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_gthrd_LPAREN_e_RPAREN_",
+"id":"EX_gthrd(e)",
 "name":"Reduced glutathione exchange",
 "metabolites":{
 "gthrd[e]":-1.0
@@ -126208,7 +126214,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_gtp_LPAREN_e_RPAREN_",
+"id":"EX_gtp(e)",
 "name":"GTP exchange",
 "metabolites":{
 "gtp[e]":-1.0
@@ -126219,7 +126225,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_gua_LPAREN_e_RPAREN_",
+"id":"EX_gua(e)",
 "name":"Guanine exchange",
 "metabolites":{
 "gua[e]":-1.0
@@ -126230,7 +126236,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_h_LPAREN_e_RPAREN_",
+"id":"EX_h(e)",
 "name":"exchange reaction for proton",
 "metabolites":{
 "h[e]":-1.0
@@ -126241,7 +126247,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_h2o_LPAREN_e_RPAREN_",
+"id":"EX_h2o(e)",
 "name":"H2O exchange",
 "metabolites":{
 "h2o[e]":-1.0
@@ -126252,7 +126258,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_h2o2_LPAREN_e_RPAREN_",
+"id":"EX_h2o2(e)",
 "name":"Hydrogen peroxide exchange",
 "metabolites":{
 "h2o2[e]":-1.0
@@ -126263,7 +126269,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ha_LPAREN_e_RPAREN_",
+"id":"EX_ha(e)",
 "name":"hyaluronan exchange",
 "metabolites":{
 "ha[e]":-1.0
@@ -126274,7 +126280,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ha_pre1_LPAREN_e_RPAREN_",
+"id":"EX_ha_pre1(e)",
 "name":"hyaluronan biosynthesis, precursor 1 exchange",
 "metabolites":{
 "ha_pre1[e]":-1.0
@@ -126285,7 +126291,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_hco3_LPAREN_e_RPAREN_",
+"id":"EX_hco3(e)",
 "name":"Bicarbonate exchange",
 "metabolites":{
 "hco3[e]":-1.0
@@ -126296,7 +126302,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_hcoumarin_LPAREN_e_RPAREN_",
+"id":"EX_hcoumarin(e)",
 "name":"hydroxy coumarin exchange",
 "metabolites":{
 "hcoumarin[e]":-1.0
@@ -126307,7 +126313,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_hdca_LPAREN_e_RPAREN_",
+"id":"EX_hdca(e)",
 "name":"Hexadecanoate (n-C16:0) exchange",
 "metabolites":{
 "hdca[e]":-1.0
@@ -126318,7 +126324,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_hdcea_LPAREN_e_RPAREN_",
+"id":"EX_hdcea(e)",
 "name":"exchange reaction for Hexadecenoate (n-C16:1)",
 "metabolites":{
 "hdcea[e]":-1.0
@@ -126329,7 +126335,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_hestratriol_LPAREN_e_RPAREN_",
+"id":"EX_hestratriol(e)",
 "name":"4,17 dihydroxy estradiol exchange",
 "metabolites":{
 "hestratriol[e]":-1.0
@@ -126340,7 +126346,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_hexc_LPAREN_e_RPAREN_",
+"id":"EX_hexc(e)",
 "name":"hexacosanoate (n-C26:0) exchange",
 "metabolites":{
 "hexc[e]":-1.0
@@ -126351,7 +126357,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_his_L_LPAREN_e_RPAREN_",
+"id":"EX_his_L(e)",
 "name":"exchange reaction for L-histidine",
 "metabolites":{
 "his_L[e]":-1.0
@@ -126362,7 +126368,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_hista_LPAREN_e_RPAREN_",
+"id":"EX_hista(e)",
 "name":"Histamine exchange",
 "metabolites":{
 "hista[e]":-1.0
@@ -126373,7 +126379,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_hom_L_LPAREN_e_RPAREN_",
+"id":"EX_hom_L(e)",
 "name":"L-Homoserine exchange",
 "metabolites":{
 "hom_L[e]":-1.0
@@ -126384,7 +126390,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_hpdca_LPAREN_e_RPAREN_",
+"id":"EX_hpdca(e)",
 "name":"heptadecanoate exchange",
 "metabolites":{
 "hpdca[e]":-1.0
@@ -126395,7 +126401,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_htaxol_LPAREN_e_RPAREN_",
+"id":"EX_htaxol(e)",
 "name":"hydroxylated taxol exchange",
 "metabolites":{
 "htaxol[e]":-1.0
@@ -126406,7 +126412,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_hxan_LPAREN_e_RPAREN_",
+"id":"EX_hxan(e)",
 "name":"Hypoxanthine exchange",
 "metabolites":{
 "hxan[e]":-1.0
@@ -126417,7 +126423,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_i_LPAREN_e_RPAREN_",
+"id":"EX_i(e)",
 "name":"Iodide exchange",
 "metabolites":{
 "i[e]":-1.0
@@ -126428,7 +126434,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_idp_LPAREN_e_RPAREN_",
+"id":"EX_idp(e)",
 "name":"IDP exchange",
 "metabolites":{
 "idp[e]":-1.0
@@ -126439,7 +126445,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ile_L_LPAREN_e_RPAREN_",
+"id":"EX_ile_L(e)",
 "name":"L-Isoleucine exchange",
 "metabolites":{
 "ile_L[e]":-1.0
@@ -126450,7 +126456,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_imp_LPAREN_e_RPAREN_",
+"id":"EX_imp(e)",
 "name":"IMP exchange",
 "metabolites":{
 "imp[e]":-1.0
@@ -126461,7 +126467,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_inost_LPAREN_e_RPAREN_",
+"id":"EX_inost(e)",
 "name":"myo-Inositol exchange",
 "metabolites":{
 "inost[e]":-1.0
@@ -126472,7 +126478,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ins_LPAREN_e_RPAREN_",
+"id":"EX_ins(e)",
 "name":"Inosine exchange",
 "metabolites":{
 "ins[e]":-1.0
@@ -126483,7 +126489,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_k_LPAREN_e_RPAREN_",
+"id":"EX_k(e)",
 "name":"K+ exchange",
 "metabolites":{
 "k[e]":-1.0
@@ -126494,7 +126500,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_lac_D_LPAREN_e_RPAREN_",
+"id":"EX_lac_D(e)",
 "name":"D-lactate exchange",
 "metabolites":{
 "lac_D[e]":-1.0
@@ -126505,7 +126511,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_lac_L_LPAREN_e_RPAREN_",
+"id":"EX_lac_L(e)",
 "name":"L-Lactate exchange",
 "metabolites":{
 "lac_L[e]":-1.0
@@ -126516,7 +126522,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_lcts_LPAREN_e_RPAREN_",
+"id":"EX_lcts(e)",
 "name":"Lactose exchange",
 "metabolites":{
 "lcts[e]":-1.0
@@ -126527,7 +126533,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_Lcystin_LPAREN_e_RPAREN_",
+"id":"EX_Lcystin(e)",
 "name":"L-Cystine exchange",
 "metabolites":{
 "Lcystin[e]":-1.0
@@ -126538,7 +126544,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_leuktrA4_LPAREN_e_RPAREN_",
+"id":"EX_leuktrA4(e)",
 "name":"leukotriene A4 exchange",
 "metabolites":{
 "leuktrA4[e]":-1.0
@@ -126549,7 +126555,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_leuktrB4_LPAREN_e_RPAREN_",
+"id":"EX_leuktrB4(e)",
 "name":"leukotriene B4 exchange",
 "metabolites":{
 "leuktrB4[e]":-1.0
@@ -126560,7 +126566,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_leuktrC4_LPAREN_e_RPAREN_",
+"id":"EX_leuktrC4(e)",
 "name":"Leukotriene C4 exchange",
 "metabolites":{
 "leuktrC4[e]":-1.0
@@ -126571,7 +126577,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_leuktrD4_LPAREN_e_RPAREN_",
+"id":"EX_leuktrD4(e)",
 "name":"leukotriene D4 exchange",
 "metabolites":{
 "leuktrD4[e]":-1.0
@@ -126582,7 +126588,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_leuktrE4_LPAREN_e_RPAREN_",
+"id":"EX_leuktrE4(e)",
 "name":"leukotriene E4 exchange",
 "metabolites":{
 "leuktrE4[e]":-1.0
@@ -126593,7 +126599,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_leuktrF4_LPAREN_e_RPAREN_",
+"id":"EX_leuktrF4(e)",
 "name":"leukotriene F4 exchange",
 "metabolites":{
 "leuktrF4[e]":-1.0
@@ -126604,7 +126610,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_leu_L_LPAREN_e_RPAREN_",
+"id":"EX_leu_L(e)",
 "name":"L-Leucine exchange",
 "metabolites":{
 "leu_L[e]":-1.0
@@ -126615,7 +126621,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_lgnc_LPAREN_e_RPAREN_",
+"id":"EX_lgnc(e)",
 "name":"lignoceric acid exchange",
 "metabolites":{
 "lgnc[e]":-1.0
@@ -126626,7 +126632,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_limnen_LPAREN_e_RPAREN_",
+"id":"EX_limnen(e)",
 "name":"Limonene exchange",
 "metabolites":{
 "limnen[e]":-1.0
@@ -126637,7 +126643,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_lipoate_LPAREN_e_RPAREN_",
+"id":"EX_lipoate(e)",
 "name":"Lipoate exchange",
 "metabolites":{
 "lipoate[e]":-1.0
@@ -126648,7 +126654,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_lnlc_LPAREN_e_RPAREN_",
+"id":"EX_lnlc(e)",
 "name":"linoleic acid (all cis C18:2) exchange",
 "metabolites":{
 "lnlc[e]":-1.0
@@ -126659,7 +126665,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_lnlnca_LPAREN_e_RPAREN_",
+"id":"EX_lnlnca(e)",
 "name":"alpha-Linolenic acid exchange",
 "metabolites":{
 "lnlnca[e]":-1.0
@@ -126670,7 +126676,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_lnlncg_LPAREN_e_RPAREN_",
+"id":"EX_lnlncg(e)",
 "name":"gamma-linolenic acid exchange",
 "metabolites":{
 "lnlncg[e]":-1.0
@@ -126681,7 +126687,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_lpchol_hs_LPAREN_e_RPAREN_",
+"id":"EX_lpchol_hs(e)",
 "name":"exchange reaction for lysophosphatidylcholine",
 "metabolites":{
 "lpchol_hs[e]":-1.0
@@ -126692,7 +126698,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_lys_L_LPAREN_e_RPAREN_",
+"id":"EX_lys_L(e)",
 "name":"L-Lysine exchange",
 "metabolites":{
 "lys_L[e]":-1.0
@@ -126703,7 +126709,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_mag_hs_LPAREN_e_RPAREN_",
+"id":"EX_mag_hs(e)",
 "name":"Monoacylglycerol 2 (homo sapiens) exchange",
 "metabolites":{
 "mag_hs[e]":-1.0
@@ -126714,7 +126720,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_malt_LPAREN_e_RPAREN_",
+"id":"EX_malt(e)",
 "name":"Maltose exchange",
 "metabolites":{
 "malt[e]":-1.0
@@ -126725,7 +126731,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_malttr_LPAREN_e_RPAREN_",
+"id":"EX_malttr(e)",
 "name":"Maltotriose exchange",
 "metabolites":{
 "malttr[e]":-1.0
@@ -126736,7 +126742,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_man_LPAREN_e_RPAREN_",
+"id":"EX_man(e)",
 "name":"exchange reaction for D-Mannose",
 "metabolites":{
 "man[e]":-1.0
@@ -126747,7 +126753,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_meoh_LPAREN_e_RPAREN_",
+"id":"EX_meoh(e)",
 "name":"methanol exchange",
 "metabolites":{
 "meoh[e]":-1.0
@@ -126758,7 +126764,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_mepi_LPAREN_e_RPAREN_",
+"id":"EX_mepi(e)",
 "name":"Metanephrine exchange",
 "metabolites":{
 "mepi[e]":-1.0
@@ -126769,7 +126775,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_met_L_LPAREN_e_RPAREN_",
+"id":"EX_met_L(e)",
 "name":"L-Methionine exchange",
 "metabolites":{
 "met_L[e]":-1.0
@@ -126780,7 +126786,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_mthgxl_LPAREN_e_RPAREN_",
+"id":"EX_mthgxl(e)",
 "name":"Methylglyoxal exchange",
 "metabolites":{
 "mthgxl[e]":-1.0
@@ -126791,7 +126797,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_n2m2nmasn_LPAREN_e_RPAREN_",
+"id":"EX_n2m2nmasn(e)",
 "name":"N-Acetyl-beta-D-glucosaminyl-1,2-alpha-D-mannosyl-1,3-(N-acetyl-beta-D-glucosaminyl-1,2-alpha-D-mannosyl-1,6)-(N-acetyl-beta-D-glucosaminyl-1,4)-beta-D-mannosyl-1,4-N-acetyl-beta-D-glucosaminyl-R exchange",
 "metabolites":{
 "n2m2nmasn[e]":-1.0
@@ -126802,7 +126808,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_na1_LPAREN_e_RPAREN_",
+"id":"EX_na1(e)",
 "name":"exchange reaction for Sodium",
 "metabolites":{
 "na1[e]":-1.0
@@ -126813,7 +126819,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_nac_LPAREN_e_RPAREN_",
+"id":"EX_nac(e)",
 "name":"Nicotinate exchange",
 "metabolites":{
 "nac[e]":-1.0
@@ -126824,7 +126830,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_nad_LPAREN_e_RPAREN_",
+"id":"EX_nad(e)",
 "name":"Nicotinamide adenine dinucleotide exchange",
 "metabolites":{
 "nad[e]":-1.0
@@ -126835,7 +126841,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_nadp_LPAREN_e_RPAREN_",
+"id":"EX_nadp(e)",
 "name":"Nicotinamide adenine dinucleotide phosphate exchange",
 "metabolites":{
 "nadp[e]":-1.0
@@ -126846,7 +126852,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ncam_LPAREN_e_RPAREN_",
+"id":"EX_ncam(e)",
 "name":"Nicotinamide exchange",
 "metabolites":{
 "ncam[e]":-1.0
@@ -126857,7 +126863,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_nh4_LPAREN_e_RPAREN_",
+"id":"EX_nh4(e)",
 "name":"Ammonia exchange",
 "metabolites":{
 "nh4[e]":-1.0
@@ -126868,7 +126874,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_no_LPAREN_e_RPAREN_",
+"id":"EX_no(e)",
 "name":"exchange reaction for NO",
 "metabolites":{
 "no[e]":-1.0
@@ -126879,7 +126885,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_npthl_LPAREN_e_RPAREN_",
+"id":"EX_npthl(e)",
 "name":"Naphthalene exchange",
 "metabolites":{
 "npthl[e]":-1.0
@@ -126890,7 +126896,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_nrpphr_LPAREN_e_RPAREN_",
+"id":"EX_nrpphr(e)",
 "name":"Norepinephrine exchange",
 "metabolites":{
 "nrpphr[e]":-1.0
@@ -126901,7 +126907,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_nrpphrsf_LPAREN_e_RPAREN_",
+"id":"EX_nrpphrsf(e)",
 "name":"Sulfate derivative of norepinephrine exchange",
 "metabolites":{
 "nrpphrsf[e]":-1.0
@@ -126912,7 +126918,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_nrvnc_LPAREN_e_RPAREN_",
+"id":"EX_nrvnc(e)",
 "name":"nervonic acid exchange",
 "metabolites":{
 "nrvnc[e]":-1.0
@@ -126923,7 +126929,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_o2_LPAREN_e_RPAREN_",
+"id":"EX_o2(e)",
 "name":"exchange reaction for oxugen",
 "metabolites":{
 "o2[e]":-1.0
@@ -126934,7 +126940,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_o2s_LPAREN_e_RPAREN_",
+"id":"EX_o2s(e)",
 "name":"Superoxide anion exchange",
 "metabolites":{
 "o2s[e]":-1.0
@@ -126945,7 +126951,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ocdca_LPAREN_e_RPAREN_",
+"id":"EX_ocdca(e)",
 "name":"echange reaction for octadecanoate (n-C18:0)",
 "metabolites":{
 "ocdca[e]":-1.0
@@ -126956,7 +126962,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ocdcea_LPAREN_e_RPAREN_",
+"id":"EX_ocdcea(e)",
 "name":"octadecenoate (n-C18:1) exchange",
 "metabolites":{
 "ocdcea[e]":-1.0
@@ -126967,7 +126973,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_octa_LPAREN_e_RPAREN_",
+"id":"EX_octa(e)",
 "name":"exchange reaction for octanoate (n-C8:0)",
 "metabolites":{
 "octa[e]":-1.0
@@ -126978,7 +126984,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_omeprazole_LPAREN_e_RPAREN_",
+"id":"EX_omeprazole(e)",
 "name":"omeprazole exchange",
 "metabolites":{
 "omeprazole[e]":-1.0
@@ -126989,7 +126995,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_onpthl_LPAREN_e_RPAREN_",
+"id":"EX_onpthl(e)",
 "name":"naphthalene epoxide exchange",
 "metabolites":{
 "onpthl[e]":-1.0
@@ -127000,7 +127006,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_orn_LPAREN_e_RPAREN_",
+"id":"EX_orn(e)",
 "name":"Ornithine exchange",
 "metabolites":{
 "orn[e]":-1.0
@@ -127011,7 +127017,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_oxa_LPAREN_e_RPAREN_",
+"id":"EX_oxa(e)",
 "name":"Oxalate exchange",
 "metabolites":{
 "oxa[e]":-1.0
@@ -127022,7 +127028,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_paf_hs_LPAREN_e_RPAREN_",
+"id":"EX_paf_hs(e)",
 "name":"1-alkyl 2-acteylglycerol 3-phosphocholine (homo sapiens) exchange",
 "metabolites":{
 "paf_hs[e]":-1.0
@@ -127033,7 +127039,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_pchol_hs_LPAREN_e_RPAREN_",
+"id":"EX_pchol_hs(e)",
 "name":"Phosphatidylcholine (homo sapiens) exchange",
 "metabolites":{
 "pchol_hs[e]":-1.0
@@ -127044,7 +127050,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_pe_hs_LPAREN_e_RPAREN_",
+"id":"EX_pe_hs(e)",
 "name":"exchange reaction for phosphatidylethanolamine",
 "metabolites":{
 "pe_hs[e]":-1.0
@@ -127055,7 +127061,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_peplys_LPAREN_e_RPAREN_",
+"id":"EX_peplys(e)",
 "name":"Peptidyl-L-lysine exchange",
 "metabolites":{
 "peplys[e]":-1.0
@@ -127066,7 +127072,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_perillyl_LPAREN_e_RPAREN_",
+"id":"EX_perillyl(e)",
 "name":"Perillyl alcohol exchange",
 "metabolites":{
 "perillyl[e]":-1.0
@@ -127077,7 +127083,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_pglyc_hs_LPAREN_e_RPAREN_",
+"id":"EX_pglyc_hs(e)",
 "name":"phosphatidylglycerol (homo sapiens) exchange",
 "metabolites":{
 "pglyc_hs[e]":-1.0
@@ -127088,7 +127094,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_pheacgln_LPAREN_e_RPAREN_",
+"id":"EX_pheacgln(e)",
 "name":"alpha-N-Phenylacetyl-L-glutamine exchange",
 "metabolites":{
 "pheacgln[e]":-1.0
@@ -127099,7 +127105,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_phe_L_LPAREN_e_RPAREN_",
+"id":"EX_phe_L(e)",
 "name":"exchange reaction for L-phenylalanine",
 "metabolites":{
 "phe_L[e]":-1.0
@@ -127110,7 +127116,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_pheme_LPAREN_e_RPAREN_",
+"id":"EX_pheme(e)",
 "name":"exchange reaction for heme",
 "metabolites":{
 "pheme[e]":-1.0
@@ -127121,7 +127127,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_phyQ_LPAREN_e_RPAREN_",
+"id":"EX_phyQ(e)",
 "name":"Phylloquinone exchange",
 "metabolites":{
 "phyQ[e]":-1.0
@@ -127132,7 +127138,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_phyt_LPAREN_e_RPAREN_",
+"id":"EX_phyt(e)",
 "name":"phytanic acid exchange",
 "metabolites":{
 "phyt[e]":-1.0
@@ -127143,7 +127149,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_pi_LPAREN_e_RPAREN_",
+"id":"EX_pi(e)",
 "name":"Phosphate exchange",
 "metabolites":{
 "pi[e]":-1.0
@@ -127154,7 +127160,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_pnto_R_LPAREN_e_RPAREN_",
+"id":"EX_pnto_R(e)",
 "name":"(R)-Pantothenate exchange",
 "metabolites":{
 "pnto_R[e]":-1.0
@@ -127165,7 +127171,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ppa_LPAREN_e_RPAREN_",
+"id":"EX_ppa(e)",
 "name":"Propionate exchange",
 "metabolites":{
 "ppa[e]":-1.0
@@ -127176,7 +127182,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_prgstrn_LPAREN_e_RPAREN_",
+"id":"EX_prgstrn(e)",
 "name":"Progesterone exchange",
 "metabolites":{
 "prgstrn[e]":-1.0
@@ -127187,7 +127193,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_pro_D_LPAREN_e_RPAREN_",
+"id":"EX_pro_D(e)",
 "name":"D-Proline exchange",
 "metabolites":{
 "pro_D[e]":-1.0
@@ -127198,7 +127204,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_pro_L_LPAREN_e_RPAREN_",
+"id":"EX_pro_L(e)",
 "name":"L-Proline exchange",
 "metabolites":{
 "pro_L[e]":-1.0
@@ -127209,7 +127215,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_prostgd2_LPAREN_e_RPAREN_",
+"id":"EX_prostgd2(e)",
 "name":"Prostaglandin D2 exchange",
 "metabolites":{
 "prostgd2[e]":-1.0
@@ -127220,7 +127226,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_prostge1_LPAREN_e_RPAREN_",
+"id":"EX_prostge1(e)",
 "name":"Prostaglandin E1 exchange",
 "metabolites":{
 "prostge1[e]":-1.0
@@ -127231,7 +127237,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_prostge2_LPAREN_e_RPAREN_",
+"id":"EX_prostge2(e)",
 "name":"Prostaglandin E2 exchange",
 "metabolites":{
 "prostge2[e]":-1.0
@@ -127242,7 +127248,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_prostgf2_LPAREN_e_RPAREN_",
+"id":"EX_prostgf2(e)",
 "name":"Prostaglandin F2alpha exchange",
 "metabolites":{
 "prostgf2[e]":-1.0
@@ -127253,7 +127259,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ps_hs_LPAREN_e_RPAREN_",
+"id":"EX_ps_hs(e)",
 "name":"phosphatidylserine (homo sapiens) exchange",
 "metabolites":{
 "ps_hs[e]":-1.0
@@ -127264,7 +127270,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ptdca_LPAREN_e_RPAREN_",
+"id":"EX_ptdca(e)",
 "name":"pentadecanoate exchange",
 "metabolites":{
 "ptdca[e]":-1.0
@@ -127275,7 +127281,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_pydam_LPAREN_e_RPAREN_",
+"id":"EX_pydam(e)",
 "name":"exchange reaction for Pyridoxamine",
 "metabolites":{
 "pydam[e]":-1.0
@@ -127286,7 +127292,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_pydx_LPAREN_e_RPAREN_",
+"id":"EX_pydx(e)",
 "name":"exchange reaction for Pyridoxal",
 "metabolites":{
 "pydx[e]":-1.0
@@ -127297,7 +127303,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_pydxn_LPAREN_e_RPAREN_",
+"id":"EX_pydxn(e)",
 "name":"exchange reaction for Pyridoxine",
 "metabolites":{
 "pydxn[e]":-1.0
@@ -127308,7 +127314,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_pyr_LPAREN_e_RPAREN_",
+"id":"EX_pyr(e)",
 "name":"Pyruvate exchange",
 "metabolites":{
 "pyr[e]":-1.0
@@ -127319,7 +127325,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_rbt_LPAREN_e_RPAREN_",
+"id":"EX_rbt(e)",
 "name":"Ribitol exchange",
 "metabolites":{
 "rbt[e]":-1.0
@@ -127330,7 +127336,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_retfa_LPAREN_e_RPAREN_",
+"id":"EX_retfa(e)",
 "name":"fatty acid retinol exchange",
 "metabolites":{
 "retfa[e]":-1.0
@@ -127341,7 +127347,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_retinol_LPAREN_e_RPAREN_",
+"id":"EX_retinol(e)",
 "name":"Retinol exchange",
 "metabolites":{
 "retinol[e]":-1.0
@@ -127352,7 +127358,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_retinol_9_cis_LPAREN_e_RPAREN_",
+"id":"EX_retinol_9_cis(e)",
 "name":"9-cis-retinol exchange",
 "metabolites":{
 "retinol_9_cis[e]":-1.0
@@ -127363,7 +127369,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_retinol_cis_11_LPAREN_e_RPAREN_",
+"id":"EX_retinol_cis_11(e)",
 "name":"cis-11-retinol exchange",
 "metabolites":{
 "retinol_cis_11[e]":-1.0
@@ -127374,7 +127380,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_retn_LPAREN_e_RPAREN_",
+"id":"EX_retn(e)",
 "name":"Retinoate exchange",
 "metabolites":{
 "retn[e]":-1.0
@@ -127385,7 +127391,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_retnglc_LPAREN_e_RPAREN_",
+"id":"EX_retnglc(e)",
 "name":"retinoyl glucuronide exchange",
 "metabolites":{
 "retnglc[e]":-1.0
@@ -127396,7 +127402,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_rib_D_LPAREN_e_RPAREN_",
+"id":"EX_rib_D(e)",
 "name":"exchange reaction for ribose",
 "metabolites":{
 "rib_D[e]":-1.0
@@ -127407,7 +127413,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ribflv_LPAREN_e_RPAREN_",
+"id":"EX_ribflv(e)",
 "name":"exchange reaction for Riboflavin",
 "metabolites":{
 "ribflv[e]":-1.0
@@ -127418,7 +127424,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_Rtotal_LPAREN_e_RPAREN_",
+"id":"EX_Rtotal(e)",
 "name":"R total exchange",
 "metabolites":{
 "Rtotal[e]":-1.0
@@ -127429,7 +127435,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_sarcs_LPAREN_e_RPAREN_",
+"id":"EX_sarcs(e)",
 "name":"Sarcosine exchange",
 "metabolites":{
 "sarcs[e]":-1.0
@@ -127440,7 +127446,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_sel_LPAREN_e_RPAREN_",
+"id":"EX_sel(e)",
 "name":"Selenate exchange",
 "metabolites":{
 "sel[e]":-1.0
@@ -127451,7 +127457,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ser_D_LPAREN_e_RPAREN_",
+"id":"EX_ser_D(e)",
 "name":"D-Serine exchange",
 "metabolites":{
 "ser_D[e]":-1.0
@@ -127462,7 +127468,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ser_L_LPAREN_e_RPAREN_",
+"id":"EX_ser_L(e)",
 "name":"exchange reaction for L-serine",
 "metabolites":{
 "ser_L[e]":-1.0
@@ -127473,7 +127479,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_sl_L_LPAREN_e_RPAREN_",
+"id":"EX_sl_L(e)",
 "name":"L-sulfolactate exchange",
 "metabolites":{
 "sl_L[e]":-1.0
@@ -127484,7 +127490,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_so4_LPAREN_e_RPAREN_",
+"id":"EX_so4(e)",
 "name":"Sulfate exchange",
 "metabolites":{
 "so4[e]":-1.0
@@ -127495,7 +127501,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_spc_hs_LPAREN_e_RPAREN_",
+"id":"EX_spc_hs(e)",
 "name":"sphingosylphosphorylcholine (homo sapiens) exchange",
 "metabolites":{
 "spc_hs[e]":-1.0
@@ -127506,7 +127512,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_sph1p_LPAREN_e_RPAREN_",
+"id":"EX_sph1p(e)",
 "name":"Sphinganine 1-phosphate exchange",
 "metabolites":{
 "sph1p[e]":-1.0
@@ -127517,7 +127523,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_sphs1p_LPAREN_e_RPAREN_",
+"id":"EX_sphs1p(e)",
 "name":"Sphingosine 1-phosphate exchange",
 "metabolites":{
 "sphs1p[e]":-1.0
@@ -127528,7 +127534,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_srtn_LPAREN_e_RPAREN_",
+"id":"EX_srtn(e)",
 "name":"Serotonin exchange",
 "metabolites":{
 "srtn[e]":-1.0
@@ -127539,7 +127545,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_strch1_LPAREN_e_RPAREN_",
+"id":"EX_strch1(e)",
 "name":"starch, structure 1 (1,6-{7[1,4-Glc], 4[1,4-Glc]}) exchange",
 "metabolites":{
 "strch1[e]":-1.0
@@ -127550,7 +127556,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_strch2_LPAREN_e_RPAREN_",
+"id":"EX_strch2(e)",
 "name":"exchange reaction for starch, structure 2 (1,6-{2[1,4-Glc], [1,4-Glc]})",
 "metabolites":{
 "strch2[e]":-1.0
@@ -127561,7 +127567,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_strdnc_LPAREN_e_RPAREN_",
+"id":"EX_strdnc(e)",
 "name":"stearidonic acid exchange",
 "metabolites":{
 "strdnc[e]":-1.0
@@ -127572,7 +127578,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_succ_LPAREN_e_RPAREN_",
+"id":"EX_succ(e)",
 "name":"Succinate exchange",
 "metabolites":{
 "succ[e]":-1.0
@@ -127583,7 +127589,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_sucr_LPAREN_e_RPAREN_",
+"id":"EX_sucr(e)",
 "name":"Sucrose exchange",
 "metabolites":{
 "sucr[e]":-1.0
@@ -127594,7 +127600,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_tag_hs_LPAREN_e_RPAREN_",
+"id":"EX_tag_hs(e)",
 "name":"triacylglycerol (homo sapiens) exchange",
 "metabolites":{
 "tag_hs[e]":-1.0
@@ -127605,7 +127611,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_tagat_D_LPAREN_e_RPAREN_",
+"id":"EX_tagat_D(e)",
 "name":"D-Tagatose exchange",
 "metabolites":{
 "tagat_D[e]":-1.0
@@ -127616,7 +127622,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_taur_LPAREN_e_RPAREN_",
+"id":"EX_taur(e)",
 "name":"Taurine exchange",
 "metabolites":{
 "taur[e]":-1.0
@@ -127627,7 +127633,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_taxol_LPAREN_e_RPAREN_",
+"id":"EX_taxol(e)",
 "name":"paclitaxel exchange",
 "metabolites":{
 "taxol[e]":-1.0
@@ -127638,7 +127644,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_tchola_LPAREN_e_RPAREN_",
+"id":"EX_tchola(e)",
 "name":"Taurocholic acid exchange",
 "metabolites":{
 "tchola[e]":-1.0
@@ -127649,7 +127655,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_tcynt_LPAREN_e_RPAREN_",
+"id":"EX_tcynt(e)",
 "name":"Thiocyanate exchange",
 "metabolites":{
 "tcynt[e]":-1.0
@@ -127660,7 +127666,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_tdchola_LPAREN_e_RPAREN_",
+"id":"EX_tdchola(e)",
 "name":"taurochenodeoxycholate exchange",
 "metabolites":{
 "tdchola[e]":-1.0
@@ -127671,7 +127677,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_tethex3_LPAREN_e_RPAREN_",
+"id":"EX_tethex3(e)",
 "name":"tetracosahexaenoic acid, n-3 exchange",
 "metabolites":{
 "tethex3[e]":-1.0
@@ -127682,7 +127688,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_tetpent3_LPAREN_e_RPAREN_",
+"id":"EX_tetpent3(e)",
 "name":"tetracosapentaenoic acid, n-3 exchange",
 "metabolites":{
 "tetpent3[e]":-1.0
@@ -127693,7 +127699,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_thf_LPAREN_e_RPAREN_",
+"id":"EX_thf(e)",
 "name":"5,6,7,8-Tetrahydrofolate exchange",
 "metabolites":{
 "thf[e]":-1.0
@@ -127704,7 +127710,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_thm_LPAREN_e_RPAREN_",
+"id":"EX_thm(e)",
 "name":"exchange reaction for Thiamin",
 "metabolites":{
 "thm[e]":-1.0
@@ -127715,7 +127721,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_thmmp_LPAREN_e_RPAREN_",
+"id":"EX_thmmp(e)",
 "name":"Thiamin monophosphate exchange",
 "metabolites":{
 "thmmp[e]":-1.0
@@ -127726,7 +127732,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_thmtp_LPAREN_e_RPAREN_",
+"id":"EX_thmtp(e)",
 "name":"Thiamin triphosphate exchange",
 "metabolites":{
 "thmtp[e]":-1.0
@@ -127737,7 +127743,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_thr_L_LPAREN_e_RPAREN_",
+"id":"EX_thr_L(e)",
 "name":"L-Threonine exchange",
 "metabolites":{
 "thr_L[e]":-1.0
@@ -127748,7 +127754,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_thym_LPAREN_e_RPAREN_",
+"id":"EX_thym(e)",
 "name":"Thymine exchange",
 "metabolites":{
 "thym[e]":-1.0
@@ -127759,7 +127765,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_thymd_LPAREN_e_RPAREN_",
+"id":"EX_thymd(e)",
 "name":"Thymidine exchange",
 "metabolites":{
 "thymd[e]":-1.0
@@ -127770,7 +127776,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_thyox_L_LPAREN_e_RPAREN_",
+"id":"EX_thyox_L(e)",
 "name":"L-Thyroxine exchange",
 "metabolites":{
 "thyox_L[e]":-1.0
@@ -127781,7 +127787,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_tmndnc_LPAREN_e_RPAREN_",
+"id":"EX_tmndnc(e)",
 "name":"timnodonic acid exchange",
 "metabolites":{
 "tmndnc[e]":-1.0
@@ -127792,7 +127798,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_tolbutamide_LPAREN_e_RPAREN_",
+"id":"EX_tolbutamide(e)",
 "name":"tolbutamide exchange",
 "metabolites":{
 "tolbutamide[e]":-1.0
@@ -127803,7 +127809,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_tre_LPAREN_e_RPAREN_",
+"id":"EX_tre(e)",
 "name":"Trehalose exchange",
 "metabolites":{
 "tre[e]":-1.0
@@ -127814,7 +127820,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_triodthy_LPAREN_e_RPAREN_",
+"id":"EX_triodthy(e)",
 "name":"Triiodothyronine exchange",
 "metabolites":{
 "triodthy[e]":-1.0
@@ -127825,7 +127831,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_triodthysuf_LPAREN_e_RPAREN_",
+"id":"EX_triodthysuf(e)",
 "name":"Triiodothyronine sulfate exchange",
 "metabolites":{
 "triodthysuf[e]":-1.0
@@ -127836,7 +127842,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_trp_L_LPAREN_e_RPAREN_",
+"id":"EX_trp_L(e)",
 "name":"L-Tryptophan exchange",
 "metabolites":{
 "trp_L[e]":-1.0
@@ -127847,7 +127853,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_tststerone_LPAREN_e_RPAREN_",
+"id":"EX_tststerone(e)",
 "name":"Testosterone exchange",
 "metabolites":{
 "tststerone[e]":-1.0
@@ -127858,7 +127864,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_tststeroneglc_LPAREN_e_RPAREN_",
+"id":"EX_tststeroneglc(e)",
 "name":"testosterone glucuronide exchange",
 "metabolites":{
 "tststeroneglc[e]":-1.0
@@ -127869,7 +127875,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_tsul_LPAREN_e_RPAREN_",
+"id":"EX_tsul(e)",
 "name":"Thiosulfate exchange",
 "metabolites":{
 "tsul[e]":-1.0
@@ -127880,7 +127886,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ttdca_LPAREN_e_RPAREN_",
+"id":"EX_ttdca(e)",
 "name":"exchange reaction for tetradecanoate (n-C14:0)",
 "metabolites":{
 "ttdca[e]":-1.0
@@ -127891,7 +127897,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_txa2_LPAREN_e_RPAREN_",
+"id":"EX_txa2(e)",
 "name":"Thromboxane A2 exchange",
 "metabolites":{
 "txa2[e]":-1.0
@@ -127902,7 +127908,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_tymsf_LPAREN_e_RPAREN_",
+"id":"EX_tymsf(e)",
 "name":"Tyramine O-sulfate exchange",
 "metabolites":{
 "tymsf[e]":-1.0
@@ -127913,7 +127919,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_Tyr_ggn_LPAREN_e_RPAREN_",
+"id":"EX_Tyr_ggn(e)",
 "name":"Tyr-194 of apo-glycogenin protein (primer for glycogen synthesis) exchange",
 "metabolites":{
 "Tyr_ggn[e]":-1.0
@@ -127924,7 +127930,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_tyr_L_LPAREN_e_RPAREN_",
+"id":"EX_tyr_L(e)",
 "name":"L-Tyrosine exchange",
 "metabolites":{
 "tyr_L[e]":-1.0
@@ -127935,7 +127941,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_udp_LPAREN_e_RPAREN_",
+"id":"EX_udp(e)",
 "name":"UDP exchange",
 "metabolites":{
 "udp[e]":-1.0
@@ -127946,7 +127952,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ump_LPAREN_e_RPAREN_",
+"id":"EX_ump(e)",
 "name":"UMP exchange",
 "metabolites":{
 "ump[e]":-1.0
@@ -127957,7 +127963,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ura_LPAREN_e_RPAREN_",
+"id":"EX_ura(e)",
 "name":"Uracil exchange",
 "metabolites":{
 "ura[e]":-1.0
@@ -127968,7 +127974,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_urate_LPAREN_e_RPAREN_",
+"id":"EX_urate(e)",
 "name":"Urate exchange",
 "metabolites":{
 "urate[e]":-1.0
@@ -127979,7 +127985,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_urea_LPAREN_e_RPAREN_",
+"id":"EX_urea(e)",
 "name":"Urea exchange",
 "metabolites":{
 "urea[e]":-1.0
@@ -127990,7 +127996,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_uri_LPAREN_e_RPAREN_",
+"id":"EX_uri(e)",
 "name":"exchange reaction for Uridine",
 "metabolites":{
 "uri[e]":-1.0
@@ -128001,7 +128007,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_utp_LPAREN_e_RPAREN_",
+"id":"EX_utp(e)",
 "name":"UTP exchange",
 "metabolites":{
 "utp[e]":-1.0
@@ -128012,7 +128018,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_vacc_LPAREN_e_RPAREN_",
+"id":"EX_vacc(e)",
 "name":"vaccenic acid exchange",
 "metabolites":{
 "vacc[e]":-1.0
@@ -128023,7 +128029,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_val_L_LPAREN_e_RPAREN_",
+"id":"EX_val_L(e)",
 "name":"L-Valine exchange",
 "metabolites":{
 "val_L[e]":-1.0
@@ -128034,7 +128040,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_vitd2_LPAREN_e_RPAREN_",
+"id":"EX_vitd2(e)",
 "name":"Vitamin D2 exchange",
 "metabolites":{
 "vitd2[e]":-1.0
@@ -128045,7 +128051,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_vitd3_LPAREN_e_RPAREN_",
+"id":"EX_vitd3(e)",
 "name":"exchange reaction for calctriol",
 "metabolites":{
 "vitd3[e]":-1.0
@@ -128056,7 +128062,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_whddca_LPAREN_e_RPAREN_",
+"id":"EX_whddca(e)",
 "name":"omega hydroxy dodecanoate (n-C12:0) exchange",
 "metabolites":{
 "whddca[e]":-1.0
@@ -128067,7 +128073,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_whhdca_LPAREN_e_RPAREN_",
+"id":"EX_whhdca(e)",
 "name":"omega hydroxy hexadecanoate (n-C16:0) exchange",
 "metabolites":{
 "whhdca[e]":-1.0
@@ -128078,7 +128084,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_whtststerone_LPAREN_e_RPAREN_",
+"id":"EX_whtststerone(e)",
 "name":"w hydroxy testosterone exchange",
 "metabolites":{
 "whtststerone[e]":-1.0
@@ -128089,7 +128095,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_xolest2_hs_LPAREN_e_RPAREN_",
+"id":"EX_xolest2_hs(e)",
 "name":"cholesterol ester (from FULLR2) exchange",
 "metabolites":{
 "xolest2_hs[e]":-1.0
@@ -128100,7 +128106,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_xoltri24_LPAREN_e_RPAREN_",
+"id":"EX_xoltri24(e)",
 "name":"7-alpha,24(S)-Dihydroxycholesterol exchange",
 "metabolites":{
 "xoltri24[e]":-1.0
@@ -128111,7 +128117,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_xoltri25_LPAREN_e_RPAREN_",
+"id":"EX_xoltri25(e)",
 "name":"7-alpha,25-Dihydroxycholesterol exchange",
 "metabolites":{
 "xoltri25[e]":-1.0
@@ -128122,7 +128128,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_xoltri27_LPAREN_e_RPAREN_",
+"id":"EX_xoltri27(e)",
 "name":"7-alpha,27-Dihydroxycholesterol exchange",
 "metabolites":{
 "xoltri27[e]":-1.0
@@ -128133,7 +128139,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_xyl_D_LPAREN_e_RPAREN_",
+"id":"EX_xyl_D(e)",
 "name":"D-Xylose exchange",
 "metabolites":{
 "xyl_D[e]":-1.0
@@ -128144,7 +128150,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_xylt_LPAREN_e_RPAREN_",
+"id":"EX_xylt(e)",
 "name":"exchange reaction for xylitol",
 "metabolites":{
 "xylt[e]":-1.0
@@ -128155,7 +128161,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_yvite_LPAREN_e_RPAREN_",
+"id":"EX_yvite(e)",
 "name":"gamma-Tocopherol exchange",
 "metabolites":{
 "yvite[e]":-1.0
@@ -128166,7 +128172,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_4abutn_LPAREN_e_RPAREN_",
+"id":"EX_4abutn(e)",
 "name":"Exchange of 4-ammoniobutanal",
 "metabolites":{
 "4abutn[e]":-1.0
@@ -128177,7 +128183,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_acmana_LPAREN_e_RPAREN_",
+"id":"EX_acmana(e)",
 "name":"Exchange of N-acetyl-D-mannosamine",
 "metabolites":{
 "acmana[e]":-1.0
@@ -128188,7 +128194,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ahdt_LPAREN_e_RPAREN_",
+"id":"EX_ahdt(e)",
 "name":"Exchange of 7,8-dihydroneopterin 3-triphosphate(4-)",
 "metabolites":{
 "ahdt[e]":-1.0
@@ -128199,7 +128205,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ctp_LPAREN_e_RPAREN_",
+"id":"EX_ctp(e)",
 "name":"Exchange of CTP(4-)",
 "metabolites":{
 "ctp[e]":-1.0
@@ -128210,7 +128216,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_dgmp_LPAREN_e_RPAREN_",
+"id":"EX_dgmp(e)",
 "name":"Exchange of dGMP(2-)",
 "metabolites":{
 "dgmp[e]":-1.0
@@ -128221,7 +128227,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_dgtp_LPAREN_e_RPAREN_",
+"id":"EX_dgtp(e)",
 "name":"Exchange of dGTP",
 "metabolites":{
 "dgtp[e]":-1.0
@@ -128232,7 +128238,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_dha_LPAREN_e_RPAREN_",
+"id":"EX_dha(e)",
 "name":"Exchange of glycerone",
 "metabolites":{
 "dha[e]":-1.0
@@ -128243,7 +128249,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_dhap_LPAREN_e_RPAREN_",
+"id":"EX_dhap(e)",
 "name":"Exchange of glycerone phosphate(2-)",
 "metabolites":{
 "dhap[e]":-1.0
@@ -128254,7 +128260,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_dtmp_LPAREN_e_RPAREN_",
+"id":"EX_dtmp(e)",
 "name":"Exchange of dTMP(2-)",
 "metabolites":{
 "dtmp[e]":-1.0
@@ -128265,7 +128271,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_dttp_LPAREN_e_RPAREN_",
+"id":"EX_dttp(e)",
 "name":"Exchange of dTTP(4-)",
 "metabolites":{
 "dttp[e]":-1.0
@@ -128276,7 +128282,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_fad_LPAREN_e_RPAREN_",
+"id":"EX_fad(e)",
 "name":"Exchange of Flavin adenine dinucleotide oxidized",
 "metabolites":{
 "fad[e]":-1.0
@@ -128287,7 +128293,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_fald_LPAREN_e_RPAREN_",
+"id":"EX_fald(e)",
 "name":"Exchange of formaldehyde",
 "metabolites":{
 "fald[e]":-1.0
@@ -128298,7 +128304,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_g1p_LPAREN_e_RPAREN_",
+"id":"EX_g1p(e)",
 "name":"Exchange of alpha-D-glucose 1-phosphate(2-)",
 "metabolites":{
 "g1p[e]":-1.0
@@ -128309,7 +128315,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC00229_LPAREN_e_RPAREN_",
+"id":"EX_HC00229(e)",
 "name":"Exchange of Isomaltose",
 "metabolites":{
 "HC00229[e]":-1.0
@@ -128320,7 +128326,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC00250_LPAREN_e_RPAREN_",
+"id":"EX_HC00250(e)",
 "name":"Exchange of hydrosulfide",
 "metabolites":{
 "HC00250[e]":-1.0
@@ -128331,7 +128337,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC01104_LPAREN_e_RPAREN_",
+"id":"EX_HC01104(e)",
 "name":"Exchange of 4-nitrophenyl phosphate(2-)",
 "metabolites":{
 "HC01104[e]":-1.0
@@ -128342,7 +128348,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC01361_LPAREN_e_RPAREN_",
+"id":"EX_HC01361(e)",
 "name":"Exchange of Dihydroneopterin",
 "metabolites":{
 "HC01361[e]":-1.0
@@ -128353,7 +128359,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC01440_LPAREN_e_RPAREN_",
+"id":"EX_HC01440(e)",
 "name":"Exchange of 3-Keto-beta-D-galactose",
 "metabolites":{
 "HC01440[e]":-1.0
@@ -128364,7 +128370,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC01441_LPAREN_e_RPAREN_",
+"id":"EX_HC01441(e)",
 "name":"Exchange of Lactose-6P",
 "metabolites":{
 "HC01441[e]":-1.0
@@ -128375,7 +128381,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC01444_LPAREN_e_RPAREN_",
+"id":"EX_HC01444(e)",
 "name":"Exchange of Galactosylglycerol",
 "metabolites":{
 "HC01444[e]":-1.0
@@ -128386,7 +128392,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC01446_LPAREN_e_RPAREN_",
+"id":"EX_HC01446(e)",
 "name":"Exchange of 3-Ketolactose",
 "metabolites":{
 "HC01446[e]":-1.0
@@ -128397,7 +128403,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC01577_LPAREN_e_RPAREN_",
+"id":"EX_HC01577(e)",
 "name":"Exchange of gamma-Glutamyl-beta-cyanoalanine",
 "metabolites":{
 "HC01577[e]":-1.0
@@ -128408,7 +128414,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC01609_LPAREN_e_RPAREN_",
+"id":"EX_HC01609(e)",
 "name":"Exchange of UroporphyrinogenI",
 "metabolites":{
 "HC01609[e]":-1.0
@@ -128419,7 +128425,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC01610_LPAREN_e_RPAREN_",
+"id":"EX_HC01610(e)",
 "name":"Exchange of CoproporphyrinogenI",
 "metabolites":{
 "HC01610[e]":-1.0
@@ -128430,7 +128436,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC01700_LPAREN_e_RPAREN_",
+"id":"EX_HC01700(e)",
 "name":"Exchange of gamma-Glutamyl-3-aminopropiononitrile",
 "metabolites":{
 "HC01700[e]":-1.0
@@ -128441,7 +128447,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC02160_LPAREN_e_RPAREN_",
+"id":"EX_HC02160(e)",
 "name":"Exchange of GM2-pool",
 "metabolites":{
 "HC02160[e]":-1.0
@@ -128452,7 +128458,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC02161_LPAREN_e_RPAREN_",
+"id":"EX_HC02161(e)",
 "name":"Exchange of GM1-pool",
 "metabolites":{
 "HC02161[e]":-1.0
@@ -128463,7 +128469,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_itp_LPAREN_e_RPAREN_",
+"id":"EX_itp(e)",
 "name":"Exchange of ITP(3-)",
 "metabolites":{
 "itp[e]":-1.0
@@ -128474,7 +128480,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_orot_LPAREN_e_RPAREN_",
+"id":"EX_orot(e)",
 "name":"Exchange of orotate",
 "metabolites":{
 "orot[e]":-1.0
@@ -128485,7 +128491,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_prpp_LPAREN_e_RPAREN_",
+"id":"EX_prpp(e)",
 "name":"Exchange of 5-O-phosphonato-alpha-D-ribofuranosyl diphosphate(5-)",
 "metabolites":{
 "prpp[e]":-1.0
@@ -128496,7 +128502,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ptrc_LPAREN_e_RPAREN_",
+"id":"EX_ptrc(e)",
 "name":"Exchange of 1,4-butanediammonium",
 "metabolites":{
 "ptrc[e]":-1.0
@@ -128507,7 +128513,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_pydx5p_LPAREN_e_RPAREN_",
+"id":"EX_pydx5p(e)",
 "name":"Exchange of pyridoxal 5-phosphate(2-)",
 "metabolites":{
 "pydx5p[e]":-1.0
@@ -128518,7 +128524,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_spmd_LPAREN_e_RPAREN_",
+"id":"EX_spmd(e)",
 "name":"Exchange of spermidine(3+)",
 "metabolites":{
 "spmd[e]":-1.0
@@ -128529,7 +128535,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_udpg_LPAREN_e_RPAREN_",
+"id":"EX_udpg(e)",
 "name":"Exchange of [(2R,3S,4R,5R)-5-(2,4-dioxo-1,2,3,4-tetrahydropyrimidin-1-yl)-3,4-dihydroxyoxolan-2-yl]methyl {[(3R,4S,5S,6R)-3,4,5-trihydroxy-6-(hydroxymethyl)oxan-2-yl phosphonato]oxy}phosphonate",
 "metabolites":{
 "udpg[e]":-1.0
@@ -128540,7 +128546,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_no2_LPAREN_e_RPAREN_",
+"id":"EX_no2(e)",
 "name":"Nitrite exchange",
 "metabolites":{
 "no2[e]":-1.0
@@ -128551,7 +128557,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_so3_LPAREN_e_RPAREN_",
+"id":"EX_so3(e)",
 "name":"Sulfite exchange",
 "metabolites":{
 "so3[e]":-1.0
@@ -128562,8 +128568,8 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_sprm_LPAREN_e_RPAREN_",
-"name":"EX sprm_LPAREN_e_RPAREN_",
+"id":"EX_sprm(e)",
+"name":"EX sprm(e)",
 "metabolites":{
 "sprm[e]":-1.0
 },
@@ -128573,7 +128579,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_prostgh2_LPAREN_e_RPAREN_",
+"id":"EX_prostgh2(e)",
 "name":"prostaglandin H2(1-) exchange",
 "metabolites":{
 "prostgh2[e]":-1.0
@@ -128584,7 +128590,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_prostgi2_LPAREN_e_RPAREN_",
+"id":"EX_prostgi2(e)",
 "name":"prostaglandin I2(1-) exchange",
 "metabolites":{
 "prostgi2[e]":-1.0
@@ -128595,7 +128601,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ppi_LPAREN_e_RPAREN_",
+"id":"EX_ppi(e)",
 "name":"exchange reaction for ppi",
 "metabolites":{
 "ppi[e]":-1.0
@@ -128606,7 +128612,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_cdp_LPAREN_e_RPAREN_",
+"id":"EX_cdp(e)",
 "name":"CDP(3-) exchange",
 "metabolites":{
 "cdp[e]":-1.0
@@ -128617,7 +128623,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_dtdp_LPAREN_e_RPAREN_",
+"id":"EX_dtdp(e)",
 "name":"({[(2R,3S,5R)-3-hydroxy-5-(5-methyl-2,4-dioxo-1,2,3,4-tetrahydropyrimidin-1-yl)oxolan-2-yl]methyl phosphonato}oxy)phosphonate exchange",
 "metabolites":{
 "dtdp[e]":-1.0
@@ -128628,7 +128634,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC00955_LPAREN_e_RPAREN_",
+"id":"EX_HC00955(e)",
 "name":"L-3-Cyanoalanine exchange",
 "metabolites":{
 "HC00955[e]":-1.0
@@ -128639,7 +128645,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_citr_L_LPAREN_e_RPAREN_",
+"id":"EX_citr_L(e)",
 "name":"L-citrulline exchange",
 "metabolites":{
 "citr_L[e]":-1.0
@@ -128650,7 +128656,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC01787_LPAREN_e_RPAREN_",
+"id":"EX_HC01787(e)",
 "name":"Lepidimoide exchange",
 "metabolites":{
 "HC01787[e]":-1.0
@@ -128661,7 +128667,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_C02470_LPAREN_e_RPAREN_",
+"id":"EX_C02470(e)",
 "name":"Xanthurenic acid exchange",
 "metabolites":{
 "C02470[e]":-1.0
@@ -128672,7 +128678,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC00822_LPAREN_e_RPAREN_",
+"id":"EX_HC00822(e)",
 "name":"Chitobiose exchange",
 "metabolites":{
 "HC00822[e]":-1.0
@@ -128683,7 +128689,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_C02528_LPAREN_e_RPAREN_",
+"id":"EX_C02528(e)",
 "name":"chenodeoxycholate exchange",
 "metabolites":{
 "C02528[e]":-1.0
@@ -128694,7 +128700,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC02192_LPAREN_e_RPAREN_",
+"id":"EX_HC02192(e)",
 "name":"taurolithocholate exchange",
 "metabolites":{
 "HC02192[e]":-1.0
@@ -128705,7 +128711,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_CE5560_LPAREN_e_RPAREN_",
+"id":"EX_CE5560(e)",
 "name":"glycolithocholate exchange",
 "metabolites":{
 "CE5560[e]":-1.0
@@ -128716,7 +128722,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC02195_LPAREN_e_RPAREN_",
+"id":"EX_HC02195(e)",
 "name":"tauroursodeoxycholate exchange",
 "metabolites":{
 "HC02195[e]":-1.0
@@ -128727,7 +128733,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC02196_LPAREN_e_RPAREN_",
+"id":"EX_HC02196(e)",
 "name":"glycoursodeoxycholate exchange",
 "metabolites":{
 "HC02196[e]":-1.0
@@ -128738,7 +128744,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC02220_LPAREN_e_RPAREN_",
+"id":"EX_HC02220(e)",
 "name":"sulfochenodeoxycholate exchange",
 "metabolites":{
 "HC02220[e]":-1.0
@@ -128749,7 +128755,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC02154_LPAREN_e_RPAREN_",
+"id":"EX_HC02154(e)",
 "name":"GM4-pool exchange",
 "metabolites":{
 "HC02154[e]":-1.0
@@ -128760,7 +128766,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ddca_LPAREN_e_RPAREN_",
+"id":"EX_ddca(e)",
 "name":"laurate exchange",
 "metabolites":{
 "ddca[e]":-1.0
@@ -128771,7 +128777,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC02199_LPAREN_e_RPAREN_",
+"id":"EX_HC02199(e)",
 "name":"glutathionyl-leuc4 exchange",
 "metabolites":{
 "HC02199[e]":-1.0
@@ -128782,7 +128788,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC02200_LPAREN_e_RPAREN_",
+"id":"EX_HC02200(e)",
 "name":"S-glutathionyl-2-4-dinitrobenzene exchange",
 "metabolites":{
 "HC02200[e]":-1.0
@@ -128793,7 +128799,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC02201_LPAREN_e_RPAREN_",
+"id":"EX_HC02201(e)",
 "name":"S-glutathionyl-ethacrynic-acid exchange",
 "metabolites":{
 "HC02201[e]":-1.0
@@ -128804,7 +128810,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC02172_LPAREN_e_RPAREN_",
+"id":"EX_HC02172(e)",
 "name":"Zinc exchange",
 "metabolites":{
 "HC02172[e]":-1.0
@@ -128815,7 +128821,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC02191_LPAREN_e_RPAREN_",
+"id":"EX_HC02191(e)",
 "name":"lithocholate exchange",
 "metabolites":{
 "HC02191[e]":-1.0
@@ -128826,7 +128832,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC02194_LPAREN_e_RPAREN_",
+"id":"EX_HC02194(e)",
 "name":"ursodeoxycholate exchange",
 "metabolites":{
 "HC02194[e]":-1.0
@@ -128837,7 +128843,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC02197_LPAREN_e_RPAREN_",
+"id":"EX_HC02197(e)",
 "name":"sulfoglycolithocholate(2-) exchange",
 "metabolites":{
 "HC02197[e]":-1.0
@@ -128848,7 +128854,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC02198_LPAREN_e_RPAREN_",
+"id":"EX_HC02198(e)",
 "name":"2-[(4R)-4-[(1S,2S,5R,7R,10R,11S,14R,15R)-2,15-dimethyl-5-(sulfonatooxy)tetracyclo[8.7.0.0^{2,7}.0^{11,15}]heptadecan-14-yl]pentanamido]ethane-1-sulfonate exchange",
 "metabolites":{
 "HC02198[e]":-1.0
@@ -128859,7 +128865,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC02187_LPAREN_e_RPAREN_",
+"id":"EX_HC02187(e)",
 "name":"reverse-triiodthyronine exchange",
 "metabolites":{
 "HC02187[e]":-1.0
@@ -128870,7 +128876,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC02180_LPAREN_e_RPAREN_",
+"id":"EX_HC02180(e)",
 "name":"thromboxane-b2 exchange",
 "metabolites":{
 "HC02180[e]":-1.0
@@ -128881,7 +128887,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC02179_LPAREN_e_RPAREN_",
+"id":"EX_HC02179(e)",
 "name":"20-hydroxy-arachidonate exchange",
 "metabolites":{
 "wharachd[e]":-1.0
@@ -128892,7 +128898,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC02202_LPAREN_e_RPAREN_",
+"id":"EX_HC02202(e)",
 "name":"prostaglandin A1(1-) exchange",
 "metabolites":{
 "HC02202[e]":-1.0
@@ -128903,7 +128909,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC02203_LPAREN_e_RPAREN_",
+"id":"EX_HC02203(e)",
 "name":"prostaglandin-a2 exchange",
 "metabolites":{
 "HC02203[e]":-1.0
@@ -128914,7 +128920,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC02204_LPAREN_e_RPAREN_",
+"id":"EX_HC02204(e)",
 "name":"prostaglandin-b1 exchange",
 "metabolites":{
 "HC02204[e]":-1.0
@@ -128925,7 +128931,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC02205_LPAREN_e_RPAREN_",
+"id":"EX_HC02205(e)",
 "name":"prostaglandin-b2 exchange",
 "metabolites":{
 "HC02205[e]":-1.0
@@ -128936,7 +128942,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC02206_LPAREN_e_RPAREN_",
+"id":"EX_HC02206(e)",
 "name":"prostaglandin C1(1-) exchange",
 "metabolites":{
 "HC02206[e]":-1.0
@@ -128947,7 +128953,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC02207_LPAREN_e_RPAREN_",
+"id":"EX_HC02207(e)",
 "name":"prostaglandin-c2 exchange",
 "metabolites":{
 "HC02207[e]":-1.0
@@ -128958,7 +128964,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC02208_LPAREN_e_RPAREN_",
+"id":"EX_HC02208(e)",
 "name":"prostaglandin-d1 exchange",
 "metabolites":{
 "HC02208[e]":-1.0
@@ -128969,7 +128975,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC02210_LPAREN_e_RPAREN_",
+"id":"EX_HC02210(e)",
 "name":"prostaglandin-d3 exchange",
 "metabolites":{
 "HC02210[e]":-1.0
@@ -128980,7 +128986,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC02213_LPAREN_e_RPAREN_",
+"id":"EX_HC02213(e)",
 "name":"prostaglandin-e3 exchange",
 "metabolites":{
 "HC02213[e]":-1.0
@@ -128991,7 +128997,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC02214_LPAREN_e_RPAREN_",
+"id":"EX_HC02214(e)",
 "name":"prostaglandin-f1alpha exchange",
 "metabolites":{
 "HC02214[e]":-1.0
@@ -129002,7 +129008,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC02216_LPAREN_e_RPAREN_",
+"id":"EX_HC02216(e)",
 "name":"prostaglandin-f2beta exchange",
 "metabolites":{
 "HC02216[e]":-1.0
@@ -129013,7 +129019,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_HC02217_LPAREN_e_RPAREN_",
+"id":"EX_HC02217(e)",
 "name":"prostaglandin-g2 exchange",
 "metabolites":{
 "HC02217[e]":-1.0
@@ -129024,7 +129030,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_malcoa_LPAREN_e_RPAREN_",
+"id":"EX_malcoa(e)",
 "name":"malonyl-CoA(4-) exchange",
 "metabolites":{
 "malcoa[e]":-1.0
@@ -129035,7 +129041,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_arachcoa_LPAREN_e_RPAREN_",
+"id":"EX_arachcoa(e)",
 "name":"arachidyl coenzyme A exchange",
 "metabolites":{
 "arachcoa[e]":-1.0
@@ -129046,7 +129052,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_coa_LPAREN_e_RPAREN_",
+"id":"EX_coa(e)",
 "name":"exchange reaction for coa",
 "metabolites":{
 "coa[e]":-1.0
@@ -129057,7 +129063,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_CE2250_LPAREN_e_RPAREN_",
+"id":"EX_CE2250(e)",
 "name":"3-oxodocosanoyl-CoA exchange",
 "metabolites":{
 "CE2250[e]":-1.0
@@ -129068,7 +129074,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_CE1940_LPAREN_e_RPAREN_",
+"id":"EX_CE1940(e)",
 "name":"spermidine monoaldehyde 2 exchange",
 "metabolites":{
 "CE1940[e]":-1.0
@@ -129079,7 +129085,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_CE2011_LPAREN_e_RPAREN_",
+"id":"EX_CE2011(e)",
 "name":"hypothiocyanite exchange",
 "metabolites":{
 "CE2011[e]":-1.0
@@ -129090,7 +129096,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_maltttr_LPAREN_e_RPAREN_",
+"id":"EX_maltttr(e)",
 "name":"Maltotetraose exchange",
 "metabolites":{
 "maltttr[e]":-1.0
@@ -129101,7 +129107,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_maltpt_LPAREN_e_RPAREN_",
+"id":"EX_maltpt(e)",
 "name":"maltopentaose exchange",
 "metabolites":{
 "maltpt[e]":-1.0
@@ -129112,7 +129118,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_malthx_LPAREN_e_RPAREN_",
+"id":"EX_malthx(e)",
 "name":"Maltohexaose exchange",
 "metabolites":{
 "malthx[e]":-1.0
@@ -129123,7 +129129,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_malthp_LPAREN_e_RPAREN_",
+"id":"EX_malthp(e)",
 "name":"maltoheptaose exchange",
 "metabolites":{
 "malthp[e]":-1.0
@@ -129134,7 +129140,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_CE2839_LPAREN_e_RPAREN_",
+"id":"EX_CE2839(e)",
 "name":"maltodecaose exchange",
 "metabolites":{
 "CE2839[e]":-1.0
@@ -129145,7 +129151,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_CE2838_LPAREN_e_RPAREN_",
+"id":"EX_CE2838(e)",
 "name":"maltononaose exchange",
 "metabolites":{
 "CE2838[e]":-1.0
@@ -129156,7 +129162,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_CE1950_LPAREN_e_RPAREN_",
+"id":"EX_CE1950(e)",
 "name":"cyanosulfurous acid anion exchange",
 "metabolites":{
 "CE1950[e]":-1.0
@@ -129167,7 +129173,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_cynt_LPAREN_e_RPAREN_",
+"id":"EX_cynt(e)",
 "name":"Cyanate exchange",
 "metabolites":{
 "cynt[e]":-1.0
@@ -129178,7 +129184,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_23cump_LPAREN_e_RPAREN_",
+"id":"EX_23cump(e)",
 "name":"2,3-cyclic UMP(1-) exchange",
 "metabolites":{
 "23cump[e]":-1.0
@@ -129189,7 +129195,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_3ump_LPAREN_e_RPAREN_",
+"id":"EX_3ump(e)",
 "name":"3-UMP(2-) exchange",
 "metabolites":{
 "3ump[e]":-1.0
@@ -129200,7 +129206,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_CE5797_LPAREN_e_RPAREN_",
+"id":"EX_CE5797(e)",
 "name":"neuromedin N exchange",
 "metabolites":{
 "CE5797[e]":-1.0
@@ -129211,7 +129217,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_CE5798_LPAREN_e_RPAREN_",
+"id":"EX_CE5798(e)",
 "name":"neuromedin N (1-4) exchange",
 "metabolites":{
 "CE5798[e]":-1.0
@@ -129222,7 +129228,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_CE4633_LPAREN_e_RPAREN_",
+"id":"EX_CE4633(e)",
 "name":"hypochlorous acid exchange",
 "metabolites":{
 "CE4633[e]":-1.0
@@ -129233,7 +129239,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_CE4881_LPAREN_e_RPAREN_",
+"id":"EX_CE4881(e)",
 "name":"nitryl chloride exchange",
 "metabolites":{
 "CE4881[e]":-1.0
@@ -129244,7 +129250,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_glcur_LPAREN_e_RPAREN_",
+"id":"EX_glcur(e)",
 "name":"D-glucuronate exchange",
 "metabolites":{
 "glcur[e]":-1.0
@@ -129255,7 +129261,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_udpgal_LPAREN_e_RPAREN_",
+"id":"EX_udpgal(e)",
 "name":"UDP-D-galactose(2-) exchange",
 "metabolites":{
 "udpgal[e]":-1.0
@@ -129266,7 +129272,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_crm_hs_LPAREN_e_RPAREN_",
+"id":"EX_crm_hs(e)",
 "name":"N-acylsphingosine exchange",
 "metabolites":{
 "crm_hs[e]":-1.0
@@ -129277,7 +129283,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_galside_hs_LPAREN_e_RPAREN_",
+"id":"EX_galside_hs(e)",
 "name":"D-galactosyl-N-acylsphingosine exchange",
 "metabolites":{
 "galside_hs[e]":-1.0
@@ -129288,7 +129294,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_CE0074_LPAREN_e_RPAREN_",
+"id":"EX_CE0074(e)",
 "name":"alloxan exchange",
 "metabolites":{
 "CE0074[e]":-1.0
@@ -129299,7 +129305,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_cdpea_LPAREN_e_RPAREN_",
+"id":"EX_cdpea(e)",
 "name":"CDP-ethanolamine(1-) exchange",
 "metabolites":{
 "cdpea[e]":-1.0
@@ -129310,7 +129316,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_12HPET_LPAREN_e_RPAREN_",
+"id":"EX_12HPET(e)",
 "name":"12(S)-HPETE(1-) exchange",
 "metabolites":{
 "12HPET[e]":-1.0
@@ -129321,7 +129327,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_C04849_LPAREN_e_RPAREN_",
+"id":"EX_C04849(e)",
 "name":"(5Z,9E,14Z)-(8xi,11R,12S)-11,12-epoxy-8-hydroxyicosa-5,9,14-trienoate exchange",
 "metabolites":{
 "C04849[e]":-1.0
@@ -129607,7 +129613,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_docosac_LPAREN_e_RPAREN_",
+"id":"EX_docosac(e)",
 "name":"exchange reaction for Behenic acid",
 "metabolites":{
 "docosac[e]":-1.0
@@ -129662,7 +129668,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_dca_LPAREN_e_RPAREN_",
+"id":"EX_dca(e)",
 "name":"Decanoate (n-C10:0) exchange",
 "metabolites":{
 "dca[e]":-1.0
@@ -129673,7 +129679,7 @@
 "subsystem":"[array(['Fatty acid oxidation'], dtype='<U20')]"
 },
 {
-"id":"EX_4hpro_LPAREN_e_RPAREN_",
+"id":"EX_4hpro(e)",
 "name":"exchange reaction for hydroxy proline",
 "metabolites":{
 "4hpro_LT[e]":-1.0
@@ -129684,7 +129690,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_adpcbl_LPAREN_e_RPAREN_",
+"id":"EX_adpcbl(e)",
 "name":"exchange reaction for Adenosylcobalamin",
 "metabolites":{
 "adocbl[e]":-1.0
@@ -129695,7 +129701,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_alaala_LPAREN_e_RPAREN_",
+"id":"EX_alaala(e)",
 "name":"exchange reaction for alanylalanine",
 "metabolites":{
 "alaala[e]":-1.0
@@ -129706,7 +129712,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_bglc_LPAREN_e_RPAREN_",
+"id":"EX_bglc(e)",
 "name":"Exchange reaction for beta glucans",
 "metabolites":{
 "bglc[e]":-1.0
@@ -129717,7 +129723,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_carn_LPAREN_e_RPAREN_",
+"id":"EX_carn(e)",
 "name":"exchange reaction for carnosine",
 "metabolites":{
 "carn[e]":-1.0
@@ -129728,7 +129734,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_dchac_LPAREN_e_RPAREN_",
+"id":"EX_dchac(e)",
 "name":"exchange reaction for deoxycholic acid",
 "metabolites":{
 "dchac[e]":-1.0
@@ -129739,7 +129745,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_glgchlo_LPAREN_e_RPAREN_",
+"id":"EX_glgchlo(e)",
 "name":"exchange reaction for beta glucan-glycocholate complex",
 "metabolites":{
 "glgchlo[e]":-1.0
@@ -129750,7 +129756,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_gltcho_LPAREN_e_RPAREN_",
+"id":"EX_gltcho(e)",
 "name":"exchange reaction for beta glucan-taurocholic acid complex",
 "metabolites":{
 "gltcho[e]":-1.0
@@ -129761,7 +129767,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_glygly_LPAREN_e_RPAREN_",
+"id":"EX_glygly(e)",
 "name":"Exchange reaction for glycylglycine",
 "metabolites":{
 "glygly[e]":-1.0
@@ -129772,7 +129778,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_glyleu_LPAREN_e_RPAREN_",
+"id":"EX_glyleu(e)",
 "name":"Glycylleucine exchange",
 "metabolites":{
 "glyleu[e]":-1.0
@@ -129783,7 +129789,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_glyphe_LPAREN_e_RPAREN_",
+"id":"EX_glyphe(e)",
 "name":"exchange reaction for glycylphenylalaine",
 "metabolites":{
 "glyphe[e]":-1.0
@@ -129794,7 +129800,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_glypro_LPAREN_e_RPAREN_",
+"id":"EX_glypro(e)",
 "name":"Glycylproline exchange",
 "metabolites":{
 "glypro[e]":-1.0
@@ -129805,7 +129811,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_glysar_LPAREN_e_RPAREN_",
+"id":"EX_glysar(e)",
 "name":"exchange reaction for glycylsarcosine",
 "metabolites":{
 "glysar[e]":-1.0
@@ -129816,7 +129822,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_gum_LPAREN_e_RPAREN_",
+"id":"EX_gum(e)",
 "name":"Exchange reaction for guar gums",
 "metabolites":{
 "gum[e]":-1.0
@@ -129827,7 +129833,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_gumgchol_LPAREN_e_RPAREN_",
+"id":"EX_gumgchol(e)",
 "name":"exchange reaction for guar gum-glycocholate complex",
 "metabolites":{
 "gumgchol[e]":-1.0
@@ -129838,7 +129844,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_gumtchol_LPAREN_e_RPAREN_",
+"id":"EX_gumtchol(e)",
 "name":"exchange reaction for guar gum-taurocholic acid complex",
 "metabolites":{
 "gumtchol[e]":-1.0
@@ -129849,7 +129855,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_leugly_LPAREN_e_RPAREN_",
+"id":"EX_leugly(e)",
 "name":"exchange reaction for leucylglycine",
 "metabolites":{
 "leugly[e]":-1.0
@@ -129860,7 +129866,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_leuleu_LPAREN_e_RPAREN_",
+"id":"EX_leuleu(e)",
 "name":"exchange reaction for leucylleucine",
 "metabolites":{
 "leuleu[e]":-1.0
@@ -129871,7 +129877,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_pectingchol_LPAREN_e_RPAREN_",
+"id":"EX_pectingchol(e)",
 "name":"exchange reaction for pectin-glycocholate complex",
 "metabolites":{
 "pectingchol[e]":-1.0
@@ -129882,7 +129888,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_pectintchol_LPAREN_e_RPAREN_",
+"id":"EX_pectintchol(e)",
 "name":"exchange reaction for pectin-taurocholic acid complex",
 "metabolites":{
 "pectintchol[e]":-1.0
@@ -129893,7 +129899,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_progly_LPAREN_e_RPAREN_",
+"id":"EX_progly(e)",
 "name":"exchange reaction for prolyl-glycine",
 "metabolites":{
 "progly[e]":-1.0
@@ -129904,7 +129910,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_psyl_LPAREN_e_RPAREN_",
+"id":"EX_psyl(e)",
 "name":"exchange reaction for psyllium",
 "metabolites":{
 "psyl[e]":-1.0
@@ -129915,7 +129921,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_psylchol_LPAREN_e_RPAREN_",
+"id":"EX_psylchol(e)",
 "name":"exchange reaction for psyllium-glycocholic acid complex",
 "metabolites":{
 "psylchol[e]":-1.0
@@ -129926,7 +129932,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_psyltchol_LPAREN_e_RPAREN_",
+"id":"EX_psyltchol(e)",
 "name":"exchange reaction for psyllium-taurocholic acid complex",
 "metabolites":{
 "psyltchol[e]":-1.0
@@ -129937,7 +129943,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_sbt-d_LPAREN_e_RPAREN_",
+"id":"EX_sbt-d(e)",
 "name":"exchange reaction for D-Sorbitol",
 "metabolites":{
 "sbt_D[e]":-1.0
@@ -129948,7 +129954,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_sfcys_LPAREN_e_RPAREN_",
+"id":"EX_sfcys(e)",
 "name":"exchange reaction for sulfocysteine",
 "metabolites":{
 "slfcys[e]":-1.0
@@ -129959,7 +129965,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_tdechola_LPAREN_e_RPAREN_",
+"id":"EX_tdechola(e)",
 "name":"exchange reaction for Taurodeoxycholic acid",
 "metabolites":{
 "tdechola[e]":-1.0
@@ -129970,7 +129976,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_cysam_LPAREN_e_RPAREN_",
+"id":"EX_cysam(e)",
 "name":"exchange reaction for cysam",
 "metabolites":{
 "cysam[e]":-1.0
@@ -129981,7 +129987,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_dpcoa_LPAREN_e_RPAREN_",
+"id":"EX_dpcoa(e)",
 "name":"exchange reaction for dpcoa",
 "metabolites":{
 "dpcoa[e]":-1.0
@@ -129992,7 +129998,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_fmn_LPAREN_e_RPAREN_",
+"id":"EX_fmn(e)",
 "name":"exchange reaction for FMN",
 "metabolites":{
 "fmn[e]":-1.0
@@ -130003,7 +130009,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_hyptaur_LPAREN_e_RPAREN_",
+"id":"EX_hyptaur(e)",
 "name":"Exchange of hypotaurine",
 "metabolites":{
 "hyptaur[e]":-1.0
@@ -130014,7 +130020,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_oh1_LPAREN_e_RPAREN_",
+"id":"EX_oh1(e)",
 "name":"exchange reaction for hydroxide ion",
 "metabolites":{
 "oh1[e]":-1.0
@@ -130025,7 +130031,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_pan4p_LPAREN_e_RPAREN_",
+"id":"EX_pan4p(e)",
 "name":"exchange reaction for pan4p",
 "metabolites":{
 "pan4p[e]":-1.0
@@ -130036,7 +130042,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ptth_LPAREN_e_RPAREN_",
+"id":"EX_ptth(e)",
 "name":"exchange reaction for ptth",
 "metabolites":{
 "ptth[e]":-1.0
@@ -130047,7 +130053,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_q10_LPAREN_e_RPAREN_",
+"id":"EX_q10(e)",
 "name":"exchange reaction for ubiquinone",
 "metabolites":{
 "q10[e]":-1.0
@@ -130058,7 +130064,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_q10h2_LPAREN_e_RPAREN_",
+"id":"EX_q10h2(e)",
 "name":"exchange reaction for ubiquinol",
 "metabolites":{
 "q10h2[e]":-1.0
@@ -130080,7 +130086,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_3mob_LPAREN_e_RPAREN_",
+"id":"EX_3mob(e)",
 "name":"Exchange of 3-methyl-2-oxobutanoate",
 "metabolites":{
 "3mob[e]":-1.0
@@ -130091,7 +130097,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_3mop_LPAREN_e_RPAREN_",
+"id":"EX_3mop(e)",
 "name":"Exchange of 3-methyl-2-oxopentanoate",
 "metabolites":{
 "3mop[e]":-1.0
@@ -130102,7 +130108,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_4mop_LPAREN_e_RPAREN_",
+"id":"EX_4mop(e)",
 "name":"Exchange of 4-methyl-2-oxopentanoate",
 "metabolites":{
 "4mop[e]":-1.0
@@ -130113,7 +130119,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_5mta_LPAREN_e_RPAREN_",
+"id":"EX_5mta(e)",
 "name":"Exchange of 5-S-methyl-5-thioadenosine",
 "metabolites":{
 "5mta[e]":-1.0
@@ -130124,7 +130130,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_5oxpro_LPAREN_e_RPAREN_",
+"id":"EX_5oxpro(e)",
 "name":"Exchange of 5-oxoprolinate",
 "metabolites":{
 "5oxpro[e]":-1.0
@@ -130135,7 +130141,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ahcys_LPAREN_e_RPAREN_",
+"id":"EX_ahcys(e)",
 "name":"Exchange of S-adenosyl-L-homocysteine",
 "metabolites":{
 "ahcys[e]":-1.0
@@ -130146,7 +130152,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_aicar_LPAREN_e_RPAREN_",
+"id":"EX_aicar(e)",
 "name":"Exchange of 5-amino-1-(5-phospho-D-ribosyl)imidazole-4-carboxamide(2-)",
 "metabolites":{
 "aicar[e]":-1.0
@@ -130157,7 +130163,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_anth_LPAREN_e_RPAREN_",
+"id":"EX_anth(e)",
 "name":"Exchange of anthranilate",
 "metabolites":{
 "anth[e]":-1.0
@@ -130168,7 +130174,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_cbasp_LPAREN_e_RPAREN_",
+"id":"EX_cbasp(e)",
 "name":"Exchange of N-carbamoyl-L-aspartate",
 "metabolites":{
 "cbasp[e]":-1.0
@@ -130179,7 +130185,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_mal_L_LPAREN_e_RPAREN_",
+"id":"EX_mal_L(e)",
 "name":"Exchange of L-malate",
 "metabolites":{
 "mal_L[e]":-1.0
@@ -130190,7 +130196,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_idour_LPAREN_e_RPAREN_",
+"id":"EX_idour(e)",
 "name":"Exchange of L-iduronate",
 "metabolites":{
 "idour[e]":-1.0
@@ -130201,7 +130207,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_fum_LPAREN_e_RPAREN_",
+"id":"EX_fum(e)",
 "name":"Exchange of Fumarate",
 "metabolites":{
 "fum[e]":-1.0
@@ -130212,7 +130218,7 @@
 "subsystem":"[array([], dtype='<U1')]"
 },
 {
-"id":"EX_xmp_LPAREN_e_RPAREN_",
+"id":"EX_xmp(e)",
 "name":"Exchange of Xanthosine 5-phosphate",
 "metabolites":{
 "xmp[e]":-1.0
@@ -130223,7 +130229,7 @@
 "subsystem":"[array([], dtype='<U1')]"
 },
 {
-"id":"EX_dcmp_LPAREN_e_RPAREN_",
+"id":"EX_dcmp(e)",
 "name":"Exchange of dCMP",
 "metabolites":{
 "dcmp[e]":-1.0
@@ -130234,7 +130240,7 @@
 "subsystem":"[array([], dtype='<U1')]"
 },
 {
-"id":"EX_HC00342_LPAREN_e_RPAREN_",
+"id":"EX_HC00342(e)",
 "name":"exhange of cis-aconitate",
 "metabolites":{
 "HC00342[e]":-1.0
@@ -130245,7 +130251,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_glyc3p_LPAREN_e_RPAREN_",
+"id":"EX_glyc3p(e)",
 "name":"exhange of glycerol 3-phosphate",
 "metabolites":{
 "glyc3p[e]":-1.0
@@ -130259,6 +130265,7 @@
 "id":"biomass_reaction",
 "name":"Generic human biomass reaction",
 "metabolites":{
+"biomass[c]":1,
 "biomass_RNA[c]":-0.05882352941176471,
 "biomass_carbohydrate[c]":-0.07200811359026368,
 "biomass_lipid[c]":-0.09837728194726167,
@@ -131397,7 +131404,7 @@
 "subsystem":"[array([], dtype='<U1')]"
 },
 {
-"id":"EX_retinal_LPAREN_e_RPAREN_",
+"id":"EX_retinal(e)",
 "name":"retinal exchange",
 "metabolites":{
 "retinal[e]":-1.0
@@ -135280,7 +135287,7 @@
 "subsystem":"[array([], dtype='<U1')]"
 },
 {
-"id":"EX_12htacr_LPAREN_e_RPAREN_",
+"id":"EX_12htacr(e)",
 "name":"12-HT or M-VI, 12-hydroxy tacrolimus exchange",
 "metabolites":{
 "12htacr[e]":-1.0
@@ -135291,7 +135298,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_1331tacr_LPAREN_e_RPAREN_",
+"id":"EX_1331tacr(e)",
 "name":"13,31-O-Didesmethyl-tacrolimus exchange",
 "metabolites":{
 "1331tacr[e]":-1.0
@@ -135302,7 +135309,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_13dmt_LPAREN_e_RPAREN_",
+"id":"EX_13dmt(e)",
 "name":"13-O-desmethyl tacrolimus, 13-DMT or M-I exchange",
 "metabolites":{
 "13dmt[e]":-1.0
@@ -135313,7 +135320,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_14hmdz_LPAREN_e_RPAREN_",
+"id":"EX_14hmdz(e)",
 "name":"1,4-Dihydroxy-midazolam exchange",
 "metabolites":{
 "14hmdz[e]":-1.0
@@ -135324,7 +135331,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_1513tacr_LPAREN_e_RPAREN_",
+"id":"EX_1513tacr(e)",
 "name":"13,15-O-didesmethyl tacrolimus exchange",
 "metabolites":{
 "1513tacr[e]":-1.0
@@ -135335,7 +135342,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_1531tacr_LPAREN_e_RPAREN_",
+"id":"EX_1531tacr(e)",
 "name":"15, 31-O-Didesmethyl-tacrolimus exchange",
 "metabolites":{
 "1531tacr[e]":-1.0
@@ -135346,7 +135353,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_15dmt_LPAREN_e_RPAREN_",
+"id":"EX_15dmt(e)",
 "name":"15-DMT or M-III, 15-O-desmethyl tacrolimus exchange",
 "metabolites":{
 "15dmt[e]":-1.0
@@ -135357,7 +135364,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_1hibupglu_S_LPAREN_e_RPAREN_",
+"id":"EX_1hibupglu_S(e)",
 "name":"1-hydroxy S-ibuprofen-glucuronide exchange",
 "metabolites":{
 "1hibupglu_S[e]":-1.0
@@ -135368,7 +135375,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_1hmdgluc_LPAREN_e_RPAREN_",
+"id":"EX_1hmdgluc(e)",
 "name":"1'-OH-midazolam-glucuronide exchange",
 "metabolites":{
 "1hmdgluc[e]":-1.0
@@ -135379,7 +135386,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_1ohmdz_LPAREN_e_RPAREN_",
+"id":"EX_1ohmdz(e)",
 "name":"1'-OH-midazolam exchange",
 "metabolites":{
 "1ohmdz[e]":-1.0
@@ -135390,7 +135397,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_2hatvacid_LPAREN_e_RPAREN_",
+"id":"EX_2hatvacid(e)",
 "name":"2-hydroxy-atorvastatin-acid / ortho-hydroxy-atorvastatin acid exchange",
 "metabolites":{
 "2hatvacid[e]":-1.0
@@ -135401,7 +135408,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_2hatvacidgluc_LPAREN_e_RPAREN_",
+"id":"EX_2hatvacidgluc(e)",
 "name":"2-hydroxy-atorvastatin-acyl-glucuronide exchange",
 "metabolites":{
 "2hatvacidgluc[e]":-1.0
@@ -135412,7 +135419,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_2hatvlac_LPAREN_e_RPAREN_",
+"id":"EX_2hatvlac(e)",
 "name":"2-hydroxy-atorvastatin-lactone / ortho-hydroxy-atorvastatin lactone exchange",
 "metabolites":{
 "2hatvlac[e]":-1.0
@@ -135423,7 +135430,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_2hatvlacgluc_LPAREN_e_RPAREN_",
+"id":"EX_2hatvlacgluc(e)",
 "name":"2-hydroxy-atorvastatin-lactone-glucuronide exchange",
 "metabolites":{
 "2hatvlacgluc[e]":-1.0
@@ -135434,7 +135441,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_2hibupglu_S_LPAREN_e_RPAREN_",
+"id":"EX_2hibupglu_S(e)",
 "name":"2-hydroxy S-ibuprofen-glucuronide exchange",
 "metabolites":{
 "2hibupglu_S[e]":-1.0
@@ -135445,7 +135452,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_31dmt_LPAREN_e_RPAREN_",
+"id":"EX_31dmt(e)",
 "name":"31-DMT or M-II, 31-O-desmethyl tacrolimus exchange",
 "metabolites":{
 "31dmt[e]":-1.0
@@ -135456,7 +135463,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_35dhpvs_LPAREN_e_RPAREN_",
+"id":"EX_35dhpvs(e)",
 "name":"3'-alpha,5'beta-dihydroxy-pravastatin / 3'-alpha5'beta6'beta-trihydroxy pravastatin exchange",
 "metabolites":{
 "35dhpvs[e]":-1.0
@@ -135467,7 +135474,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_35dsmv_LPAREN_e_RPAREN_",
+"id":"EX_35dsmv(e)",
 "name":"3',5'-dihydrodiol-simvastatin-lactone form exchange",
 "metabolites":{
 "35dsmv[e]":-1.0
@@ -135478,7 +135485,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_3hibupglu_S_LPAREN_e_RPAREN_",
+"id":"EX_3hibupglu_S(e)",
 "name":"3-hydroxy S-ibuprofen-glucuronide exchange",
 "metabolites":{
 "3hibupglu_S[e]":-1.0
@@ -135489,7 +135496,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_3hlvstacid_LPAREN_e_RPAREN_",
+"id":"EX_3hlvstacid(e)",
 "name":"3''-hydroxy-lovastatin acid form exchange",
 "metabolites":{
 "3hlvstacid[e]":-1.0
@@ -135500,7 +135507,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_3hpvs_LPAREN_e_RPAREN_",
+"id":"EX_3hpvs(e)",
 "name":"3'-S-hydroxy-pravastatin exchange",
 "metabolites":{
 "3hpvs[e]":-1.0
@@ -135511,7 +135518,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_3hpvstet_LPAREN_e_RPAREN_",
+"id":"EX_3hpvstet(e)",
 "name":"3'-S-hydroxy-pravastatin-tetranor exchange",
 "metabolites":{
 "3hpvstet[e]":-1.0
@@ -135522,7 +135529,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_3hsmvacid_LPAREN_e_RPAREN_",
+"id":"EX_3hsmvacid(e)",
 "name":"3'-hydroxy-simvastatin-acid form exchange",
 "metabolites":{
 "3hsmvacid[e]":-1.0
@@ -135533,7 +135540,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_3ispvs_LPAREN_e_RPAREN_",
+"id":"EX_3ispvs(e)",
 "name":"3-alpha-iso-pravastatin exchange",
 "metabolites":{
 "3ispvs[e]":-1.0
@@ -135544,7 +135551,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_3ohacmp_LPAREN_e_RPAREN_",
+"id":"EX_3ohacmp(e)",
 "name":"3-hydroxy-acetaminophen exchange",
 "metabolites":{
 "3ohacmp[e]":-1.0
@@ -135555,7 +135562,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_4bhglz_LPAREN_e_RPAREN_",
+"id":"EX_4bhglz(e)",
 "name":"4-beta-OH-gliclazide exchange",
 "metabolites":{
 "4bhglz[e]":-1.0
@@ -135566,7 +135573,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_4hatvacid_LPAREN_e_RPAREN_",
+"id":"EX_4hatvacid(e)",
 "name":"4-hydroxy-atorvastatin-acid / para-hydroxy-atorvastatin acid exchange",
 "metabolites":{
 "4hatvacid[e]":-1.0
@@ -135577,7 +135584,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_4hatvlac_LPAREN_e_RPAREN_",
+"id":"EX_4hatvlac(e)",
 "name":"4-hydroxy-atorvastatin-lactone / para-hydroxy-atorvastatin lactone exchange",
 "metabolites":{
 "4hatvlac[e]":-1.0
@@ -135588,7 +135595,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_4hmdgluc_LPAREN_e_RPAREN_",
+"id":"EX_4hmdgluc(e)",
 "name":"4-OH-midazolam-glucuronide exchange",
 "metabolites":{
 "4hmdgluc[e]":-1.0
@@ -135599,7 +135606,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_4ohmdz_LPAREN_e_RPAREN_",
+"id":"EX_4ohmdz(e)",
 "name":"4-OH-midazolam exchange",
 "metabolites":{
 "4ohmdz[e]":-1.0
@@ -135610,7 +135617,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_56dhpvs_LPAREN_e_RPAREN_",
+"id":"EX_56dhpvs(e)",
 "name":"3-keto-5,6,-dihydroxy-pravastatin exchange",
 "metabolites":{
 "56dhpvs[e]":-1.0
@@ -135621,7 +135628,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_56eppvs_LPAREN_e_RPAREN_",
+"id":"EX_56eppvs(e)",
 "name":"5,6-epoxy-3-alpha-iso-pravastatin exchange",
 "metabolites":{
 "56eppvs[e]":-1.0
@@ -135632,7 +135639,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_5ohfvs_LPAREN_e_RPAREN_",
+"id":"EX_5ohfvs(e)",
 "name":"5-hydroxy-fluvastatin exchange",
 "metabolites":{
 "5ohfvs[e]":-1.0
@@ -135643,7 +135650,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_5ohfvsglu_LPAREN_e_RPAREN_",
+"id":"EX_5ohfvsglu(e)",
 "name":"5-hydroxy-fluvastatin-glucuronide exchange",
 "metabolites":{
 "5ohfvsglu[e]":-1.0
@@ -135654,7 +135661,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_6ahglz_LPAREN_e_RPAREN_",
+"id":"EX_6ahglz(e)",
 "name":"6-alpha-OH-gliclazide exchange",
 "metabolites":{
 "6ahglz[e]":-1.0
@@ -135665,7 +135672,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_6bhglz_LPAREN_e_RPAREN_",
+"id":"EX_6bhglz(e)",
 "name":"6-beta-OH-gliclazide exchange",
 "metabolites":{
 "6bhglz[e]":-1.0
@@ -135676,7 +135683,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_6bhglzglc_LPAREN_e_RPAREN_",
+"id":"EX_6bhglzglc(e)",
 "name":"6-beta-OH-gliclazide-glucuronide exchange",
 "metabolites":{
 "6bhglzglc[e]":-1.0
@@ -135687,7 +135694,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_6csmvacid_LPAREN_e_RPAREN_",
+"id":"EX_6csmvacid(e)",
 "name":"6'-beta-carboxy-simvastatin-acid form exchange",
 "metabolites":{
 "6csmvacid[e]":-1.0
@@ -135698,7 +135705,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_6epvs_LPAREN_e_RPAREN_",
+"id":"EX_6epvs(e)",
 "name":"6-epipravastatin exchange",
 "metabolites":{
 "6epvs[e]":-1.0
@@ -135709,7 +135716,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_6hlvst_LPAREN_e_RPAREN_",
+"id":"EX_6hlvst(e)",
 "name":"6'-beta-hydroxy-lovastatin lactone form exchange",
 "metabolites":{
 "6hlvst[e]":-1.0
@@ -135720,7 +135727,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_6hmsmvacid_LPAREN_e_RPAREN_",
+"id":"EX_6hmsmvacid(e)",
 "name":"6'-beta-hydroxy-methyl-simvastatin-acid form exchange",
 "metabolites":{
 "6hmsmvacid[e]":-1.0
@@ -135731,7 +135738,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_6hsmvacid_LPAREN_e_RPAREN_",
+"id":"EX_6hsmvacid(e)",
 "name":"6'-beta-hydroxy simvastatin acid exchange",
 "metabolites":{
 "6hsmvacid[e]":-1.0
@@ -135742,7 +135749,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_6melvacid_LPAREN_e_RPAREN_",
+"id":"EX_6melvacid(e)",
 "name":"6'-exomethylene-lovastatin-acid form exchange",
 "metabolites":{
 "6melvacid[e]":-1.0
@@ -135753,7 +135760,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_6melvst_LPAREN_e_RPAREN_",
+"id":"EX_6melvst(e)",
 "name":"6'-exomethylene-lovastatin lactone form exchange",
 "metabolites":{
 "6melvst[e]":-1.0
@@ -135764,7 +135771,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_6ohfvs_LPAREN_e_RPAREN_",
+"id":"EX_6ohfvs(e)",
 "name":"6-hydroxy-fluvastatin exchange",
 "metabolites":{
 "6ohfvs[e]":-1.0
@@ -135775,7 +135782,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_6ohfvsglu_LPAREN_e_RPAREN_",
+"id":"EX_6ohfvsglu(e)",
 "name":"6-hydroxy-fluvastatin-glucuronide exchange",
 "metabolites":{
 "6ohfvsglu[e]":-1.0
@@ -135786,7 +135793,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_7ahglz_LPAREN_e_RPAREN_",
+"id":"EX_7ahglz(e)",
 "name":"7-alpha-OH-gliclazide exchange",
 "metabolites":{
 "7ahglz[e]":-1.0
@@ -135797,7 +135804,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_7bhglz_LPAREN_e_RPAREN_",
+"id":"EX_7bhglz(e)",
 "name":"7-beta-OH-gliclazide exchange",
 "metabolites":{
 "7bhglz[e]":-1.0
@@ -135808,7 +135815,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_7bhglzglc_LPAREN_e_RPAREN_",
+"id":"EX_7bhglzglc(e)",
 "name":"7-beta-OH-gliclazide-glucuronide exchange",
 "metabolites":{
 "7bhglzglc[e]":-1.0
@@ -135819,7 +135826,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_7hpvs_LPAREN_e_RPAREN_",
+"id":"EX_7hpvs(e)",
 "name":"7-hydroxy-3-alpha-iso-pravastatin exchange",
 "metabolites":{
 "7hpvs[e]":-1.0
@@ -135830,7 +135837,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_acmp_LPAREN_e_RPAREN_",
+"id":"EX_acmp(e)",
 "name":"acetaminophen/paracetamol exchange",
 "metabolites":{
 "acmp[e]":-1.0
@@ -135841,7 +135848,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_acmpglu_LPAREN_e_RPAREN_",
+"id":"EX_acmpglu(e)",
 "name":"Acetaminophen glucuronide exchange",
 "metabolites":{
 "acmpglu[e]":-1.0
@@ -135852,7 +135859,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_acmpglut_LPAREN_e_RPAREN_",
+"id":"EX_acmpglut(e)",
 "name":"acetaminophen-glutathione-conjugate exchange",
 "metabolites":{
 "acmpglut[e]":-1.0
@@ -135863,7 +135870,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_allop_LPAREN_e_RPAREN_",
+"id":"EX_allop(e)",
 "name":"allopurinol exchange",
 "metabolites":{
 "allop[e]":-1.0
@@ -135874,7 +135881,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_am19cs_LPAREN_e_RPAREN_",
+"id":"EX_am19cs(e)",
 "name":"AM19 (cyclosporine) exchange",
 "metabolites":{
 "am19cs[e]":-1.0
@@ -135885,7 +135892,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_am1a4ncs_LPAREN_e_RPAREN_",
+"id":"EX_am1a4ncs(e)",
 "name":"AM1A4N (cyclosporine) exchange",
 "metabolites":{
 "am1a4ncs[e]":-1.0
@@ -135896,7 +135903,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_am1accs_LPAREN_e_RPAREN_",
+"id":"EX_am1accs(e)",
 "name":"AM1Ac (cyclosporine) exchange",
 "metabolites":{
 "am1accs[e]":-1.0
@@ -135907,7 +135914,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_am1acs_LPAREN_e_RPAREN_",
+"id":"EX_am1acs(e)",
 "name":"AM1A (cyclosporine) exchange",
 "metabolites":{
 "am1acs[e]":-1.0
@@ -135918,7 +135925,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_am1alcs_LPAREN_e_RPAREN_",
+"id":"EX_am1alcs(e)",
 "name":"AM1AL (cyclosporine) exchange",
 "metabolites":{
 "am1alcs[e]":-1.0
@@ -135929,7 +135936,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_am1c4n9cs_LPAREN_e_RPAREN_",
+"id":"EX_am1c4n9cs(e)",
 "name":"AM1c4N9 (cyclosporine) exchange",
 "metabolites":{
 "am1c4n9cs[e]":-1.0
@@ -135940,7 +135947,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_am1c9cs_LPAREN_e_RPAREN_",
+"id":"EX_am1c9cs(e)",
 "name":"AM1c9 (cyclosporine) exchange",
 "metabolites":{
 "am1c9cs[e]":-1.0
@@ -135951,7 +135958,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_am1ccs_LPAREN_e_RPAREN_",
+"id":"EX_am1ccs(e)",
 "name":"AM1c (cyclosporine) exchange",
 "metabolites":{
 "am1ccs[e]":-1.0
@@ -135962,7 +135969,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_am1cglc_LPAREN_e_RPAREN_",
+"id":"EX_am1cglc(e)",
 "name":"AM1c-glucuronide (cyclosporine) exchange",
 "metabolites":{
 "am1cglc[e]":-1.0
@@ -135973,7 +135980,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_am1csa_LPAREN_e_RPAREN_",
+"id":"EX_am1csa(e)",
 "name":"AM1 (cyclosporine) exchange",
 "metabolites":{
 "am1csa[e]":-1.0
@@ -135984,7 +135991,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_am4n9cs_LPAREN_e_RPAREN_",
+"id":"EX_am4n9cs(e)",
 "name":"AM4N9 (cyclosporine) exchange",
 "metabolites":{
 "am4n9cs[e]":-1.0
@@ -135995,7 +136002,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_am4ncs_LPAREN_e_RPAREN_",
+"id":"EX_am4ncs(e)",
 "name":"AM4N (cyclosporine) exchange",
 "metabolites":{
 "am4ncs[e]":-1.0
@@ -136006,7 +136013,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_am9csa_LPAREN_e_RPAREN_",
+"id":"EX_am9csa(e)",
 "name":"AM9 (cyclosporine) exchange",
 "metabolites":{
 "am9csa[e]":-1.0
@@ -136017,7 +136024,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_atvacid_LPAREN_e_RPAREN_",
+"id":"EX_atvacid(e)",
 "name":"atorvastatin-acid exchange",
 "metabolites":{
 "atvacid[e]":-1.0
@@ -136028,7 +136035,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_atvlac_LPAREN_e_RPAREN_",
+"id":"EX_atvlac(e)",
 "name":"atorvastatin-lactone exchange",
 "metabolites":{
 "atvlac[e]":-1.0
@@ -136039,7 +136046,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_caribup_R_LPAREN_e_RPAREN_",
+"id":"EX_caribup_R(e)",
 "name":"R-carboxy ibuprofen exchange",
 "metabolites":{
 "caribup_R[e]":-1.0
@@ -136050,7 +136057,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_caribup_s_LPAREN_e_RPAREN_",
+"id":"EX_caribup_s(e)",
 "name":"S-carboxy ibuprofen exchange",
 "metabolites":{
 "caribup_s[e]":-1.0
@@ -136061,7 +136068,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_caribupglu_S_LPAREN_e_RPAREN_",
+"id":"EX_caribupglu_S(e)",
 "name":"S-carboxy ibuprofen glucuronide exchange",
 "metabolites":{
 "caribupglu_S[e]":-1.0
@@ -136072,7 +136079,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_crglz_LPAREN_e_RPAREN_",
+"id":"EX_crglz(e)",
 "name":"carboxy-gliclazide exchange",
 "metabolites":{
 "crglz[e]":-1.0
@@ -136083,7 +136090,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_crvs_LPAREN_e_RPAREN_",
+"id":"EX_crvs(e)",
 "name":"cerivastatin exchange",
 "metabolites":{
 "crvs[e]":-1.0
@@ -136094,7 +136101,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_crvsm1_LPAREN_e_RPAREN_",
+"id":"EX_crvsm1(e)",
 "name":"cerivastatin-M1 exchange",
 "metabolites":{
 "crvsm1[e]":-1.0
@@ -136105,7 +136112,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_crvsm23_LPAREN_e_RPAREN_",
+"id":"EX_crvsm23(e)",
 "name":"cerivastatin-M23 exchange",
 "metabolites":{
 "crvsm23[e]":-1.0
@@ -136116,7 +136123,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_crvsm24_LPAREN_e_RPAREN_",
+"id":"EX_crvsm24(e)",
 "name":"cerivastatin-M24 exchange",
 "metabolites":{
 "crvsm24[e]":-1.0
@@ -136127,7 +136134,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_csa_LPAREN_e_RPAREN_",
+"id":"EX_csa(e)",
 "name":"cyclosporine exchange",
 "metabolites":{
 "csa[e]":-1.0
@@ -136138,7 +136145,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_csasulp_LPAREN_e_RPAREN_",
+"id":"EX_csasulp(e)",
 "name":"cyclosporine-sulphate exchange",
 "metabolites":{
 "csasulp[e]":-1.0
@@ -136149,7 +136156,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_cysacmp_LPAREN_e_RPAREN_",
+"id":"EX_cysacmp(e)",
 "name":"cysteine-conjugate-acetaminophen exchange",
 "metabolites":{
 "cysacmp[e]":-1.0
@@ -136160,7 +136167,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_deoxfvs_LPAREN_e_RPAREN_",
+"id":"EX_deoxfvs(e)",
 "name":"deoxy-fluvastatin-dinor exchange",
 "metabolites":{
 "deoxfvs[e]":-1.0
@@ -136171,7 +136178,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_desfvs_LPAREN_e_RPAREN_",
+"id":"EX_desfvs(e)",
 "name":"N-desisopropyl-fluvastatin exchange",
 "metabolites":{
 "desfvs[e]":-1.0
@@ -136182,7 +136189,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_dhglz_LPAREN_e_RPAREN_",
+"id":"EX_dhglz(e)",
 "name":"dehydro-gliclazide exchange",
 "metabolites":{
 "dhglz[e]":-1.0
@@ -136193,7 +136200,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_dspvs_LPAREN_e_RPAREN_",
+"id":"EX_dspvs(e)",
 "name":"desacyl dehydro-pravastatin exchange",
 "metabolites":{
 "dspvs[e]":-1.0
@@ -136204,7 +136211,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_epoxtac_LPAREN_e_RPAREN_",
+"id":"EX_epoxtac(e)",
 "name":"31-O-Desmethyl,19-Hydroxy,37, 39-Epoxy-tacrolimus exchange",
 "metabolites":{
 "epoxtac[e]":-1.0
@@ -136215,7 +136222,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_fvs_LPAREN_e_RPAREN_",
+"id":"EX_fvs(e)",
 "name":"fluvastatin exchange",
 "metabolites":{
 "fvs[e]":-1.0
@@ -136226,7 +136233,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_fvstet_LPAREN_e_RPAREN_",
+"id":"EX_fvstet(e)",
 "name":"des-isopropyl-dihydro-fluvastatin-tetranor exchange",
 "metabolites":{
 "fvstet[e]":-1.0
@@ -136237,7 +136244,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_fvstetglu_LPAREN_e_RPAREN_",
+"id":"EX_fvstetglu(e)",
 "name":"des-isopropyl-dihydro-fluvastatin-tetranor-glucuronide exchange",
 "metabolites":{
 "fvstetglu[e]":-1.0
@@ -136248,7 +136255,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_glc3meacp_LPAREN_e_RPAREN_",
+"id":"EX_glc3meacp(e)",
 "name":"glucuronide-conjugate of 3-methoxy-acetaminophen exchange",
 "metabolites":{
 "glc3meacp[e]":-1.0
@@ -136259,7 +136266,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_glz_LPAREN_e_RPAREN_",
+"id":"EX_glz(e)",
 "name":"Gliclazide exchange",
 "metabolites":{
 "glz[e]":-1.0
@@ -136270,7 +136277,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_gtacmp_LPAREN_e_RPAREN_",
+"id":"EX_gtacmp(e)",
 "name":"glucuronide-thiomethyl-acetaminophen conjugate exchange",
 "metabolites":{
 "gtacmp[e]":-1.0
@@ -136281,7 +136288,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ibupgluc_LPAREN_e_RPAREN_",
+"id":"EX_ibupgluc(e)",
 "name":"ibuprofen acyl glucuronide exchange",
 "metabolites":{
 "ibupgluc[e]":-1.0
@@ -136292,7 +136299,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_isolvstacid_LPAREN_e_RPAREN_",
+"id":"EX_isolvstacid(e)",
 "name":"3'-hydroxy-iso-delta-4',5'-hydroxy acid form of lovastatin exchange",
 "metabolites":{
 "isolvstacid[e]":-1.0
@@ -136303,7 +136310,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_lst4exp_LPAREN_e_RPAREN_",
+"id":"EX_lst4exp(e)",
 "name":"Losartan-E3174/ losartan-M6 exchange",
 "metabolites":{
 "lst4exp[e]":-1.0
@@ -136314,7 +136321,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_lstn_LPAREN_e_RPAREN_",
+"id":"EX_lstn(e)",
 "name":"Losartan exchange",
 "metabolites":{
 "lstn[e]":-1.0
@@ -136325,7 +136332,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_lstn1gluc_LPAREN_e_RPAREN_",
+"id":"EX_lstn1gluc(e)",
 "name":"Losartan-N1-glucuronide exchange",
 "metabolites":{
 "lstn1gluc[e]":-1.0
@@ -136336,7 +136343,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_lstnm1_LPAREN_e_RPAREN_",
+"id":"EX_lstnm1(e)",
 "name":"Losartan-M1 exchange",
 "metabolites":{
 "lstnm1[e]":-1.0
@@ -136347,7 +136354,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_lstnm2_LPAREN_e_RPAREN_",
+"id":"EX_lstnm2(e)",
 "name":"Losartan-M2 exchange",
 "metabolites":{
 "lstnm2[e]":-1.0
@@ -136358,7 +136365,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_lstnm4_LPAREN_e_RPAREN_",
+"id":"EX_lstnm4(e)",
 "name":"Losartan-M4 (glucuronide derivative) exchange",
 "metabolites":{
 "lstnm4[e]":-1.0
@@ -136369,7 +136376,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_lstnm5_LPAREN_e_RPAREN_",
+"id":"EX_lstnm5(e)",
 "name":"Losartan-M5 exchange",
 "metabolites":{
 "lstnm5[e]":-1.0
@@ -136380,7 +136387,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_lstnm7_LPAREN_e_RPAREN_",
+"id":"EX_lstnm7(e)",
 "name":"Losartan-N2-glucuronide / Losartan-M7 exchange",
 "metabolites":{
 "lstnm7[e]":-1.0
@@ -136391,7 +136398,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_lvst_LPAREN_e_RPAREN_",
+"id":"EX_lvst(e)",
 "name":"lovastatin lactone form exchange",
 "metabolites":{
 "lvst[e]":-1.0
@@ -136402,7 +136409,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_mdz_LPAREN_e_RPAREN_",
+"id":"EX_mdz(e)",
 "name":"Midazolam exchange",
 "metabolites":{
 "mdz[e]":-1.0
@@ -136413,7 +136420,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_mdzglc_LPAREN_e_RPAREN_",
+"id":"EX_mdzglc(e)",
 "name":"Midazolam-glucuronide exchange",
 "metabolites":{
 "mdzglc[e]":-1.0
@@ -136424,7 +136431,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_meracmp_LPAREN_e_RPAREN_",
+"id":"EX_meracmp(e)",
 "name":"acetaminophen-mercapturate-conjugate/N-acetyl-cysteine-acetaminophen exchange",
 "metabolites":{
 "meracmp[e]":-1.0
@@ -136435,7 +136442,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_mhglz_LPAREN_e_RPAREN_",
+"id":"EX_mhglz(e)",
 "name":"Methyl-hydroxy-gliclazide exchange",
 "metabolites":{
 "mhglz[e]":-1.0
@@ -136446,7 +136453,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ndersv_LPAREN_e_RPAREN_",
+"id":"EX_ndersv(e)",
 "name":"N-desmethyl-rosuvastatin exchange",
 "metabolites":{
 "ndersv[e]":-1.0
@@ -136457,7 +136464,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_nfdlac_LPAREN_e_RPAREN_",
+"id":"EX_nfdlac(e)",
 "name":"lactone form of nifedipine exchange",
 "metabolites":{
 "nfdlac[e]":-1.0
@@ -136468,7 +136475,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_oxyp_LPAREN_e_RPAREN_",
+"id":"EX_oxyp(e)",
 "name":"oxypurinol exchange",
 "metabolites":{
 "oxyp[e]":-1.0
@@ -136479,7 +136486,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_oxy1rb_LPAREN_e_RPAREN_",
+"id":"EX_oxy1rb(e)",
 "name":"oxypurinol-1-riboside exchange",
 "metabolites":{
 "oxy1rb[e]":-1.0
@@ -136490,7 +136497,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_oxy7rb_LPAREN_e_RPAREN_",
+"id":"EX_oxy7rb(e)",
 "name":"oxypurinol-7-riboside exchange",
 "metabolites":{
 "oxy7rb[e]":-1.0
@@ -136501,7 +136508,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_profvs_LPAREN_e_RPAREN_",
+"id":"EX_profvs(e)",
 "name":"des-isoproylpropionic-acid-fluvastatin exchange",
 "metabolites":{
 "profvs[e]":-1.0
@@ -136512,7 +136519,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ptvst_LPAREN_e_RPAREN_",
+"id":"EX_ptvst(e)",
 "name":"pitavastatin exchange",
 "metabolites":{
 "ptvst[e]":-1.0
@@ -136523,7 +136530,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ptvstlac_LPAREN_e_RPAREN_",
+"id":"EX_ptvstlac(e)",
 "name":"pitavastatin-lactone exchange",
 "metabolites":{
 "ptvstlac[e]":-1.0
@@ -136534,7 +136541,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_ptvstm3_LPAREN_e_RPAREN_",
+"id":"EX_ptvstm3(e)",
 "name":"pitavastatin-M3 exchange",
 "metabolites":{
 "ptvstm3[e]":-1.0
@@ -136545,7 +136552,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_pvs_LPAREN_e_RPAREN_",
+"id":"EX_pvs(e)",
 "name":"pravastatin exchange",
 "metabolites":{
 "pvs[e]":-1.0
@@ -136556,7 +136563,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_pvsgluc_LPAREN_e_RPAREN_",
+"id":"EX_pvsgluc(e)",
 "name":"pravastatin glucuronide exchange",
 "metabolites":{
 "pvsgluc[e]":-1.0
@@ -136567,7 +136574,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_rsv_LPAREN_e_RPAREN_",
+"id":"EX_rsv(e)",
 "name":"rosuvastatin exchange",
 "metabolites":{
 "rsv[e]":-1.0
@@ -136578,7 +136585,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_rsvlac_LPAREN_e_RPAREN_",
+"id":"EX_rsvlac(e)",
 "name":"rosuvastatin-5S-lactone exchange",
 "metabolites":{
 "rsvlac[e]":-1.0
@@ -136589,7 +136596,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_s3meacmp_LPAREN_e_RPAREN_",
+"id":"EX_s3meacmp(e)",
 "name":"sulphate-conjugate-3-methoxy-acetaminophen exchange",
 "metabolites":{
 "s3meacmp[e]":-1.0
@@ -136600,7 +136607,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_smv_LPAREN_e_RPAREN_",
+"id":"EX_smv(e)",
 "name":"simvastatin lactone form exchange",
 "metabolites":{
 "smv[e]":-1.0
@@ -136611,7 +136618,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_smvacid_LPAREN_e_RPAREN_",
+"id":"EX_smvacid(e)",
 "name":"simvastatin dihydroxy acid form exchange",
 "metabolites":{
 "smvacid[e]":-1.0
@@ -136622,7 +136629,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_stacmp_LPAREN_e_RPAREN_",
+"id":"EX_stacmp(e)",
 "name":"sulphate-conjugate of thiomethyl-acetaminophen exchange",
 "metabolites":{
 "stacmp[e]":-1.0
@@ -136633,7 +136640,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_sulpacmp_LPAREN_e_RPAREN_",
+"id":"EX_sulpacmp(e)",
 "name":"sulphate-conjugate-acetaminophen exchange",
 "metabolites":{
 "sulpacmp[e]":-1.0
@@ -136644,7 +136651,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_tacr_LPAREN_e_RPAREN_",
+"id":"EX_tacr(e)",
 "name":"Tacrolimus exchange",
 "metabolites":{
 "tacr[e]":-1.0
@@ -136655,7 +136662,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_tauribup_S_LPAREN_e_RPAREN_",
+"id":"EX_tauribup_S(e)",
 "name":"taurine conjugate of S-ibuprofen exchange",
 "metabolites":{
 "tauribup_S[e]":-1.0
@@ -136666,7 +136673,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_thrfvs_LPAREN_e_RPAREN_",
+"id":"EX_thrfvs(e)",
 "name":"threo-isomer of fluvastain exchange",
 "metabolites":{
 "thrfvs[e]":-1.0
@@ -136677,7 +136684,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_tlacfvs_LPAREN_e_RPAREN_",
+"id":"EX_tlacfvs(e)",
 "name":"trans-lactone-fluvastatin exchange",
 "metabolites":{
 "tlacfvs[e]":-1.0
@@ -136688,7 +136695,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_tmd_LPAREN_e_RPAREN_",
+"id":"EX_tmd(e)",
 "name":"Torasemide exchange",
 "metabolites":{
 "tmd[e]":-1.0
@@ -136699,7 +136706,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_tmdm1_LPAREN_e_RPAREN_",
+"id":"EX_tmdm1(e)",
 "name":"Torasemide-M1 exchange",
 "metabolites":{
 "tmdm1[e]":-1.0
@@ -136710,7 +136717,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_tmdm3_LPAREN_e_RPAREN_",
+"id":"EX_tmdm3(e)",
 "name":"Torasemide-M3 exchange",
 "metabolites":{
 "tmdm3[e]":-1.0
@@ -136721,7 +136728,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_tmdm5_LPAREN_e_RPAREN_",
+"id":"EX_tmdm5(e)",
 "name":"Torasemide-M5 exchange",
 "metabolites":{
 "tmdm5[e]":-1.0
@@ -136732,7 +136739,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_tripvs_LPAREN_e_RPAREN_",
+"id":"EX_tripvs(e)",
 "name":"triol metabolite of pravastatin exchange",
 "metabolites":{
 "tripvs[e]":-1.0
@@ -136743,7 +136750,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_tsacmgluc_LPAREN_e_RPAREN_",
+"id":"EX_tsacmgluc(e)",
 "name":"thiomethyl-sulphoxide-acetaminophen-glucuronide exchange",
 "metabolites":{
 "tsacmgluc[e]":-1.0
@@ -136754,7 +136761,7 @@
 "subsystem":"[array(['Exchange/demand reaction'], dtype='<U24')]"
 },
 {
-"id":"EX_tsacmsul_LPAREN_e_RPAREN_",
+"id":"EX_tsacmsul(e)",
 "name":"thiomethyl-sulphoxide-acetaminophen-sulphate exchange",
 "metabolites":{
 "tsacmsul[e]":-1.0
@@ -139686,7 +139693,7 @@
 "subsystem":"[array([], dtype='<U1')]"
 },
 {
-"id":"EX_lvstacid_LPAREN_e_RPAREN_",
+"id":"EX_lvstacid(e)",
 "name":"lovastatin-hydroxyacid form exchange",
 "metabolites":{
 "lvstacid[e]":-1.0
@@ -139793,7 +139800,7 @@
 "subsystem":"[array([], dtype='<U1')]"
 },
 {
-"id":"EX_ptvstm13_LPAREN_e_RPAREN_",
+"id":"EX_ptvstm13(e)",
 "name":"pitavastatin-M13 exchange",
 "metabolites":{
 "ptvstm13[e]":-1.0
@@ -140383,7 +140390,7 @@
 "subsystem":"[array([], dtype='<U1')]"
 },
 {
-"id":"EX_hx_LPAREN_e_RPAREN_",
+"id":"EX_hx(e)",
 "name":"exchange reaction for hexanoate (n-C6:0)",
 "metabolites":{
 "hx[e]":-1.0
