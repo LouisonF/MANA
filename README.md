@@ -1,9 +1,13 @@
 # MANA
 MANA: mMoA identification Assisted by modelling and Network Analysis.
+[![Documentation Status](https://readthedocs.org/projects/manamodeller/badge/?version=latest)](https://manamodeller.readthedocs.io/en/latest/?badge=latest)
+[![PyPI version](https://badge.fury.io/py/manamodeller.svg)](https://badge.fury.io/py/manamodeller)
 
 This repository contains code and a test case associated with the article named : 
 
     A strategy to detect metabolic changes induced by exposure to chemicals from large sets of condition-specific metabolic models computed with enumeration techniques
+
+API documentation is available here: https://manamodeller.readthedocs.io/en/latest/
 
 The workflow presented in this article aims at improving our understanding of the metabolic Mechanism of Action and can be divided in three steps:
 1. Condition-specific metabolic network modelling with partial enumeration from gene expression data

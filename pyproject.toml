@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "manamodeller"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["Louison Fresnais <fresnaislouison@gmail.com>"]
 readme = "README.md"
